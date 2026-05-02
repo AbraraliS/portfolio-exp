@@ -240,10 +240,10 @@ const ProjectDetails = async ({ params }: Props) => {
                       <p className="text-slate-400 italic mt-2 font-medium">{project.system_architecture.flow}</p>
                     </div>
                   </div>
-                  {project.images?.find(img => img.includes("architecture")) && (
+                  {project.images?.some(img => img.includes("architecture")) && (
                     <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl bg-[#050505]">
                       <Image
-                        src={project.images.find(img => img.includes("architecture")) || ""}
+                        src={project.images.find(img => img.includes("architecture")) as string}
                         alt={`${project.name} Architecture`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -432,7 +432,7 @@ const ProjectDetails = async ({ params }: Props) => {
             )}
 
             {/* Semantic Evaluation & Q&A (Specific to TIPS but kept as generic check) */}
-            {project.id === 1 && (
+            {project.id.toString() === "1" && (
               <section className="flex flex-col gap-8">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
@@ -481,7 +481,7 @@ const ProjectDetails = async ({ params }: Props) => {
                   </h2>
                 </div>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.features.map((feature, index) => (
+                  {(project.features || []).map((feature, index) => (
                     <li
                       key={index}
                       className="group p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-red-500/[0.03] hover:border-red-500/20 transition-all duration-300 flex gap-4"
@@ -507,7 +507,7 @@ const ProjectDetails = async ({ params }: Props) => {
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {project.pipeline.map((stage, index) => (
+                  {(project.pipeline || []).map((stage, index) => (
                     <div key={index} className="relative p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-red-500/30 transition-all group overflow-hidden">
                       <span className="absolute -right-4 -bottom-4 text-7xl font-black text-white/[0.03] group-hover:text-red-500/[0.05] transition-colors">
                         0{index + 1}
@@ -594,7 +594,7 @@ const ProjectDetails = async ({ params }: Props) => {
                     </h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {project.tools.map((tool, index) => (
+                    {(project.tools || []).map((tool, index) => (
                       <Badge
                         key={index}
                         variant="outline"

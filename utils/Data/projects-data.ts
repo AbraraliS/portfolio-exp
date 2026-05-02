@@ -8,7 +8,6 @@ export const projectsData = [
     tools: ["Python", "FastAPI", "WebRTC", "OpenCV", "MediaPipe", "Whisper", "PyTorch", "Transformers", "Chart.js"],
     role: "System Architecture",
     code: "https://github.com/AbraraliS/TIPS-LLM",
-    demo: "",
     date: "2026",
     status: "Completed",
     isMain: true,
@@ -24,7 +23,6 @@ export const projectsData = [
       "/projects/tips/tips-architecture.png"
     ],
     thumbnail: "/projects/tips/tips-overview.png",
-    videos: [""],
     highlights: [
       "Reduces hiring subjectivity using data-driven evaluation",
       "Supports scalable automated interview analysis",
