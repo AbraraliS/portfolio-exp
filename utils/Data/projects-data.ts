@@ -1,6 +1,6 @@
 export const projectsData = [
   {
-    id: 1,
+    id: "1",
     name: "TIPS — Temporal Interview Profiling System",
     shortTitle: "TIPS",
     description: "A multimodal AI system that analyzes recorded video interviews using audio, video, and LLM-based semantic evaluation to generate objective, time-evolving candidate assessments.",
@@ -56,7 +56,7 @@ export const projectsData = [
     ]
   },
   {
-    id: 2,
+    id: "2",
     name: "OpenClaw Orchestrator",
     shortTitle: "OpenClaw",
     description: "A multi-agent orchestration system where a central commander agent coordinates specialized sub-agents (researcher, analyzer, coder, assistant) to execute complex tasks autonomously, including web interaction and real-world action simulation.",
@@ -119,7 +119,7 @@ export const projectsData = [
     priority: 4
   },
   {
-    id: 3,
+    id: "3",
     name: "GitStore — GitHub-Based Distributed File System",
     shortTitle: "GitStore",
     description: "A distributed file storage system that transforms GitHub repositories into a personal cloud filesystem using an HDFS-inspired architecture with encryption, deduplication, and multi-layer caching.",
@@ -190,7 +190,7 @@ export const projectsData = [
     priority: 2
   },
   {
-    id: 4,
+    id: "4",
     name: "SurveySense — AI Survey Platform",
     fullName: "SurveySense — AI-Driven Survey Web Application",
     shortTitle: "SurveySense",

@@ -22,10 +22,10 @@ const FeaturedProjects = () => {
           {projectsData
             .sort((a, b) => {
               if (a.featured !== b.featured) return a.featured ? -1 : 1;
-              return (a.priority || 99) - (b.priority || 99);
+              return (a.priority ?? 999) - (b.priority ?? 999);
             })
-            .map((project, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 h-full">
+            .map((project) => (
+              <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3 h-full">
                 <ProjectCard key={project.id} project={project} />
               </CarouselItem>
             ))}

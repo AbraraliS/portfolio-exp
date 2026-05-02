@@ -27,7 +27,7 @@ const ProjectsPage = () => {
           {projectsData
             .sort((a, b) => {
               if (a.featured !== b.featured) return a.featured ? -1 : 1;
-              return (a.priority || 99) - (b.priority || 99);
+              return (a.priority ?? 999) - (b.priority ?? 999);
             })
             .map((project) => (
               <div key={project.id} className="h-full">

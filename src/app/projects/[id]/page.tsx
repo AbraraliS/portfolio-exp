@@ -46,7 +46,7 @@ type Props = {
 
 const ProjectDetails = async ({ params }: Props) => {
   const { id } = await params;
-  const project = projectsData.find((p) => p.id === parseInt(id));
+  const project = projectsData.find((p) => p.id.toString() === id);
 
   if (!project) {
     notFound();

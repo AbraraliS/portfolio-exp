@@ -8,28 +8,31 @@ export interface GlowCardProps {
   children: ReactNode;
   identifier: string;
 }
-interface Project {
-  id: number;
+export interface Project {
+  id: string | number;
   name: string;
-  fullName?: string;
-  shortTitle?: string;
-  tools: string[];
-  role: string;
   description: string;
+  shortTitle?: string;
+  fullName?: string;
+  tools?: string[];
+  features?: string[];
+  highlights?: string[];
   code?: string;
   demo?: string;
-  date: string;
-  type?: string;
+  live?: string;
+  videos?: string[];
   images?: string[];
   thumbnail?: string;
-  videos?: string[];
-  highlights?: string[];
-  features?: string[];
-  pipeline?: string[];
   featured?: boolean;
   isMain?: boolean;
   priority?: number;
+  role?: string;
+  category?: string;
+  type?: string;
   status?: string;
+  date?: string;
+  year?: string;
+  pipeline?: string[];
   system_architecture?: {
     type: string;
     components: string[];

@@ -20,7 +20,7 @@ const Projects = () => {
 
   const mainProjects = projectsData
     .filter((p) => p.isMain)
-    .sort((a, b) => (a.priority || 99) - (b.priority || 99));
+    .sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999));
 
   const projectsToRender = isMobile 
     ? (showAllMobile ? mainProjects : mainProjects.slice(0, 1))
