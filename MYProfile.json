@@ -1,0 +1,275 @@
+{
+    "personal_info": {
+        "name": "Abrarali Sunasara",
+        "title": "Full Stack & Systems Engineer",
+        "tagline": "System Architecture • Full Stack • AI Systems • Scalable Applications",
+        "bio": "I design and build complete systems — from frontend interfaces and mobile apps to backend architecture, APIs, and AI-driven workflows. My focus is on scalable system design, clean architecture, and production-ready applications. I work across web, mobile, and backend, integrating AI and automation where it adds real value.",
+        "location": "Bengaluru, India",
+        "email": "abrarali.sunasara28@gmail.com",
+        "phone": "+91 7203957429",
+        "social_links": {
+            "github": "https://github.com/abraralis",
+            "linkedin": "https://linkedin.com/in/abraralis"
+        }
+    },
+    "skills": {
+        "core": [
+            "JavaScript",
+            "TypeScript",
+            "Java",
+            "Python"
+        ],
+        "frontend": [
+            "React",
+            "Next.js",
+            "Tailwind CSS"
+        ],
+        "backend": [
+            "Node.js",
+            "Express.js",
+            "Spring Boot",
+            "REST API",
+            "API Design",
+            "Schema Design"
+        ],
+        "mobile": [
+            "React Native",
+            "Expo"
+        ],
+        "ai": [
+            "AI Integration",
+            "Prompt Engineering",
+            "LLM APIs",
+            "Automation",
+            "Workflow Systems"
+        ],
+        "system_design": [
+            "System Architecture",
+            "Microservices",
+            "Scalable Systems",
+            "Event-Driven Design"
+        ],
+        "devops": [
+            "Docker",
+            "Vercel",
+            "Deployment",
+            "CI/CD",
+            "Linux"
+        ],
+        "tools": [
+            "Git",
+            "Postman",
+            "Prisma",
+            "n8n"
+        ]
+    },
+    "projects": [
+        {
+            "project_name": "TIPS — Temporal Interview Profiling System",
+            "description": "A multimodal AI system that analyzes recorded video interviews using audio, video, and LLM-based semantic evaluation to generate objective, time-evolving candidate assessments.",
+            "tech_stack": [
+                "Python",
+                "FastAPI",
+                "WebRTC (aiortc)",
+                "OpenCV",
+                "MediaPipe",
+                "Whisper",
+                "PyTorch",
+                "Transformers",
+                "Chart.js"
+            ],
+            "featured": true,
+            "github": "https://github.com/AbraraliS/TIPS-LLM",
+            "images": [
+                "/projects/tips/tips-overview.png",
+                "/projects/tips/tips-dashboard.png",
+                "/projects/tips/tips-timeline.png",
+                "/projects/tips/tips-analysis.png",
+                "/projects/tips/tips-qa.png",
+                "/projects/tips/tips-architecture.png"
+            ],
+            "thumbnail": "/projects/tips/tips-overview.png",
+            "system_architecture": {
+                "type": "Multimodal AI Analysis Pipeline",
+                "components": [
+                    "6-stage Analysis Pipeline",
+                    "Audio/Video Feature Extraction",
+                    "Whisper Speech-to-Text",
+                    "LLM Semantic Scorer",
+                    "Temporal Performance Tracker",
+                    "Interactive Analytics Dashboard"
+                ],
+                "flow": "Interview Capture → Temporal Extraction → Semantic Scoring → Behavioral Metrics → Visual Analytics"
+            },
+            "api_schema": {
+                "interview": [
+                    "POST /interview/upload",
+                    "GET /interview/{id}/analysis"
+                ],
+                "metrics": [
+                    "GET /metrics/temporal",
+                    "GET /metrics/behavioral"
+                ]
+            }
+        },
+        {
+            "project_name": "Full Stack AI SaaS",
+            "description": "Production-ready SaaS system integrating frontend, backend APIs, AI services, and database architecture.",
+            "tech_stack": [
+                "Next.js",
+                "Node.js",
+                "Spring Boot",
+                "PostgreSQL"
+            ],
+            "featured": true,
+            "system_architecture": {
+                "type": "Modular full-stack system",
+                "components": [
+                    "Frontend",
+                    "Backend API",
+                    "AI Services",
+                    "Database"
+                ],
+                "flow": "Client → API → AI → DB → Response"
+            },
+            "api_schema": {
+                "user": [
+                    "GET /user/profile",
+                    "PUT /user/update"
+                ],
+                "ai": [
+                    "POST /ai/chat"
+                ]
+            }
+        },
+        {
+            "project_name": "Mobile App System",
+            "description": "Cross-platform mobile application integrated with backend APIs and real-time systems.",
+            "tech_stack": [
+                "React Native",
+                "Node.js",
+                "Firebase"
+            ],
+            "featured": false,
+            "system_architecture": {
+                "type": "Client-server mobile architecture",
+                "components": [
+                    "Mobile App (React Native)",
+                    "Backend API (Node.js)",
+                    "Authentication Service",
+                    "Database (Firebase/PostgreSQL)"
+                ],
+                "flow": "Mobile App → API → Database → Response"
+            },
+            "api_schema": {
+                "auth": [
+                    "POST /login",
+                    "POST /signup"
+                ],
+                "data": [
+                    "GET /data",
+                    "POST /data"
+                ]
+            }
+        }
+    ],
+    "experience": [
+        {
+            "role": "Full Stack Engineer",
+            "company": "Freelance / Independent",
+            "duration": "2023 – Present",
+            "responsibilities": [
+                "Built full-stack applications with scalable architecture",
+                "Designed APIs and database schemas",
+                "Integrated AI and automation workflows",
+                "Handled deployment and optimization"
+            ]
+        },
+        {
+            "role": "Backend Developer",
+            "company": "Client Projects",
+            "duration": "2022 – 2023",
+            "responsibilities": [
+                "Developed web and mobile applications",
+                "Implemented backend systems and integrations"
+            ]
+        },
+        {
+            "role": "Software Developer Intern",
+            "company": "Infiposts Pvt Ltd",
+            "duration": "Internship",
+            "responsibilities": [
+                "Worked on frontend and backend features",
+                "Assisted in API development and debugging"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Master of Computer Applications (MCA)",
+            "institution": "REVA University, Bengaluru",
+            "duration": "2024 – 2026",
+            "cgpa": "9.44"
+        },
+        {
+            "degree": "Bachelor of Science (Computer Application & IT)",
+            "institution": "Hemchandracharya North Gujarat University",
+            "duration": "2021 – 2024",
+            "cgpa": "7.5"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Microsoft Azure AI Fundamentals",
+            "link": ""
+        },
+        {
+            "name": "AI-first Software Engineering",
+            "link": "https://drive.google.com/file/d/1qBzfAFkUZDIO70wzgF8eZICh3vHezmD8/view?usp=drive_link"
+        },
+        {
+            "name": "Applied Generative AI Certification",
+            "link": "https://drive.google.com/file/d/1E6k09YkGxqHdyiX1YWw011Eno6NxF2TT/view?usp=drive_link"
+        },
+        {
+            "name": "Introduction to AI & Generative AI",
+            "link": "https://drive.google.com/file/d/1q9c6gmoyQrt3SCkiBJftH6LNMBKJvofU/view?usp=drive_link"
+        },
+        {
+            "name": "OpenAI Generative Pre-trained Transformer 3 (GPT-3) for developers",
+            "link": "https://drive.google.com/file/d/1r84Pwcvky_8Ke54fim0A3nTTptasJfhE/view?usp=drive_link"
+        },
+        {
+            "name": "Prompt Engineering",
+            "link": "https://drive.google.com/file/d/1qaFTnj3rL7iQoVh5-E1Douqo_ZziLaS_/view?usp=drive_link"
+        },
+        {
+            "name": "Data Structures and Algorithms using Java",
+            "link": "https://drive.google.com/file/d/15ctHjfyaoIF_GC_RccAxRDLc0uaUBt_2/view?usp=drive_link"
+        },
+        {
+            "name": "Database Design and ER modeling",
+            "link": "https://drive.google.com/file/d/1Nd8AqVYXbIzEOLVUc1WEg4GPf6d0OdHr/view?usp=drive_link"
+        }
+    ],
+    "achievements": [
+        {
+            "name": "SSIP Hackathon 2022",
+            "link": "https://drive.google.com/file/d/1xpV4VhiuAdGsmwrYogGMF3EOZCEcXjHY/view?usp=drive_link"
+        },
+        {
+            "service_title": "Mobile App Development",
+            "description": "Building cross-platform mobile applications."
+        }
+    ],
+    "ui_text_content": [
+        "System Architecture",
+        "Full Stack Systems",
+        "AI-Powered Applications",
+        "Scalable Engineering",
+        "Build. Scale. Automate.",
+        "Let’s Build Real Systems",
+        "View Work",
+        "Contact"
+    ]
+}
