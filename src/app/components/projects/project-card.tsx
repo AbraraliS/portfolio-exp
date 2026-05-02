@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ProjectCardProps } from "@/Types/types";
+import { getSkillIcon, getSkillColor } from "@/../utils/skill-icons";
 import { ChevronUp, Code, ExternalLink, Globe, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -120,15 +121,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 href={`/projects/${project.id}`}
                 className="group/title inline-block"
               >
-                <CardTitle className="text-2xl font-bold text-white group-hover/title:text-red-500 transition-colors flex items-center gap-2 tracking-tight">
-                  {project.name}
-                  <ExternalLink className="w-4 h-4 opacity-0 -translate-y-1 translate-x-1 group-hover/title:opacity-100 group-hover/title:translate-y-0 group-hover/title:translate-x-0 transition-all text-red-500" />
+                <CardTitle className="text-xl font-bold text-white group-hover/title:text-red-500 transition-colors flex items-start gap-2 tracking-tight break-words leading-tight">
+                  <span className="flex-1">{project.name}</span>
+                  <ExternalLink className="w-4 h-4 mt-0.5 opacity-0 shrink-0 group-hover/title:opacity-100 transition-all text-red-500" />
                 </CardTitle>
               </Link>
             </div>
           </CardHeader>
 
-          <CardContent className="px-6 flex-1 overflow-y-auto min-h-[220px]">
+          <CardContent className="px-6 flex-1">
             <p className="text-slate-400 text-sm mb-6 leading-relaxed font-medium italic line-clamp-2">
               {project.description}
             </p>
@@ -162,14 +163,19 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </div>
             )}
             <div className="flex flex-wrap gap-2">
-              {visibleTools.map((tool, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 text-[11px] font-bold bg-white/5 border border-white/10 text-slate-400 rounded-lg hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-500 transition-all duration-300"
-                >
-                  {tool}
-                </span>
-              ))}
+              {visibleTools.map((tool, index) => {
+                const Icon = getSkillIcon(tool);
+                const color = getSkillColor(tool);
+                return (
+                  <span
+                    key={index}
+                    className="flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold bg-white/5 border border-white/10 text-slate-400 rounded-lg hover:bg-red-500/10 hover:border-red-500/30 hover:text-red-500 transition-all duration-300"
+                  >
+                    <Icon className="w-3 h-3 shrink-0" style={{ color }} />
+                    {tool}
+                  </span>
+                );
+              })}
               {hasMoreTags && (
                 <button
                   onClick={(e) => {

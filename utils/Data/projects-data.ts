@@ -245,5 +245,79 @@ export const projectsData = [
     },
     isMain: true,
     priority: 3
+  },
+  {
+    id: "5",
+    name: "LabelFlow — Data Annotation & QA Platform",
+    shortTitle: "LabelFlow",
+    description: "A scalable data annotation platform that manages the full labeling lifecycle with multi-level quality assurance, task orchestration, and integrated payment workflows.",
+    category: "System Design / Full Stack / Platform",
+    type: "Workflow & Annotation System",
+    role: "Full Stack System Architect",
+    featured: false,
+    date: "2026",
+    status: "Completed",
+    isMain: false,
+    priority: 5,
+    tools: [
+      "Node.js",
+      "React",
+      "PostgreSQL",
+      "Queue Workers",
+      "JWT/Auth",
+      "Cloud Storage",
+      "REST APIs"
+    ],
+    features: [
+      "End-to-end annotation lifecycle (upload → split → annotate → review → payout)",
+      "Multi-level QA system (L1 annotators, L2/L3 reviewers)",
+      "Task orchestration with locking, timeout, and retry mechanisms",
+      "Role-based access control and workflow enforcement",
+      "Escrow-style payment system with audit tracking",
+      "Scalable task distribution and parallel processing",
+      "Comprehensive audit logs for all actions and transitions",
+      "Support for multi-modal data (text, image, video, audio)"
+    ],
+    highlights: [
+      "Designed production-grade workflow engine for annotation systems",
+      "Ensures data quality via structured multi-stage review pipeline",
+      "Integrates operational workflows with financial systems (payments + escrow)"
+    ],
+    system_architecture: {
+      type: "Multi-Stage Workflow Engine",
+      components: [
+        "Task Ingestion & Splitting",
+        "L1 Annotation Queue",
+        "L2/L3 Review Pipeline",
+        "Escrow Payment Engine",
+        "Audit & Logging Layer"
+      ],
+      flow: "Upload → Split → L1 Annotate → L2 Review → L3 Approve → Export + Payout"
+    },
+    capabilities: [
+      "Annotator (L1): Task assignment, submission, and payment tracking",
+      "Reviewer (L2): QA review and approval/rejection workflow",
+      "Super Reviewer (L3): Final arbitration and escalation resolution",
+      "Admin: Dataset management, role assignment, and audit access"
+    ],
+    deployment: {
+      platforms: ["Cloud (AWS/GCP)", "On-Premise", "Docker"],
+      highlights: [
+        "Queue-based task distribution for horizontal scaling",
+        "Configurable retry and timeout policies per task type",
+        "Pluggable storage adapters for S3/GCS/Azure"
+      ]
+    },
+    security: [
+      "JWT-based authentication with role scopes",
+      "Task locking prevents concurrent annotation conflicts",
+      "Full audit trail for every state transition",
+      "Escrow model ensures payment integrity"
+    ],
+    performance: [
+      "Queue workers handle parallel task processing",
+      "Database-level row locking for task state integrity",
+      "Timeout-based task recovery prevents queue stalls"
+    ]
   }
 ];

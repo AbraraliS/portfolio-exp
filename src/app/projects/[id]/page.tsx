@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { getSkillIcon, getSkillColor } from "@/../utils/skill-icons";
 
 const getYouTubeEmbedUrl = (url: string) => {
   if (!url) return null;
@@ -582,7 +583,7 @@ const ProjectDetails = async ({ params }: Props) => {
           {/* Sidebar (Right) */}
           <aside className="flex flex-col gap-8">
             {/* Tech Stack Card */}
-            <Card className="bg-[#050505]/20 border-white/10 rounded-3xl overflow-hidden sticky top-24 shadow-2xl">
+            <Card className="bg-[#050505]/20 border-white/10 rounded-3xl overflow-hidden lg:sticky lg:top-24 shadow-2xl">
               <CardContent className="p-8 flex flex-col gap-8">
                 <div className="flex flex-col gap-6">
                   <div className="flex items-center gap-3">
@@ -594,15 +595,24 @@ const ProjectDetails = async ({ params }: Props) => {
                     </h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {(project.tools || []).map((tool, index) => (
-                      <Badge
-                        key={index}
-                        variant="outline"
-                        className="px-4 py-1.5 bg-white/5 border-white/10 text-slate-300 rounded-full hover:border-red-500/50 hover:bg-red-500/10 hover:text-white transition-all cursor-default font-semibold text-[11px] uppercase tracking-wider"
-                      >
-                        {tool}
-                      </Badge>
-                    ))}
+                    {(project.tools || []).map((tool, index) => {
+                      const Icon = getSkillIcon(tool);
+                      const color = getSkillColor(tool);
+                      return (
+                        <div
+                          key={index}
+                          className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full hover:border-red-500/30 hover:bg-white/10 transition-all cursor-default group"
+                        >
+                          <Icon
+                            className="w-3.5 h-3.5 shrink-0"
+                            style={{ color }}
+                          />
+                          <span className="text-slate-300 font-semibold text-[11px] uppercase tracking-wider group-hover:text-white transition-colors">
+                            {tool}
+                          </span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 

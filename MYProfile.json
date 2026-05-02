@@ -272,6 +272,55 @@
                 "Provides actionable insights with visual analytics",
                 "Scalable architecture with Supabase backend"
             ]
+        },
+        {
+            "id": "5",
+            "project_name": "LabelFlow — Data Annotation & QA Platform",
+            "shortTitle": "LabelFlow",
+            "description": "A scalable data annotation platform that manages the full labeling lifecycle with multi-level quality assurance, task orchestration, and integrated payment workflows.",
+            "category": "System Design / Full Stack / Platform",
+            "type": "Workflow & Annotation System",
+            "role": "Full Stack System Architect",
+            "featured": false,
+            "year": "2026",
+            "status": "Completed",
+            "isMain": false,
+            "priority": 5,
+            "tech_stack": [
+                "Node.js",
+                "React",
+                "PostgreSQL",
+                "Queue Workers",
+                "JWT/Auth",
+                "Cloud Storage",
+                "REST APIs"
+            ],
+            "features": [
+                "End-to-end annotation lifecycle (upload → split → annotate → review → payout)",
+                "Multi-level QA system (L1 annotators, L2/L3 reviewers)",
+                "Task orchestration with locking, timeout, and retry mechanisms",
+                "Role-based access control and workflow enforcement",
+                "Escrow-style payment system with audit tracking",
+                "Scalable task distribution and parallel processing",
+                "Comprehensive audit logs for all actions and transitions",
+                "Support for multi-modal data (text, image, video, audio)"
+            ],
+            "highlights": [
+                "Designed production-grade workflow engine for annotation systems",
+                "Ensures data quality via structured multi-stage review pipeline",
+                "Integrates operational workflows with financial systems (payments + escrow)"
+            ],
+            "system_architecture": {
+                "type": "Multi-Stage Workflow Engine",
+                "components": [
+                    "Task Ingestion & Splitting",
+                    "L1 Annotation Queue",
+                    "L2/L3 Review Pipeline",
+                    "Escrow Payment Engine",
+                    "Audit & Logging Layer"
+                ],
+                "flow": "Upload → Split → L1 Annotate → L2 Review → L3 Approve → Export + Payout"
+            }
         }
     ],
     "experience": [
