@@ -67,7 +67,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       <Card className="relative flex flex-col h-full justify-between border border-white/10 bg-[#050505]/20 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden transition-all duration-500 hover:border-red-600/50 hover:shadow-red-600/10">
         <div className="flex-1">
           <div className="relative overflow-hidden aspect-video">
-            {project.videos?.[0] ? (
+            {project.videos?.[0] && !project.videos[0].includes("youtu") ? (
               <video
                 src={project.videos[0]}
                 className="w-full h-full object-cover"
@@ -128,7 +128,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </CardHeader>
 
           <CardContent className="px-6 flex-1 overflow-y-auto min-h-[220px]">
-            <p className="text-slate-400 text-sm mb-6 leading-relaxed font-medium italic">
+            <p className="text-slate-400 text-sm mb-6 leading-relaxed font-medium italic line-clamp-2">
               {project.description}
             </p>
             {project.system_architecture && (
@@ -190,7 +190,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <CardFooter className="p-6 pt-2 flex flex-col gap-3">
           <div className="flex gap-4 w-full">
-            <Link href={project.demo || "#"} target="_blank" className="flex-1">
+            <Link
+              href={project.demo || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1"
+            >
               <Button
                 className={`w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 border border-white/10 ${
                   project.demo
@@ -203,20 +208,38 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 Demo
               </Button>
             </Link>
-            <Link href={project.code || "#"} target="_blank" className="flex-1">
-              <Button
-                className={`w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 border border-white/10 ${
-                  project.code
-                    ? "bg-white/5 hover:bg-red-950 text-white hover:border-red-800 shadow-xl hover:shadow-red-950/20"
-                    : "bg-white/2 text-slate-800 cursor-not-allowed border-none"
-                }`}
-                disabled={!project.code}
-              >
-                <Code className="w-4 h-4" />
-                GitHub
-              </Button>
-            </Link>
-          </div>
+    <Link
+      href={project.code || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-1"
+    >
+      <Button
+        className={`w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 border border-white/10 ${
+          project.code
+            ? "bg-white/5 hover:bg-red-950 text-white hover:border-red-800 shadow-xl hover:shadow-red-950/20"
+            : "bg-white/2 text-slate-800 cursor-not-allowed border-none"
+        }`}
+        disabled={!project.code}
+      >
+        <Code className="w-4 h-4" />
+        GitHub
+      </Button>
+    </Link>
+  </div>
+  {project.videos?.[0] && (
+    <Link
+      href={project.videos[0]}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full"
+    >
+      <Button className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-white/5 border border-white/10 text-white hover:bg-red-600/20 hover:border-red-500 transition-all duration-300 flex items-center justify-center gap-2">
+        <ExternalLink className="w-4 h-4" />
+        Video Demo
+      </Button>
+    </Link>
+  )}
           <Link href={`/projects/${project.id}`} className="w-full">
             <Button className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-red-600/10 border border-red-600/20 text-red-500 hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
               View Technical Details <ExternalLink className="w-4 h-4" />

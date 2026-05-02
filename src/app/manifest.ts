@@ -37,13 +37,13 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     screenshots: [
       {
-        src: "/Pwa-logos/Logo-v1-white.png",
+        src: "/Pwa-logos/card.png",
         sizes: "1280x720",
         type: "image/png",
         form_factor: "wide",
       },
       {
-        src: "/Pwa-logos/Logo-v1-white.png",
+        src: "/Pwa-logos/card.png",
         sizes: "1080x1920",
         type: "image/png",
         form_factor: "narrow",

@@ -17,6 +17,7 @@ export const personalData = {
   facebook: "",
   Instagram: "",
   linkedIn: "https://linkedin.com/in/abraralis",
+  youtube: "https://www.youtube.com/@abraralis7",
   twitter: "",
   stackOverflow: "",
   devUsername: "Abrarali",

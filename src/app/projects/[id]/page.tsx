@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { projectsData } from "@/../utils/Data/projects-data";
 import FeaturedProjects from "@/app/components/projects/_components/FeaturedProjects";
 import { Badge } from "@/components/ui/badge";
@@ -18,10 +19,26 @@ import {
   Cpu,
   Calendar,
   ArrowLeft,
+  Play,
+  BarChart3,
+  Terminal,
+  Layers,
+  Settings,
+  Lock,
+  Zap,
+  Box,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+
+const getYouTubeEmbedUrl = (url: string) => {
+  if (!url) return null;
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11
+    ? `https://www.youtube.com/embed/${match[2]}`
+    : null;
+};
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -61,14 +78,21 @@ const ProjectDetails = async ({ params }: Props) => {
 
           <div className="relative z-10 p-8 lg:p-16 flex flex-col lg:flex-row gap-12 items-center">
             {/* Project Banner Image */}
-            <div className="w-full lg:w-1/2 aspect-video relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-              <Image
-                src={project.images?.[0] || "/placeholder/placeholder.png"}
-                alt={project.name}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                priority
-              />
+            <div className="w-full lg:w-1/2 aspect-video relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group bg-[#050505]">
+              {project.images?.[0] ? (
+                <Image
+                  src={project.images[0]}
+                  alt={project.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-red-950/20 to-black p-8">
+                   <Terminal className="w-16 h-16 text-red-500/40" />
+                   <p className="text-slate-500 font-bold uppercase tracking-widest text-xs text-center">{project.name}</p>
+                </div>
+              )}
             </div>
 
             {/* Project Header Info */}
@@ -88,8 +112,8 @@ const ProjectDetails = async ({ params }: Props) => {
                 </Badge>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-red-100 to-slate-400">
-                {project.name}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-red-100 to-slate-400 leading-[1.1]">
+                {project.fullName || project.name}
               </h1>
 
               <p className="text-lg text-slate-400 leading-relaxed max-w-2xl font-medium italic">
@@ -106,13 +130,24 @@ const ProjectDetails = async ({ params }: Props) => {
                   </Link>
                 )}
                 {project.code && (
-                  <Link href={project.code} target="_blank">
+                  <Link href={project.code} target="_blank" rel="noopener noreferrer">
                     <Button
                       variant="outline"
                       className="border-white/10 bg-white/5 hover:bg-red-950/20 hover:text-red-500 hover:border-red-500/30 text-white px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 active:scale-95 flex gap-2 font-bold uppercase tracking-widest"
                     >
                       <Code className="w-5 h-5" />
                       View Source
+                    </Button>
+                  </Link>
+                )}
+                {project.videos?.[0] && (
+                   <Link href={project.videos[0]} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      className="border-white/10 bg-white/5 hover:bg-red-600/10 hover:text-red-500 hover:border-red-500/30 text-white px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 active:scale-95 flex gap-2 font-bold uppercase tracking-widest"
+                    >
+                      <Play className="w-5 h-5" />
+                      Watch Demo
                     </Button>
                   </Link>
                 )}
@@ -125,6 +160,30 @@ const ProjectDetails = async ({ params }: Props) => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content (Left) */}
           <div className="lg:col-span-2 flex flex-col gap-16">
+            {/* Video Demo Embed */}
+            {project.videos?.[0] && getYouTubeEmbedUrl(project.videos[0]) && (
+              <section className="flex flex-col gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                    <Play className="w-6 h-6 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+                  </div>
+                  <h2 className="text-3xl font-black text-white">
+                    Video Demonstration
+                  </h2>
+                </div>
+                <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black">
+                  <iframe
+                    src={getYouTubeEmbedUrl(project.videos[0]) || ""}
+                    title={`${project.name} Video Demo`}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+              </section>
+            )}
+
             {/* Overview */}
             <section className="flex flex-col gap-8">
               <div className="flex items-center gap-3">
@@ -139,11 +198,11 @@ const ProjectDetails = async ({ params }: Props) => {
                 <p className="text-slate-300 text-lg leading-relaxed font-medium">
                   {project.description}
                 </p>
-                {project.id === 1 && (
-                  <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl">
+                {project.images?.[0] && (
+                  <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl bg-[#050505]">
                     <Image
-                      src="/projects/tips/tips-overview.png"
-                      alt="TIPS Overview"
+                      src={project.images[0]}
+                      alt={`${project.name} Overview`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -181,11 +240,11 @@ const ProjectDetails = async ({ params }: Props) => {
                       <p className="text-slate-400 italic mt-2 font-medium">{project.system_architecture.flow}</p>
                     </div>
                   </div>
-                  {project.id === 1 && (
-                    <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl">
+                  {project.images?.find(img => img.includes("architecture")) && (
+                    <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl bg-[#050505]">
                       <Image
-                        src="/projects/tips/tips-architecture.png"
-                        alt="TIPS Architecture"
+                        src={project.images.find(img => img.includes("architecture")) || ""}
+                        alt={`${project.name} Architecture`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
@@ -195,47 +254,184 @@ const ProjectDetails = async ({ params }: Props) => {
               </section>
             )}
 
-            {/* Features & Dashboard */}
-            <section className="flex flex-col gap-8">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
-                  <ShieldCheck className="w-6 h-6 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+            {/* Core Systems Section */}
+            {project.core_systems && (
+              <section className="flex flex-col gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                    <Layers className="w-6 h-6 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+                  </div>
+                  <h2 className="text-3xl font-black text-white">
+                    Core Engineering Systems
+                  </h2>
                 </div>
-                <h2 className="text-3xl font-black text-white">
-                  Visual Analytics & Dashboard
-                </h2>
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] flex flex-col gap-3">
+                    <div className="flex items-center gap-2 text-red-500">
+                      <Zap className="w-4 h-4" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest">Upload Pipeline</span>
+                    </div>
+                    <p className="text-white text-sm font-bold leading-relaxed">{project.core_systems.upload_pipeline}</p>
+                  </div>
+                  <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] flex flex-col gap-3">
+                    <div className="flex items-center gap-2 text-red-500">
+                      <Box className="w-4 h-4" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest">Cache Hierarchy</span>
+                    </div>
+                    <p className="text-white text-sm font-bold leading-relaxed">{project.core_systems.cache_hierarchy}</p>
+                  </div>
+                  <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] flex flex-col gap-3">
+                    <div className="flex items-center gap-2 text-red-500">
+                      <Globe className="w-4 h-4" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest">Search Engine</span>
+                    </div>
+                    <p className="text-white text-sm font-bold leading-relaxed">{project.core_systems.search}</p>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Security & Performance Grid */}
+            {(project.security || project.performance) && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {project.id === 1 && (
-                  <>
-                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group">
-                      <Image
-                        src="/projects/tips/tips-dashboard.png"
-                        alt="TIPS Dashboard"
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
-                        <p className="text-white text-xs font-bold uppercase tracking-widest text-center">Interactive Dashboard</p>
+                {project.security && (
+                  <section className="flex flex-col gap-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
+                        <Lock className="w-4 h-4 text-red-500" />
                       </div>
+                      <h3 className="text-xl font-bold text-white">Security</h3>
                     </div>
-                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group">
-                      <Image
-                        src="/projects/tips/tips-timeline.png"
-                        alt="TIPS Timeline"
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
-                        <p className="text-white text-xs font-bold uppercase tracking-widest text-center">Temporal Performance</p>
+                    <ul className="space-y-3">
+                      {project.security.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-3 text-slate-400 text-sm">
+                           <div className="w-1.5 h-1.5 rounded-full bg-red-600/50" />
+                           {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+                {project.performance && (
+                  <section className="flex flex-col gap-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-red-500/10 flex items-center justify-center">
+                        <Zap className="w-4 h-4 text-red-500" />
                       </div>
+                      <h3 className="text-xl font-bold text-white">Performance</h3>
                     </div>
-                  </>
+                    <ul className="space-y-3">
+                      {project.performance.map((item, idx) => (
+                        <li key={idx} className="flex items-center gap-3 text-slate-400 text-sm">
+                           <div className="w-1.5 h-1.5 rounded-full bg-red-600/50" />
+                           {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
                 )}
               </div>
-            </section>
+            )}
 
-            {/* Analysis & Q&A */}
+            {/* Capabilities Section */}
+            {project.capabilities && (
+              <section className="flex flex-col gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                    <ShieldCheck className="w-6 h-6 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+                  </div>
+                  <h2 className="text-3xl font-black text-white">
+                    System Capabilities
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {project.capabilities.map((cap, idx) => (
+                    <div key={idx} className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] flex items-center gap-4">
+                      <div className="w-2 h-2 rounded-full bg-red-600" />
+                      <span className="text-slate-300 font-bold">{cap}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Deployment Section */}
+            {project.deployment && (
+              <section className="flex flex-col gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                    <Settings className="w-6 h-6 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+                  </div>
+                  <h2 className="text-3xl font-black text-white">
+                    Deployment & Portability
+                  </h2>
+                </div>
+                <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] flex flex-col gap-8">
+                   <div className="flex flex-col gap-4">
+                      <span className="text-red-500 font-bold uppercase tracking-[0.2em] text-[10px]">Supported Platforms</span>
+                      <div className="flex flex-wrap gap-3">
+                        {project.deployment.platforms.map((plat, idx) => (
+                          <Badge key={idx} variant="secondary" className="bg-white/5 text-slate-300 border-white/10 px-4 py-2">
+                            {plat}
+                          </Badge>
+                        ))}
+                      </div>
+                   </div>
+                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {project.deployment.highlights.map((highlight, idx) => (
+                        <div key={idx} className="p-4 rounded-xl bg-[#050505] border border-white/5">
+                           <p className="text-slate-400 text-xs font-medium italic">{highlight}</p>
+                        </div>
+                      ))}
+                   </div>
+                </div>
+              </section>
+            )}
+
+            {/* Analytics Section */}
+            {project.analytics && (
+              <section className="flex flex-col gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                    <BarChart3 className="w-6 h-6 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
+                  </div>
+                  <h2 className="text-3xl font-black text-white">
+                    Visual Analytics & Insights
+                  </h2>
+                </div>
+                <div className="flex flex-col gap-8">
+                   <p className="text-slate-300 text-lg leading-relaxed font-medium">
+                    {project.analytics.description}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {project.images?.filter(img => img.includes("analytics") || img.includes("charts") || img.includes("dashboard")).map((img, idx) => (
+                      <div key={idx} className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group bg-[#050505]">
+                        <Image
+                          src={img}
+                          alt={`${project.name} Analytics ${idx + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
+                          <p className="text-white text-xs font-bold uppercase tracking-widest text-center">
+                            {img.includes("charts") ? "Dynamic Visualizations" : "Data Insights"}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {project.analytics.features.map((feat, idx) => (
+                       <li key={idx} className="p-4 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-sm font-medium text-center">
+                          {feat}
+                       </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )}
+
+            {/* Semantic Evaluation & Q&A (Specific to TIPS but kept as generic check) */}
             {project.id === 1 && (
               <section className="flex flex-col gap-8">
                 <div className="flex items-center gap-3">

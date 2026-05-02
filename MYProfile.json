@@ -9,7 +9,8 @@
         "phone": "+91 7203957429",
         "social_links": {
             "github": "https://github.com/abraralis",
-            "linkedin": "https://linkedin.com/in/abraralis"
+            "linkedin": "https://linkedin.com/in/abraralis",
+            "youtube": "https://www.youtube.com/@abraralis7"
         }
     },
     "skills": {
@@ -110,67 +111,167 @@
                     "GET /metrics/temporal",
                     "GET /metrics/behavioral"
                 ]
-            }
+            },
+            "isMain": true,
+            "priority": 1
         },
         {
-            "project_name": "Full Stack AI SaaS",
-            "description": "Production-ready SaaS system integrating frontend, backend APIs, AI services, and database architecture.",
+            "id": "openclaw-orchestrator",
+            "project_name": "OpenClaw Orchestrator",
+            "shortTitle": "OpenClaw",
+            "description": "A multi-agent orchestration system where a central commander agent coordinates specialized sub-agents (researcher, analyzer, coder, assistant) to execute complex tasks autonomously, including web interaction and real-world action simulation.",
+            "category": "AI / Systems / Automation",
+            "type": "Agent Orchestration System",
+            "role": "Full Stack AI Systems Architect",
+            "featured": true,
+            "year": "2026",
+            "tech_stack": [
+                "Python",
+                "Docker",
+                "Telegram Bot API",
+                "LLM Agents",
+                "Browser Automation",
+                "Raspberry Pi",
+                "Windows"
+            ],
+            "features": [
+                "Commander–subagent architecture for distributed task execution",
+                "Specialized agents (researcher, analyzer, coder, assistant) working collaboratively",
+                "Autonomous workflow execution with task delegation and result aggregation",
+                "Browser interaction capabilities including search and simulated transactions",
+                "Telegram-based control interface for remote task triggering",
+                "Lightweight execution using PicoClaw (~10MB RAM footprint)",
+                "Cross-platform deployment (Raspberry Pi + low-end systems + Windows)",
+                "Containerized architecture using Docker for portability"
+            ],
+            "highlights": [
+                "Designed scalable agent orchestration model for automation workflows",
+                "Optimized for low-resource environments without sacrificing capability",
+                "Bridges AI agents with real-world task execution (web + system actions)"
+            ],
+            "system_architecture": {
+                "type": "Commander–Subagent Orchestration",
+                "components": [
+                    "Commander Agent (Orchestration)",
+                    "Researcher Agent (Data Gathering)",
+                    "Analyzer Agent (Reasoning)",
+                    "Coder Agent (Execution)",
+                    "Assistant Agent (Coordination)"
+                ],
+                "flow": "Input → Task Decomposition → Delegation → Parallel Execution → Result Aggregation"
+            },
+            "status": "Completed",
+            "isMain": false,
+            "priority": 4
+        },
+        {
+            "id": "gitstore-distributed-storage",
+            "project_name": "GitStore — GitHub-Based Distributed File System",
+            "shortTitle": "GitStore",
+            "description": "A distributed file storage system that transforms GitHub repositories into a personal cloud filesystem using an HDFS-inspired architecture with encryption, deduplication, and multi-layer caching.",
+            "category": "Systems / Distributed / Full Stack",
+            "type": "Distributed Storage System",
+            "role": "Full Stack Systems Engineer",
+            "featured": true,
+            "year": "2026",
             "tech_stack": [
                 "Next.js",
-                "Node.js",
-                "Spring Boot",
-                "PostgreSQL"
+                "TypeScript",
+                "GitHub API (Octokit)",
+                "Auth.js (NextAuth)",
+                "Cloudflare Workers",
+                "IndexedDB",
+                "Workbox",
+                "Upstash Redis",
+                "BullMQ",
+                "React Native (Expo)"
             ],
-            "featured": true,
+            "images": [
+                "/projects/gitstore/gitstore-main.png"
+            ],
+            "thumbnail": "/projects/gitstore/gitstore-main.png",
+            "features": [
+                "HDFS-inspired architecture using GitHub repos as data nodes",
+                "Chunked file uploads with parallel processing and deduplication (SHA-256)",
+                "Client-side AES-256-GCM encryption for secure storage",
+                "5-layer caching system (memory → IndexedDB → service worker → CDN → GitHub API)",
+                "O(1) instant search using inverted index",
+                "Fault-tolerant index replication (primary + secondary repos)",
+                "Cloudflare CDN proxy for optimized file delivery",
+                "Cross-platform support including web and mobile app"
+            ],
+            "highlights": [
+                "Replaces traditional cloud storage with GitHub-based infrastructure",
+                "Implements distributed system concepts in a real-world application",
+                "Optimized for performance using multi-layer caching and edge delivery"
+            ],
             "system_architecture": {
-                "type": "Modular full-stack system",
+                "type": "Distributed Node-Based Storage",
                 "components": [
-                    "Frontend",
-                    "Backend API",
-                    "AI Services",
-                    "Database"
+                    "NameNode (Index Repository)",
+                    "DataNodes (GitHub Repositories)",
+                    "Client (Web/Mobile App)",
+                    "Edge Proxy (Cloudflare Workers)"
                 ],
-                "flow": "Client → API → AI → DB → Response"
+                "flow": "Client → AES Encryption → Chunking → Parallel Upload → DataNodes → NameNode Index Update"
             },
-            "api_schema": {
-                "user": [
-                    "GET /user/profile",
-                    "PUT /user/update"
-                ],
-                "ai": [
-                    "POST /ai/chat"
-                ]
-            }
+            "status": "Completed",
+            "isMain": true,
+            "priority": 2
         },
         {
-            "project_name": "Mobile App System",
-            "description": "Cross-platform mobile application integrated with backend APIs and real-time systems.",
+            "project_name": "SurveySense — AI Survey Platform",
+            "description": "A full-stack AI-powered survey platform that generates intelligent questions using LLMs and provides real-time analytics with interactive visualizations.",
             "tech_stack": [
-                "React Native",
+                "React",
+                "TypeScript",
+                "Tailwind CSS",
                 "Node.js",
-                "Firebase"
+                "Express",
+                "Supabase",
+                "OpenRouter (Claude 3.5 Sonnet)",
+                "Chart.js"
             ],
-            "featured": false,
+            "featured": true,
+            "github": "https://github.com/AbraraliS/SurveySense",
+            "live": "https://surveysense.vercel.app/",
+            "video": "https://youtu.be/mZARUwXdfHw",
+            "status": "Completed",
+            "type": "AI SaaS Application",
+            "year": "2026",
+            "role": "Full Stack AI Developer",
+            "images": [
+                "/projects/surveysense/surveysense-main.png",
+                "/projects/surveysense/surveysense-overview.png",
+                "/projects/surveysense/surveysense-generator.png",
+                "/projects/surveysense/surveysense-survey.png",
+                "/projects/surveysense/surveysense-analytics.png",
+                "/projects/surveysense/surveysense-charts.png"
+            ],
+            "thumbnail": "/projects/surveysense/surveysense-main.png",
             "system_architecture": {
-                "type": "Client-server mobile architecture",
+                "type": "AI-Powered Survey Architecture",
                 "components": [
-                    "Mobile App (React Native)",
-                    "Backend API (Node.js)",
-                    "Authentication Service",
-                    "Database (Firebase/PostgreSQL)"
+                    "Frontend: React + Vite + Tailwind",
+                    "Backend: Node.js + Express",
+                    "Database: Supabase",
+                    "AI: OpenRouter (Claude 3.5)"
                 ],
-                "flow": "Mobile App → API → Database → Response"
+                "flow": "User Prompt → OpenRouter LLM → Generated Survey → Supabase DB → Interactive Analytics"
             },
-            "api_schema": {
-                "auth": [
-                    "POST /login",
-                    "POST /signup"
-                ],
-                "data": [
-                    "GET /data",
-                    "POST /data"
-                ]
-            }
+            "features": [
+                "AI-powered contextual survey question generation",
+                "Dynamic MCQ and text-based question distribution",
+                "Unique survey sharing with multiple responses",
+                "Real-time analytics with charts and word frequency analysis",
+                "Interactive dashboard for insights",
+                "Fully responsive UI across devices"
+            ],
+            "highlights": [
+                "Automates survey creation using LLMs",
+                "Provides actionable insights with visual analytics",
+                "Scalable architecture with Supabase backend"
+            ]
         }
     ],
     "experience": [

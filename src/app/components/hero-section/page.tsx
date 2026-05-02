@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/dist/SplitText";
 import Link from "next/link";
 import { useRef } from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
 import { FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
@@ -155,6 +155,15 @@ const HeroSection = () => {
                   className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
                 >
                   <BsLinkedin size={24} />
+                </Link>
+              )}
+              {personalData.youtube && (
+                <Link
+                  href={personalData.youtube}
+                  target="_blank"
+                  className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
+                >
+                  <BsYoutube size={24} />
                 </Link>
               )}
               {personalData.leetcode && (

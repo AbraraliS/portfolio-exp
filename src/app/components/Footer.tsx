@@ -3,7 +3,7 @@
 import { personalData } from "@/../utils/Data/PersonalData";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => (
@@ -95,6 +95,16 @@ const Footer = () => (
                 className="p-2 rounded-lg bg-white/5 hover:bg-red-500/10 hover:text-red-500 transition-all border border-white/5"
               >
                 <FaLinkedin size={20} />
+              </Link>
+            )}
+            {personalData.youtube && (
+              <Link
+                href={personalData.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg bg-white/5 hover:bg-red-500/10 hover:text-red-500 transition-all border border-white/5"
+              >
+                <FaYoutube size={20} />
               </Link>
             )}
           </div>

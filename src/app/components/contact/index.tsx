@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { BiLogoLinkedin } from "react-icons/bi";
-import { FaFacebook, FaStackOverflow } from "react-icons/fa";
+import { FaFacebook, FaStackOverflow, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
@@ -143,6 +143,11 @@ function ContactSection() {
                       href: personalData.linkedIn,
                       icon: BiLogoLinkedin,
                       color: "#0077b5",
+                    },
+                    {
+                      href: personalData.youtube,
+                      icon: FaYoutube,
+                      color: "#FF0000",
                     },
                     {
                       href: personalData.twitter,

@@ -18,10 +18,13 @@ const Projects = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const desktopLimit = 3;
+  const mainProjects = projectsData
+    .filter((p) => p.isMain)
+    .sort((a, b) => (a.priority || 99) - (b.priority || 99));
+
   const projectsToRender = isMobile 
-    ? (showAllMobile ? projectsData.slice(0, desktopLimit) : projectsData.slice(0, 1))
-    : projectsData.slice(0, desktopLimit);
+    ? (showAllMobile ? mainProjects : mainProjects.slice(0, 1))
+    : mainProjects.slice(0, 3);
 
   return (
     <section

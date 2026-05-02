@@ -24,11 +24,16 @@ const ProjectsPage = () => {
         </div>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 w-full">
-          {projectsData.map((project) => (
-            <div key={project.id} className="h-full">
-              <ProjectCard project={project} />
-            </div>
-          ))}
+          {projectsData
+            .sort((a, b) => {
+              if (a.featured !== b.featured) return a.featured ? -1 : 1;
+              return (a.priority || 99) - (b.priority || 99);
+            })
+            .map((project) => (
+              <div key={project.id} className="h-full">
+                <ProjectCard project={project} />
+              </div>
+            ))}
         </div>
       </div>
     </section>
