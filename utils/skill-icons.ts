@@ -152,10 +152,30 @@ export const getSkillIcon = (skill: string): IconType => {
     case "bullmq":
     case "auth.js (nextauth)":
     case "jwt/auth":
+    case "jwt":
       return FaLock;
     case "react native (expo)":
     case "react native":
       return SiReact;
+
+    // AI Tools (new)
+    case "streamlit":
+      return SiPython; // Streamlit is Python-ecosystem
+    case "langchain":
+    case "google gemini ai":
+    case "gemini ai":
+    case "omdb api":
+    case "aiohttp":
+      return FaBrain;
+
+    // ORM / DB Tools (new)
+    case "sqlalchemy":
+    case "sequelize":
+      return FaDatabase;
+
+    // Media / Cloud (new)
+    case "cloudinary":
+      return FaCloud;
 
     // Design
     case "figma":
@@ -251,6 +271,24 @@ export const getSkillColor = (skill: string): string => {
       return "#a22846";
     case "figma":
       return "#f24e1e";
+    case "streamlit":
+      return "#ff4b4b";
+    case "langchain":
+      return "#1c3c3c";
+    case "google gemini ai":
+    case "gemini ai":
+      return "#4285f4";
+    case "omdb api":
+    case "aiohttp":
+      return "#2b5797";
+    case "sqlalchemy":
+      return "#ce1312";
+    case "sequelize":
+      return "#52b0e7";
+    case "cloudinary":
+      return "#3448c5";
+    case "jwt":
+      return "#d63aff";
     default:
       return "#ef4444";
   }

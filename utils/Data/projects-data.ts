@@ -319,5 +319,115 @@ export const projectsData = [
       "Database-level row locking for task state integrity",
       "Timeout-based task recovery prevents queue stalls"
     ]
+  },
+  {
+    id: "6",
+    name: "DataTalk Pro — AI Database Query Assistant",
+    shortTitle: "DataTalk Pro",
+    description: "A conversational AI system that allows users to interact with MySQL databases using natural language, generating and executing SQL queries with intelligent responses.",
+    category: "AI / Data Systems",
+    type: "AI Data Interface",
+    role: "AI Engineer",
+    featured: false,
+    date: "2025",
+    status: "Completed",
+    isMain: false,
+    priority: 6,
+    tools: [
+      "Python",
+      "Streamlit",
+      "LangChain",
+      "Google Gemini AI",
+      "MySQL",
+      "SQLAlchemy"
+    ],
+    features: [
+      "Natural language to SQL query generation",
+      "Conversational interface with context awareness",
+      "Real-time database interaction",
+      "Formatted table outputs for query results",
+      "Safety layer preventing destructive SQL operations",
+      "Secure environment variable handling for API keys"
+    ],
+    highlights: [
+      "Bridges AI with database querying for non-technical users",
+      "Implements safe execution layer for SQL operations",
+      "Improves data accessibility through conversational UI"
+    ]
+  },
+  {
+    id: "7",
+    name: "AI ChatBot — Movie Recommendation System",
+    shortTitle: "MovieBot",
+    description: "A dual-mode AI chatbot powered by Gemini that supports general conversations and intelligent movie recommendations using natural language queries and OMDB integration.",
+    category: "AI / Full Stack",
+    type: "Conversational AI System",
+    role: "Full Stack AI Developer",
+    featured: false,
+    date: "2025",
+    status: "Completed",
+    isMain: false,
+    priority: 7,
+    tools: [
+      "FastAPI",
+      "Python",
+      "React",
+      "Gemini AI",
+      "OMDB API",
+      "aiohttp"
+    ],
+    features: [
+      "Dual-mode chatbot (general AI + movie recommendation)",
+      "Natural language movie filtering (genre, rating, year, actors)",
+      "AI-generated summaries for movie results",
+      "Real-time data fetching from OMDB API",
+      "Markdown-supported responses for better UX",
+      "Asynchronous backend for performance optimization"
+    ],
+    highlights: [
+      "Combines conversational AI with real-world API integration",
+      "Advanced filtering using natural language understanding",
+      "Scalable async backend architecture"
+    ],
+    code: "https://github.com/AbraraliS/Movie-Recommendations-ChatBot"
+  },
+  {
+    id: "8",
+    name: "InvenTrack Pro — Inventory Management Platform",
+    shortTitle: "InvenTrack",
+    description: "A full-stack inventory management system with real-time tracking, invoicing, barcode generation, and analytics for retail and warehouse operations.",
+    category: "Full Stack / System",
+    type: "Business Management System",
+    role: "Full Stack Developer",
+    featured: false,
+    date: "2025",
+    status: "Completed",
+    isMain: false,
+    priority: 8,
+    tools: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Sequelize",
+      "Tailwind CSS",
+      "Cloudinary",
+      "JWT"
+    ],
+    features: [
+      "Real-time inventory tracking with alerts",
+      "Invoice management with draft support",
+      "Barcode generation and product management",
+      "Customer and category management",
+      "Analytics dashboard with charts",
+      "Secure authentication using JWT"
+    ],
+    highlights: [
+      "Complete retail/warehouse management solution",
+      "Scalable REST API with structured backend",
+      "Modern responsive UI with analytics support"
+    ],
+    code: "https://github.com/AbraraliS/InvenTrackPro"
   }
 ];
