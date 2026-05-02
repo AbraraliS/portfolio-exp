@@ -32,7 +32,7 @@ Welcome to my **developer portfolio** built with **Next.js 15**, **Tailwind CSS*
 ## 📁 Folder Structure
 
 ```
-abraralis-personal-portfolio-website/
+ghost-oo5-personal-portfolio-website/
 ├── public/                  # Static assets, Lottie, images, icons
 ├── src/app/
 │   ├── components/          # Reusable UI & page sections
