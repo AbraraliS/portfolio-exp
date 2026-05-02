@@ -52,8 +52,8 @@ ghost-oo5-personal-portfolio-website/
 ### 1. Clone this repo
 
 ```bash
-git clone https://github.com/your-username/your-portfolio.git
-cd your-portfolio
+git clone https://github.com/AbraraliS/portfolio-exp.git
+cd portfolio-exp
 ```
 
 ### 2. Install dependencies
