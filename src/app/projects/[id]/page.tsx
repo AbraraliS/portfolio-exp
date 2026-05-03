@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { projectsData } from "@/../utils/Data/projects-data";
 import FeaturedProjects from "@/app/components/projects/_components/FeaturedProjects";
+import ProjectGallery from "@/app/components/projects/_components/ProjectGallery";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,6 +28,8 @@ import {
   Lock,
   Zap,
   Box,
+  FileText,
+  Youtube,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -122,36 +125,46 @@ const ProjectDetails = async ({ params }: Props) => {
               </p>
 
               <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 max-w-full">
-                {project.demo && (
-                  <Link href={project.demo} target="_blank">
-                    <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-red-600/20 transition-all hover:scale-105 active:scale-95 flex gap-2 font-bold uppercase tracking-widest">
-                      <Globe className="w-5 h-5" />
-                      Live Preview
-                    </Button>
-                  </Link>
-                )}
-                {project.code && (
-                  <Link href={project.code} target="_blank" rel="noopener noreferrer">
-                    <Button
-                      variant="outline"
-                      className="border-white/10 bg-white/5 hover:bg-red-950/20 hover:text-red-500 hover:border-red-500/30 text-white px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 active:scale-95 flex gap-2 font-bold uppercase tracking-widest"
-                    >
-                      <Code className="w-5 h-5" />
-                      View Source
-                    </Button>
-                  </Link>
-                )}
-                {project.videos?.[0] && (
-                   <Link href={project.videos[0]} target="_blank" rel="noopener noreferrer">
-                    <Button
-                      variant="outline"
-                      className="border-white/10 bg-white/5 hover:bg-red-600/10 hover:text-red-500 hover:border-red-500/30 text-white px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 active:scale-95 flex gap-2 font-bold uppercase tracking-widest"
-                    >
-                      <Play className="w-5 h-5" />
-                      Watch Demo
-                    </Button>
-                  </Link>
-                )}
+                {(() => {
+                  const links = [
+                    (project.live || project.demo) && { 
+                      label: "Live Preview", 
+                      url: project.live || project.demo, 
+                      icon: <Globe className="w-5 h-5" />,
+                      className: "bg-red-600 hover:bg-red-700 text-white"
+                    },
+                    (project.github || project.code) && { 
+                      label: "View Source", 
+                      url: project.github || project.code, 
+                      icon: <Code className="w-5 h-5" />,
+                      className: "border-white/10 bg-white/5 hover:bg-red-950/20 hover:text-red-500 hover:border-red-500/30 text-white"
+                    },
+                    project.videos?.[0] && { 
+                      label: "Watch Demo", 
+                      url: project.videos[0], 
+                      icon: <Play className="w-5 h-5" />,
+                      className: "border-white/10 bg-white/5 hover:bg-red-600/10 hover:text-red-500 hover:border-red-500/30 text-white"
+                    },
+                    project.docs && { 
+                      label: "Documentation", 
+                      url: project.docs, 
+                      icon: <FileText className="w-5 h-5" />,
+                      className: "border-white/10 bg-white/5 hover:bg-red-600/10 hover:text-red-500 hover:border-red-500/30 text-white"
+                    }
+                  ].filter((link): link is Exclude<typeof link, false | "" | 0 | null | undefined> => !!link);
+
+                  return links.map((link, idx) => (
+                    <Link key={idx} href={link.url || "#"} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        variant={link.label === "Live Preview" ? "default" : "outline"}
+                        className={`${link.className} px-8 py-6 text-lg rounded-xl transition-all hover:scale-105 active:scale-95 flex gap-2 font-bold uppercase tracking-widest`}
+                      >
+                        {link.icon}
+                        {link.label}
+                      </Button>
+                    </Link>
+                  ));
+                })()}
               </div>
             </div>
           </div>
@@ -199,16 +212,16 @@ const ProjectDetails = async ({ params }: Props) => {
                 <p className="text-slate-300 text-lg leading-relaxed font-medium">
                   {project.description}
                 </p>
-                {project.images?.[0] && (
+                {project.images?.find(img => img.includes("dashboard") || img.includes("overview")) || project.images?.[0] ? (
                   <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl bg-[#050505]">
                     <Image
-                      src={project.images[0]}
+                      src={project.images.find(img => img.includes("dashboard") || img.includes("overview")) || project.images[0]}
                       alt={`${project.name} Overview`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                )}
+                ) : null}
               </div>
             </section>
 
@@ -397,7 +410,7 @@ const ProjectDetails = async ({ params }: Props) => {
                     <BarChart3 className="w-6 h-6 text-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
                   </div>
                   <h2 className="text-3xl font-black text-white">
-                    Visual Analytics & Insights
+                    {project.id === "8" || project.name.includes("InvenTrack") ? "System Modules & Visual Insights" : "Visual Analytics & Insights"}
                   </h2>
                 </div>
                 <div className="flex flex-col gap-8">
@@ -405,17 +418,33 @@ const ProjectDetails = async ({ params }: Props) => {
                     {project.analytics.description}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {project.images?.filter(img => img.includes("analytics") || img.includes("charts") || img.includes("dashboard") || img.includes("analysis")).map((img, idx) => (
+                    {project.images?.filter(img => 
+                      img.includes("analytics") || 
+                      img.includes("charts") || 
+                      img.includes("dashboard") || 
+                      img.includes("analysis") ||
+                      img.includes("products") ||
+                      img.includes("inventory") ||
+                      img.includes("invoice") ||
+                      img.includes("barcode") ||
+                      img.includes("auth")
+                    ).map((img, idx) => (
                       <div key={idx} className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group bg-[#050505]">
                         <Image
                           src={img}
-                          alt={`${project.name} Analytics ${idx + 1}`}
+                          alt={`${project.name} Module ${idx + 1}`}
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute bottom-4 left-4 right-4 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
-                          <p className="text-white text-xs font-bold uppercase tracking-widest text-center">
-                            {img.includes("charts") ? "Dynamic Visualizations" : "Data Insights"}
+                          <p className="text-white text-[10px] font-bold uppercase tracking-widest text-center">
+                            {img.includes("dashboard") ? "Admin Dashboard" :
+                             img.includes("products") || img.includes("inventory") ? "Inventory Management" :
+                             img.includes("invoice") ? "Billing & Invoicing" :
+                             img.includes("barcode") ? "Barcode System" :
+                             img.includes("analytics") ? "Data Analytics" :
+                             img.includes("auth") ? "Security & Authentication" : 
+                             "System Module"}
                           </p>
                         </div>
                       </div>
@@ -547,7 +576,7 @@ const ProjectDetails = async ({ params }: Props) => {
             </section>
 
             {/* Gallery */}
-            {project.images && project.images.length > 1 && (
+            {project.images && project.images.length > 0 && (
               <section className="flex flex-col gap-8">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-red-900/10 flex items-center justify-center border border-red-900/20">
@@ -557,25 +586,8 @@ const ProjectDetails = async ({ params }: Props) => {
                     Visual Showcase
                   </h2>
                 </div>
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {project.images.slice(1).map((image, index) => (
-                      <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                        <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group bg-[#050505]">
-                          <Image
-                            src={image}
-                            alt={`${project.name} Screenshot ${index + 1}`}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110 shadow-2xl opacity-80 group-hover:opacity-100"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="left-4 bg-red-600/20 border-red-600/30 hover:bg-red-600 text-white transition-all backdrop-blur-md" />
-                  <CarouselNext className="right-4 bg-red-600/20 border-red-600/30 hover:bg-red-600 text-white transition-all backdrop-blur-md" />
-                </Carousel>
+                
+                <ProjectGallery images={project.images} projectName={project.name} />
               </section>
             )}
           </div>

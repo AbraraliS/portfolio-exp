@@ -64,6 +64,8 @@ export const projectsData = [
       "Analyze",
       "Recommend"
     ],
+    github: "https://github.com/AbraraliS/BuySmart-ai",
+    docs: "https://github.com/AbraraliS/BuySmart-ai#readme",
     priority: 3
   },
   {
@@ -74,7 +76,7 @@ export const projectsData = [
     featured: true,
     tools: ["Python", "FastAPI", "WebRTC", "OpenCV", "MediaPipe", "Whisper", "PyTorch", "Transformers", "Chart.js"],
     role: "System Architecture",
-    code: "https://github.com/AbraraliS/TIPS-LLM",
+    github: "https://github.com/AbraraliS/TIPS-LLM",
     date: "2026",
     status: "Completed",
     isMain: true,
@@ -263,7 +265,7 @@ export const projectsData = [
     featured: true,
     tools: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "Supabase", "OpenRouter (Claude 3.5 Sonnet)", "Chart.js"],
     role: "Full Stack AI Developer",
-    code: "https://github.com/AbraraliS/SurveySense",
+    github: "https://github.com/AbraraliS/SurveySense",
     demo: "https://surveysense.vercel.app/",
     date: "2026",
     status: "Completed",
@@ -456,7 +458,7 @@ export const projectsData = [
       "Advanced filtering using natural language understanding",
       "Scalable async backend architecture"
     ],
-    code: "https://github.com/AbraraliS/Movie-Recommendations-ChatBot"
+    github: "https://github.com/AbraraliS/Movie-Recommendations-ChatBot"
   },
   {
     id: "8",
@@ -495,6 +497,23 @@ export const projectsData = [
       "Scalable REST API with structured backend",
       "Modern responsive UI with analytics support"
     ],
-    code: "https://github.com/AbraraliS/InvenTrackPro"
+    "images": [
+      "/assets/projects/inventrack/inventrack-dashboard.png",
+      "/assets/projects/inventrack/inventrack-products.png",
+      "/assets/projects/inventrack/inventrack-invoice.png",
+      "/assets/projects/inventrack/inventrack-barcode.png",
+      "/assets/projects/inventrack/inventrack-analytics.png",
+      "/assets/projects/inventrack/inventrack-auth.png"
+    ],
+    "thumbnail": "/assets/projects/inventrack/inventrack-dashboard.png",
+    "analytics": {
+      "description": "Comprehensive insights and visualizations for inventory and sales performance.",
+      "features": [
+        "Real-time stock level monitoring",
+        "Sales trends and forecasting",
+        "Category-wise performance analysis"
+      ]
+    },
+    "github": "https://github.com/AbraraliS/InvenTrackPro"
   }
 ];

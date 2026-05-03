@@ -18,9 +18,11 @@ export interface Project {
   features?: string[];
   highlights?: string[];
   code?: string;
+  github?: string;
   demo?: string;
   live?: string;
   videos?: string[];
+  docs?: string;
   images?: string[];
   thumbnail?: string;
   featured?: boolean;

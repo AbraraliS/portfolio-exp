@@ -130,6 +130,8 @@
                 "Analyze",
                 "Recommend"
             ],
+            "github": "https://github.com/AbraraliS/BuySmart-ai",
+            "docs": "https://github.com/AbraraliS/BuySmart-ai#readme",
             "priority": 3
         },
         {
@@ -473,6 +475,23 @@
                 "Scalable REST API with structured backend",
                 "Modern responsive UI with analytics support"
             ],
+            "images": [
+                "/assets/projects/inventrack/inventrack-dashboard.png",
+                "/assets/projects/inventrack/inventrack-products.png",
+                "/assets/projects/inventrack/inventrack-invoice.png",
+                "/assets/projects/inventrack/inventrack-barcode.png",
+                "/assets/projects/inventrack/inventrack-analytics.png",
+                "/assets/projects/inventrack/inventrack-auth.png"
+            ],
+            "thumbnail": "/assets/projects/inventrack/inventrack-dashboard.png",
+            "analytics": {
+                "description": "Comprehensive insights and visualizations for inventory and sales performance.",
+                "features": [
+                    "Real-time stock level monitoring",
+                    "Sales trends and forecasting",
+                    "Category-wise performance analysis"
+                ]
+            },
             "github": "https://github.com/AbraraliS/InvenTrackPro"
         }
     ],

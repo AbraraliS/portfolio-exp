@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { ProjectCardProps } from "@/Types/types";
 import { getSkillIcon, getSkillColor } from "@/../utils/skill-icons";
-import { ChevronUp, Code, ExternalLink, Globe, Sparkles } from "lucide-react";
+import { ChevronUp, Code, ExternalLink, Globe, Sparkles, Play, FileText, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { MouseEvent, useRef, useState } from "react";
@@ -196,60 +196,65 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </div>
 
         <CardFooter className="p-6 pt-2 flex flex-col gap-3">
-          {(project.demo || project.live || project.code || project.videos?.[0]) && (
-            <div className="flex flex-wrap gap-3 w-full">
-              {(project.demo || project.live) && (
-                <Link
-                  href={project.demo || project.live || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 min-w-[120px]"
-                >
-                  <Button
-                    className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 border border-white/10 bg-white/5 hover:bg-red-600 text-white hover:border-red-500 shadow-xl hover:shadow-red-600/20"
-                  >
-                    <Globe className="w-4 h-4" />
-                    Live Demo
-                  </Button>
-                </Link>
-              )}
-              {project.code && (
-                <Link
-                  href={project.code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 min-w-[120px]"
-                >
-                  <Button
-                    className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 border border-white/10 bg-white/5 hover:bg-red-950 text-white hover:border-red-800 shadow-xl hover:shadow-red-950/20"
-                  >
-                    <Code className="w-4 h-4" />
-                    GitHub
-                  </Button>
-                </Link>
-              )}
-            </div>
-          )}
+          {(() => {
+            const links = [
+              (project.live || project.demo) && { 
+                label: "Live Demo", 
+                url: project.live || project.demo, 
+                icon: <Globe className="w-4 h-4" />,
+                className: "bg-white/5 hover:bg-red-600 text-white hover:border-red-500 shadow-xl hover:shadow-red-600/20"
+              },
+              (project.github || project.code) && { 
+                label: "GitHub", 
+                url: project.github || project.code, 
+                icon: <Code className="w-4 h-4" />,
+                className: "bg-white/5 hover:bg-red-950 text-white hover:border-red-800 shadow-xl hover:shadow-red-950/20"
+              },
+              project.videos?.[0] && { 
+                label: "Video", 
+                url: project.videos[0], 
+                icon: <Youtube className="w-4 h-4" />,
+                className: "bg-white/5 hover:bg-red-600/20 hover:border-red-500 text-white shadow-xl"
+              },
+              project.docs && { 
+                label: "Docs", 
+                url: project.docs, 
+                icon: <FileText className="w-4 h-4" />,
+                className: "bg-white/5 hover:bg-red-600/10 hover:border-red-500/30 text-white shadow-xl"
+              }
+            ].filter((link): link is Exclude<typeof link, false | "" | 0 | null | undefined> => !!link);
 
-          {project.videos?.[0] && (
-            <Link
-              href={project.videos[0]}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <Button className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-white/5 border border-white/10 text-white hover:bg-red-600/20 hover:border-red-500 transition-all duration-300 flex items-center justify-center gap-2">
-                <ExternalLink className="w-4 h-4" />
-                Video Demo
-              </Button>
-            </Link>
-          )}
-          
-          <Link href={`/projects/${project.id}`} className="w-full">
-            <Button className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-red-600/10 border border-red-600/20 text-red-500 hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
-              View Technical Details <ExternalLink className="w-4 h-4" />
-            </Button>
-          </Link>
+            return (
+              <>
+                {links.length > 0 && (
+                  <div className="flex flex-wrap gap-3 w-full">
+                    {links.map((link, idx) => (
+                      <Link
+                        key={idx}
+                        href={link.url || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 min-w-[120px]"
+                      >
+                        <Button
+                          className={`w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 border border-white/10 ${link.className}`}
+                        >
+                          {link.icon}
+                          {link.label}
+                        </Button>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+                
+                <Link href={`/projects/${project.id}`} className="w-full">
+                  <Button className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-red-600/10 border border-red-600/20 text-red-500 hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+                    View Technical Details <ExternalLink className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </>
+            );
+          })()}
         </CardFooter>
       </Card>
     </div>
