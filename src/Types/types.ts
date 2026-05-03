@@ -58,6 +58,17 @@ export interface Project {
   security?: string[];
   performance?: string[];
 }
+export interface Achievement {
+  title?: string;
+  name?: string; // For backward compatibility
+  type?: string;
+  description?: string;
+  focus?: string;
+  id?: string;
+  link?: string;
+  year?: string;
+}
+
 export interface ProjectCardProps {
   project: Project;
 }
