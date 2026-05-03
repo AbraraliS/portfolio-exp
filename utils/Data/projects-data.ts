@@ -1,4 +1,6 @@
-export const projectsData = [
+import { Project } from "@/Types/types";
+
+export const projectsData: Project[] = [
   {
     id: "buysmart-ai",
     name: "BuySmart AI — Intelligent Product Analysis Platform",
@@ -188,6 +190,7 @@ export const projectsData = [
   {
     id: "3",
     name: "GitStore — GitHub-Based Distributed File System",
+    github: "https://github.com/AbraraliS/GitSmartStorage",
     shortTitle: "GitStore",
     description: "A distributed file storage system that transforms GitHub repositories into a personal cloud filesystem using an HDFS-inspired architecture with encryption, deduplication, and multi-layer caching.",
     category: "Systems / Distributed / Full Stack",
@@ -392,6 +395,7 @@ export const projectsData = [
   {
     id: "6",
     name: "DataTalk Pro — AI Database Query Assistant",
+    github: "https://github.com/AbraraliS/DataTalkPro",
     shortTitle: "DataTalk Pro",
     description: "A conversational AI system that allows users to interact with MySQL databases using natural language, generating and executing SQL queries with intelligent responses.",
     category: "AI / Data Systems",

@@ -6,13 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
   Code,
   Globe,
   User,
@@ -29,7 +22,6 @@ import {
   Zap,
   Box,
   FileText,
-  Youtube,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

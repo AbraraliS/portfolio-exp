@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { ProjectCardProps } from "@/Types/types";
 import { getSkillIcon, getSkillColor } from "@/../utils/skill-icons";
-import { ChevronUp, Code, ExternalLink, Globe, Sparkles, Play, FileText, Youtube } from "lucide-react";
+import { ChevronUp, Code, ExternalLink, Globe, Sparkles, FileText, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { MouseEvent, useRef, useState } from "react";

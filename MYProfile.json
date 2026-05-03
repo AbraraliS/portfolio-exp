@@ -236,6 +236,7 @@
         {
             "id": "gitstore-distributed-storage",
             "project_name": "GitStore — GitHub-Based Distributed File System",
+            "github": "https://github.com/AbraraliS/GitSmartStorage",
             "shortTitle": "GitStore",
             "description": "A distributed file storage system that transforms GitHub repositories into a personal cloud filesystem using an HDFS-inspired architecture with encryption, deduplication, and multi-layer caching.",
             "category": "Systems / Distributed / Full Stack",
@@ -394,6 +395,7 @@
         {
             "id": "6",
             "project_name": "DataTalk Pro — AI Database Query Assistant",
+            "github": "https://github.com/AbraraliS/DataTalkPro",
             "shortTitle": "DataTalk Pro",
             "description": "A conversational AI system that allows users to interact with MySQL databases using natural language, generating and executing SQL queries with intelligent responses.",
             "category": "AI / Data Systems",

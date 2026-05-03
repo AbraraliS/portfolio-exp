@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,14 @@ interface ProjectGalleryProps {
 const ProjectGallery = ({ images, projectName }: ProjectGalleryProps) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
+  const handlePrev = useCallback(() => {
+    setSelectedImage((prev) => (prev !== null ? (prev - 1 + images.length) % images.length : null));
+  }, [images.length]);
+
+  const handleNext = useCallback(() => {
+    setSelectedImage((prev) => (prev !== null ? (prev + 1) % images.length : null));
+  }, [images.length]);
+
   // Close on escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -22,15 +30,7 @@ const ProjectGallery = ({ images, projectName }: ProjectGalleryProps) => {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedImage]);
-
-  const handlePrev = () => {
-    setSelectedImage((prev) => (prev !== null ? (prev - 1 + images.length) % images.length : null));
-  };
-
-  const handleNext = () => {
-    setSelectedImage((prev) => (prev !== null ? (prev + 1) % images.length : null));
-  };
+  }, [handlePrev, handleNext]);
 
   if (!images || images.length === 0) return null;
 
