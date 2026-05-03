@@ -247,13 +247,20 @@ const ProjectDetails = async ({ params }: Props) => {
                     </div>
                   </div>
                   {project.images?.some(img => img.includes("architecture")) && (
-                    <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl bg-[#050505]">
-                      <Image
-                        src={project.images.find(img => img.includes("architecture")) as string}
-                        alt={`${project.name} Architecture`}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      />
+                    <div className="flex flex-col gap-4">
+                      <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group shadow-2xl bg-[#050505]">
+                        <Image
+                          src={project.images.find(img => img.includes("architecture")) as string}
+                          alt={`${project.name} Architecture`}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                      <p className="text-slate-500 text-sm italic text-center font-medium">
+                        {project.id === "tips" || project.name.includes("TIPS")
+                          ? "Temporal multi-stage pipeline combining signal processing and LLM-based evaluation"
+                          : `${project.name} System Architecture Diagram`}
+                      </p>
                     </div>
                   )}
                 </div>

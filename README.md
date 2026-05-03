@@ -1,111 +1,69 @@
+# 🌐 Personal Portfolio — Abrarali Sunasara
 
-# 🌐 Abrarali Sunasara — Personal Portfolio
+A modern, responsive developer portfolio showcasing **AI systems, full-stack applications, and system design projects**.
 
-Welcome to my **developer portfolio** built with **Next.js 15**, **Tailwind CSS**, and modern web tools. This site showcases my journey, skills, and projects — all wrapped in a sleek, animated, and responsive UI.
+🔴 Live: https://abrarali.vercel.app/
 
----
-## 📸 Screenshot
+![Portfolio Preview](./docs/portfolio-preview.png)
 
-![Homepage of Abrarali Sunasara’s Portfolio](public/Website-overview.png)
----
-## 🚀 Live Demo
+## 🚀 About
 
-🔗 [Visit Portfolio Website](https://abraralisunasara.vercel.app/)
+This portfolio highlights my work in:
 
----
+- AI-driven systems  
+- Distributed architectures  
+- Full-stack applications  
+- System design and automation  
 
-## 🧠 Tech Stack
+Focused on building scalable, production-ready solutions.
 
-- ⚡ **Framework**: [Next.js 15](https://nextjs.org/)
-- 🎨 **Styling**: [Tailwind CSS 3](https://tailwindcss.com/)
-- 💻 **TypeScript**: Fully typed components & utilities
-- 🧩 **Animations**: [Lottie React](https://www.npmjs.com/package/lottie-react)
-- 📧 **Contact**: [EmailJS](https://www.emailjs.com/) integration
-- 📦 **PWA Ready**: Uses [`@ducanh2912/next-pwa`](https://www.npmjs.com/package/@ducanh2912/next-pwa)
-- 🔐 **reCAPTCHA v3**: [Google reCAPTCHA](https://www.npmjs.com/package/react-google-recaptcha)
-- 🧠 **Icons**: [Lucide](https://lucide.dev/), [React Icons](https://react-icons.github.io/)
-- ✅ **Prettier + ESLint**: Enforced code style & formatting
-- 🧪 **Husky**: Git hooks for pre-commit checks
+## 🛠️ Tech Stack
 
----
+- **Frontend:** React, TypeScript, Tailwind CSS  
+- **Backend:** Node.js, Express, FastAPI  
+- **Database:** PostgreSQL, Supabase  
+- **AI/ML:** LLMs, OpenRouter, Transformers  
+- **Tools:** Docker, Git, Cloudflare  
 
-## 📁 Folder Structure
+## ✨ Features
 
-```
-ghost-oo5-personal-portfolio-website/
-├── public/                  # Static assets, Lottie, images, icons
-├── src/app/
-│   ├── components/          # Reusable UI & page sections
-│   ├── pages/               # Page-specific components (About, Projects, etc.)
-│   ├── css/                 # Custom CSS (e.g., card effects)
-│   ├── fonts/               # Custom fonts
-├── utils/                   # Helper functions & data (skills, projects, etc.)
-├── .husky/                  # Git pre-commit hook
-├── tailwind.config.ts       # Tailwind theme configuration
-├── next.config.ts           # Next.js + PWA configuration
-```
+- Fully responsive UI (mobile-first)  
+- Dynamic project showcase  
+- AI + system design focused projects  
+- Clean architecture and modular code  
+- Smooth animations and optimized performance  
 
----
+## 📂 Featured Projects
 
-## 🛠️ Getting Started
+- **TIPS** — Temporal Interview Profiling System  
+- **GitStore** — Distributed storage using GitHub  
+- **SurveySense** — AI-powered survey platform  
+- **OpenClaw** — Multi-agent orchestration system  
 
-### 1. Clone this repo
+## ⚙️ Run Locally
 
 ```bash
-git clone https://github.com/AbraraliS/portfolio-exp.git
+git clone https://github.com/AbraraliS/portfolio-exp
 cd portfolio-exp
-```
-
-### 2. Install dependencies
-
-```bash
-pnpm install
-# or
 npm install
-# or
-yarn install
-```
-
-### 3. Run the development server
-
-```bash
-pnpm dev
-# or
 npm run dev
 ```
 
-Then visit: [http://localhost:3000](http://localhost:3000)
+## 🚀 Deployment
 
----
+Deployed on **Vercel**
 
-## 🧪 Environment Variables
+🔗 https://abrarali.vercel.app/
 
-Copy `.env.example` and create `.env.local`:
+## 📬 Contact
 
-```env
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
-```
+- GitHub: https://github.com/AbraraliS  
+- LinkedIn: https://linkedin.com/in/abraralis
+- YouTube: https://www.youtube.com/@abraralis7  
 
----
+## 🔮 Future Improvements
 
-## 📦 Deployment
-
-deployed  [here](https://abraralisunasara.vercel.app/)
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-## 📬 Contact Me
-
-Got a project in mind or just want to say hi?
-
-📧 [abrarali.sunasara28@gmail.com](mailto:abrarali.sunasara28@gmail.com)  
-
-```
+- Add blog section  
+- Enhance animations  
+- Improve accessibility  
+- Add analytics dashboard  

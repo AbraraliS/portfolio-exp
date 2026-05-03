@@ -152,24 +152,24 @@
             "github": "https://github.com/AbraraliS/TIPS-LLM",
             "images": [
                 "/projects/tips/tips-overview.png",
+                "/assets/projects/tips/tips-architecture-v2.png",
                 "/projects/tips/tips-dashboard.png",
                 "/projects/tips/tips-timeline.png",
                 "/projects/tips/tips-analysis.png",
-                "/projects/tips/tips-qa.png",
-                "/projects/tips/tips-architecture.png"
+                "/projects/tips/tips-qa.png"
             ],
             "thumbnail": "/projects/tips/tips-overview.png",
             "system_architecture": {
-                "type": "Multimodal AI Analysis Pipeline",
+                "type": "Multimodal Temporal Analysis Pipeline (Hybrid Signal + LLM)",
                 "components": [
                     "6-stage Analysis Pipeline",
                     "Audio/Video Feature Extraction",
                     "Whisper Speech-to-Text",
-                    "LLM Semantic Scorer",
+                    "AI Semantic Scorer (Qwen2.5-3B)",
                     "Temporal Performance Tracker",
                     "Interactive Analytics Dashboard"
                 ],
-                "flow": "Interview Capture → Temporal Extraction → Semantic Scoring → Behavioral Metrics → Visual Analytics"
+                "flow": "Input (AV/JD) → Parallel Extraction → Temporal Sync → Behavioral/Semantic Analysis → Output (JSON/Dashboard)"
             },
             "api_schema": {
                 "interview": [

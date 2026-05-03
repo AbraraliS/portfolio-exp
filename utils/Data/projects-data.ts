@@ -87,11 +87,11 @@ export const projectsData: Project[] = [
     type: "Advanced AI System",
     images: [
       "/projects/tips/tips-overview.png",
+      "/assets/projects/tips/tips-architecture-v2.png",
       "/projects/tips/tips-dashboard.png",
       "/projects/tips/tips-timeline.png",
       "/projects/tips/tips-analysis.png",
-      "/projects/tips/tips-qa.png",
-      "/projects/tips/tips-architecture.png"
+      "/projects/tips/tips-qa.png"
     ],
     thumbnail: "/projects/tips/tips-overview.png",
     highlights: [
@@ -107,13 +107,16 @@ export const projectsData: Project[] = [
       "Behavioral metrics tracking"
     ],
     system_architecture: {
-      type: "Multimodal AI Pipeline",
+      type: "Multimodal Temporal Analysis Pipeline (Hybrid Signal + LLM)",
       components: [
-        "Interview UI (WebRTC)",
-        "Backend Analysis Pipeline (6 stages)",
-        "Dashboard (Visual Analytics)"
+        "6-stage Analysis Pipeline",
+        "Audio/Video Feature Extraction",
+        "Whisper Speech-to-Text",
+        "AI Semantic Scorer (Qwen2.5-3B)",
+        "Temporal Performance Tracker",
+        "Interactive Analytics Dashboard"
       ],
-      flow: "WebRTC Capture → 6-Stage Pipeline → LLM Semantic Scoring → Visual Analytics Dashboard"
+      flow: "Input (AV/JD) → Parallel Extraction → Temporal Sync → Behavioral/Semantic Analysis → Output (JSON/Dashboard)"
     },
     pipeline: [
       "Timebase (Synchronization)",
