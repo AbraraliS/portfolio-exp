@@ -1,5 +1,72 @@
 export const projectsData = [
   {
+    id: "buysmart-ai",
+    name: "BuySmart AI — Intelligent Product Analysis Platform",
+    shortTitle: "BuySmart AI",
+    description: "A microservices-based AI platform that analyzes products using real-time data, generates objective recommendations with Gemini AI, and helps users make data-driven purchasing decisions.",
+    category: "AI / System Design / Full Stack",
+    type: "AI Decision System",
+    role: "Full Stack AI Systems Engineer",
+    featured: true,
+    isMain: false,
+    date: "2026",
+    tools: [
+      "React",
+      "TypeScript",
+      "Spring Boot",
+      "Java",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Docker",
+      "Supabase",
+      "Gemini AI",
+      "Recharts",
+      "Tailwind CSS"
+    ],
+    features: [
+      "AI-powered product analysis with Buy Score, pros, and cons",
+      "Microservices architecture (Frontend + Spring Boot + AI service)",
+      "Real-time product data fetching with caching",
+      "JWT-based authentication and secure user sessions",
+      "Wishlist with price tracking and history",
+      "Fallback system when AI service is unavailable",
+      "Interactive dashboard with analytics and insights"
+    ],
+    highlights: [
+      "Implements real-world microservice architecture with AI integration",
+      "Optimized using caching and containerized deployment",
+      "Bridges AI with real-time e-commerce decision systems"
+    ],
+    status: "Completed",
+    images: [
+      "/assets/projects/buysmart/buysmart-overview.png",
+      "/assets/projects/buysmart/buysmart-dashboard.png",
+      "/assets/projects/buysmart/buysmart-analysis.png",
+      "/assets/projects/buysmart/buysmart-search.png",
+      "/assets/projects/buysmart/buysmart-architecture.png",
+      "/assets/projects/buysmart/buysmart-wishlist.png"
+    ],
+    thumbnail: "/assets/projects/buysmart/buysmart-overview.png",
+    system_architecture: {
+      type: "Microservices Architecture",
+      components: [
+        "Frontend (React)",
+        "Backend (Spring Boot)",
+        "AI Service (FastAPI + Gemini)",
+        "Database (PostgreSQL)"
+      ],
+      flow: "Search → Fetch → Analyze → Recommend"
+    },
+    pipeline: [
+      "Search",
+      "Fetch",
+      "Analyze",
+      "Recommend"
+    ],
+    priority: 3
+  },
+  {
     id: "1",
     name: "TIPS — Temporal Interview Profiling System",
     shortTitle: "TIPS",

@@ -405,7 +405,7 @@ const ProjectDetails = async ({ params }: Props) => {
                     {project.analytics.description}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {project.images?.filter(img => img.includes("analytics") || img.includes("charts") || img.includes("dashboard")).map((img, idx) => (
+                    {project.images?.filter(img => img.includes("analytics") || img.includes("charts") || img.includes("dashboard") || img.includes("analysis")).map((img, idx) => (
                       <div key={idx} className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group bg-[#050505]">
                         <Image
                           src={img}
@@ -560,7 +560,7 @@ const ProjectDetails = async ({ params }: Props) => {
                 <Carousel className="w-full">
                   <CarouselContent>
                     {project.images.slice(1).map((image, index) => (
-                      <CarouselItem key={index}>
+                      <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                         <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 group bg-[#050505]">
                           <Image
                             src={image}
