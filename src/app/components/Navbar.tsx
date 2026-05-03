@@ -100,7 +100,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+        <div className="hidden md:flex flex-wrap items-center gap-x-4 lg:gap-x-8 gap-y-2">
           {navItems.map((item) => renderLink(item))}
         </div>
 
@@ -146,7 +146,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#050505]/95 backdrop-blur-2xl border-b border-white/10 md:hidden animate-in slide-in-from-top duration-300">
+        <div className="absolute top-full left-0 w-full bg-[#050505]/95 backdrop-blur-2xl border-b border-white/10 md:hidden animate-in slide-in-from-top duration-300 overflow-hidden">
           <div className="container mx-auto px-6 py-8 flex flex-col space-y-2">
             {navItems.map((item) => renderLink(item, true))}
           </div>

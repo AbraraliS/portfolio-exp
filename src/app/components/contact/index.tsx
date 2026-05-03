@@ -31,7 +31,7 @@ const ContactInfoCard = ({
     className="group relative flex items-center gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/10 transition-all duration-300 shadow-xl"
   >
     <div
-      className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300`}
+      className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300`}
       style={{ backgroundColor: `${color}15` }}
     >
       <Icon
@@ -39,11 +39,11 @@ const ContactInfoCard = ({
         style={{ color: color }}
       />
     </div>
-    <div className="flex flex-col">
+    <div className="flex flex-col flex-1 min-w-0">
       <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
         {label}
       </span>
-      <span className="text-sm md:text-base text-slate-200 font-medium group-hover:text-white transition-colors">
+      <span className="text-sm md:text-base text-slate-200 font-medium group-hover:text-white transition-colors break-all min-w-0">
         {value}
       </span>
     </div>

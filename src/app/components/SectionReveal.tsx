@@ -29,20 +29,24 @@ export default function SectionReveal({
 
     switch (direction) {
       case "up":
-        y = 50;
+        y = 40;
         break;
       case "down":
-        y = -50;
+        y = -40;
         break;
       case "left":
-        x = 50;
+        x = 40;
         break;
       case "right":
-        x = -50;
+        x = -40;
         break;
     }
 
-    gsap.fromTo(
+    // Safety: ensure element is always visible even if ScrollTrigger never fires
+    // (can happen on mobile when element is already in view on mount, or on fast scroll)
+    gsap.set(el, { opacity: 1, x: 0, y: 0 });
+
+    const anim = gsap.fromTo(
       el,
       {
         opacity: 0,
@@ -53,16 +57,31 @@ export default function SectionReveal({
         opacity: 1,
         x: 0,
         y: 0,
-        duration: 1,
+        duration: 0.8,
         delay: delay,
         ease: "power3.out",
         scrollTrigger: {
           trigger: el,
-          start: "top 85%", // Starts animating when the top of the section is 85% down the screen
+          start: "top 90%", // More forgiving threshold — fires sooner
           toggleActions: "play none none none",
+          // Fallback: if element is already above the trigger point on load, play immediately
+          onEnter: () => gsap.set(el, { opacity: 1 }),
         },
       },
     );
+
+    // Critical safety net: if ScrollTrigger doesn't fire within 3s, force visibility
+    const safetyTimer = setTimeout(() => {
+      gsap.set(el, { opacity: 1, x: 0, y: 0 });
+    }, 3000);
+
+    return () => {
+      anim.kill();
+      clearTimeout(safetyTimer);
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger === el) st.kill();
+      });
+    };
   }, [direction, delay]);
 
   return <div ref={elementRef}>{children}</div>;

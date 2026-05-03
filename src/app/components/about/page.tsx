@@ -113,7 +113,7 @@ function About() {
           </div>
 
           {/* Right Side: Profile Image with High-End Frame */}
-          <div className="lg:col-span-5 order-1 lg:order-2">
+          <div className="lg:col-span-5 order-1 lg:order-2 overflow-hidden relative isolate">
             <Tilt
               perspective={1500}
               glareEnable={true}

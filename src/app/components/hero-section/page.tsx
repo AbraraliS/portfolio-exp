@@ -116,7 +116,7 @@ const HeroSection = () => {
             <span className="hero-tag px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold tracking-[0.3em] w-fit">
               System Design & Engineering
             </span>
-            <h1 className="hero-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] break-words">
+            <h1 className="hero-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] text-balance">
               Full Stack{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
                 Systems
@@ -127,7 +127,7 @@ const HeroSection = () => {
               <span className="text-white font-bold">{personalData.name}</span>,
               a professional
               <span
-                className="text-red-500 ml-2 font-bold inline-block min-w-fit md:min-w-[200px]"
+                className="text-red-500 ml-2 font-bold inline-block md:min-w-[200px]"
                 ref={designationRef}
               >
                 {personalData.designation}
@@ -237,8 +237,8 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="p-6 lg:p-10">
-                <code className="font-mono text-xs md:text-sm lg:text-base leading-relaxed">
+              <div className="p-6 lg:p-10 overflow-hidden">
+                <code className="font-mono text-xs md:text-sm lg:text-base leading-relaxed block">
                   <div className="flex gap-4">
                     <span className="text-slate-600 italic">01</span>
                     <p>

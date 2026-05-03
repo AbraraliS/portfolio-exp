@@ -42,14 +42,14 @@ function Education() {
                   scale={1.02}
                 >
                   <div className="group relative p-6 md:p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md hover:border-red-600/50 transition-all duration-500 shadow-xl overflow-hidden">
-                    <div className="flex items-start gap-6 relative z-10">
-                      <div className="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(239,68,68,0.2)]">
+                    <div className="flex items-start gap-4 sm:gap-6 relative z-10">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(239,68,68,0.2)]">
                         <GraduationCap className="text-red-500 w-7 h-7" />
                       </div>
 
-                      <div className="flex flex-col gap-3">
+                      <div className="flex flex-col gap-3 flex-1 min-w-0">
                         <div className="flex flex-col gap-1">
-                          <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-red-500 transition-colors">
+                          <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-red-500 transition-colors break-words leading-tight">
                             {education.title}
                           </h3>
                           <div className="flex items-center gap-2 text-red-500 text-xs font-bold uppercase tracking-widest">
@@ -59,9 +59,9 @@ function Education() {
                         </div>
 
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                          <div className="flex items-center gap-2 text-slate-400 font-medium">
-                            <School className="w-4 h-4 text-red-900" />
-                            {education.institution}
+                          <div className="flex items-center gap-2 text-slate-400 font-medium min-w-0">
+                            <School className="w-4 h-4 text-red-900 flex-shrink-0" />
+                            <span className="break-words min-w-0">{education.institution}</span>
                           </div>
                           {education.cgpa && (
                             <span className="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold">

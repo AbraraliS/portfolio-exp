@@ -63,20 +63,20 @@ const Footer = () => (
               <div className="flex flex-col gap-3">
               <a
                 href={`mailto:${personalData.email}`}
-                className="text-gray-400 hover:text-red-500 transition-all font-medium"
+                className="text-gray-400 hover:text-red-500 transition-all font-medium break-all"
               >
                 {personalData.email}
               </a>
               <a
                 href={`tel:${personalData.phone}`}
-                className="text-gray-400 hover:text-red-500 transition-all font-medium"
+                className="text-gray-400 hover:text-red-500 transition-all font-medium break-all"
               >
                 {personalData.phone}
               </a>
             </div>
           </div>
 
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
             {personalData.github && (
               <Link
                 href={personalData.github}

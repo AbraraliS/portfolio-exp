@@ -113,7 +113,7 @@ const ProjectDetails = async ({ params }: Props) => {
                 </Badge>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-red-100 to-slate-400 leading-[1.1]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-red-100 to-slate-400 leading-tight break-words">
                 {project.fullName || project.name}
               </h1>
 
@@ -121,7 +121,7 @@ const ProjectDetails = async ({ params }: Props) => {
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-4 mt-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 max-w-full">
                 {project.demo && (
                   <Link href={project.demo} target="_blank">
                     <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-red-600/20 transition-all hover:scale-105 active:scale-95 flex gap-2 font-bold uppercase tracking-widest">

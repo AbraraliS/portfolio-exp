@@ -49,7 +49,7 @@ const Projects = () => {
             <p className="text-red-500 text-sm font-bold uppercase tracking-[0.4em] mb-4">
               Production-Ready Systems
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tighter break-words">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tighter text-balance">
               Scalable{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
                 Architecture
