@@ -1,6 +1,5 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
@@ -13,6 +12,7 @@ const ContactWithoutCaptcha = () => {
     email: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState("");
   const [error, setError] = useState({
     email: false,
     required: false,
@@ -36,43 +36,37 @@ const ContactWithoutCaptcha = () => {
       setError({ ...error, required: false });
     }
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "";
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
-    const options = {
-      publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "",
-    };
-
-    const templateParams = {
-      from_name: input.name,
-      email: input.email,
-      message: `${input.message} \nEmail: ${input.email}`,
-    };
-
     try {
       setIsLoading(true);
-      const res = await emailjs.send(
-        serviceID,
-        templateID,
-        templateParams,
-        options,
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...input,
+          honeypot: honeypot,
+        }),
+      });
 
-      if (res.status === 200) {
+      const data = await res.json();
+
+      if (res.ok) {
         toast.success("Message sent successfully!");
-        setIsLoading(false);
         setInput({
           name: "",
           email: "",
           message: "",
         });
+        setHoneypot("");
+      } else {
+        toast.error(data.error || "Failed to send message");
       }
     } catch (error: unknown) {
+      console.error("Contact form error:", error);
+      toast.error("An unexpected error occurred.");
+    } finally {
       setIsLoading(false);
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error("An unexpected error occurred.");
-      }
     }
   };
 
@@ -89,6 +83,17 @@ const ContactWithoutCaptcha = () => {
         </div>
 
         <div className="flex flex-col gap-6">
+          {/* Honeypot field - hidden from users */}
+          <input
+            type="text"
+            name="honeypot"
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+            onChange={(e) => setHoneypot(e.target.value)}
+            value={honeypot}
+          />
+
           {/* Name Field */}
           <div className="flex flex-col gap-2 group/input">
             <label className="text-sm font-bold text-slate-500 uppercase tracking-widest ml-1 flex items-center gap-2 group-focus-within/input:text-red-500 transition-colors">
