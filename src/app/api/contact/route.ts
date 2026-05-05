@@ -10,17 +10,14 @@ export async function POST(req: Request) {
 
     // Spam protection: check if honeypot field is filled
     if (honeypot) {
-      return NextResponse.json(
-        { error: "Spam detected" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Spam detected" }, { status: 400 });
     }
 
     // Basic validation
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -28,7 +25,7 @@ export async function POST(req: Request) {
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: personalData.email,
       subject: `New Message from ${name} (Portfolio)`,
-      reply_to: email,
+      replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
@@ -42,7 +39,7 @@ export async function POST(req: Request) {
     console.error("API Error:", err);
     return NextResponse.json(
       { error: "Internal Server Error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
