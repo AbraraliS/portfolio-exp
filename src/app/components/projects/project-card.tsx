@@ -9,7 +9,15 @@ import {
 } from "@/components/ui/card";
 import { ProjectCardProps } from "@/Types/types";
 import { getSkillIcon, getSkillColor } from "@/../utils/skill-icons";
-import { ChevronUp, Code, ExternalLink, Globe, Sparkles, FileText, Youtube } from "lucide-react";
+import {
+  ChevronUp,
+  Code,
+  ExternalLink,
+  Globe,
+  Sparkles,
+  FileText,
+  Youtube,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { MouseEvent, useRef, useState } from "react";
@@ -23,9 +31,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   const maxVisibleTags = 5;
   const tools = project.tools || [];
   const hasMoreTags = tools.length > maxVisibleTags;
-  const visibleTools = showAllTags
-    ? tools
-    : tools.slice(0, maxVisibleTags);
+  const visibleTools = showAllTags ? tools : tools.slice(0, maxVisibleTags);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -135,24 +141,39 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </p>
             {project.system_architecture && (
               <div className="mb-4 text-xs">
-                <p className="text-white font-bold mb-2 uppercase tracking-wider text-[10px]">System Architecture</p>
+                <p className="text-white font-bold mb-2 uppercase tracking-wider text-[10px]">
+                  System Architecture
+                </p>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-3 overflow-hidden">
-                  <p className="text-red-400 font-medium mb-1 break-words">{project.system_architecture.type}</p>
-                  <p className="text-slate-400 mb-2 break-words">{project.system_architecture.components.join(" • ")}</p>
-                  <p className="text-slate-500 italic break-words">Flow: {project.system_architecture.flow}</p>
+                  <p className="text-red-400 font-medium mb-1 break-words">
+                    {project.system_architecture.type}
+                  </p>
+                  <p className="text-slate-400 mb-2 break-words">
+                    {project.system_architecture.components.join(" • ")}
+                  </p>
+                  <p className="text-slate-500 italic break-words">
+                    Flow: {project.system_architecture.flow}
+                  </p>
                 </div>
               </div>
             )}
             {project.api_schema && (
               <div className="mb-6 text-xs">
-                <p className="text-white font-bold mb-2 uppercase tracking-wider text-[10px]">API Schema</p>
+                <p className="text-white font-bold mb-2 uppercase tracking-wider text-[10px]">
+                  API Schema
+                </p>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-3 flex flex-col gap-2">
                   {Object.entries(project.api_schema).map(([key, routes]) => (
                     <div key={key} className="flex flex-col">
-                      <span className="text-red-400 font-medium capitalize mb-1">{key} Endpoints:</span>
+                      <span className="text-red-400 font-medium capitalize mb-1">
+                        {key} Endpoints:
+                      </span>
                       <div className="flex flex-wrap gap-1">
                         {routes.map((route, i) => (
-                          <span key={i} className="px-2 py-0.5 bg-[#050505] text-slate-400 rounded-md border border-white/5 text-[10px] font-mono">
+                          <span
+                            key={i}
+                            className="px-2 py-0.5 bg-[#050505] text-slate-400 rounded-md border border-white/5 text-[10px] font-mono"
+                          >
                             {route}
                           </span>
                         ))}
@@ -198,31 +219,42 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <CardFooter className="p-6 pt-2 flex flex-col gap-3">
           {(() => {
             const links = [
-              (project.live || project.demo) && { 
-                label: "Live Demo", 
-                url: project.live || project.demo, 
+              (project.live || project.demo) && {
+                label: "Live Demo",
+                url: project.live || project.demo,
                 icon: <Globe className="w-4 h-4" />,
-                className: "bg-white/5 hover:bg-red-600 text-white hover:border-red-500 shadow-xl hover:shadow-red-600/20"
+                className:
+                  "bg-white/5 hover:bg-red-600 text-white hover:border-red-500 shadow-xl hover:shadow-red-600/20",
               },
-              (project.github || project.code) && { 
-                label: "GitHub", 
-                url: project.github || project.code, 
+              (project.github || project.code) && {
+                label: "GitHub",
+                url: project.github || project.code,
                 icon: <Code className="w-4 h-4" />,
-                className: "bg-white/5 hover:bg-red-950 text-white hover:border-red-800 shadow-xl hover:shadow-red-950/20"
+                className:
+                  "bg-white/5 hover:bg-red-950 text-white hover:border-red-800 shadow-xl hover:shadow-red-950/20",
               },
-              project.videos?.[0] && { 
-                label: "Video", 
-                url: project.videos[0], 
+              project.videos?.[0] && {
+                label: "Video",
+                url: project.videos[0],
                 icon: <Youtube className="w-4 h-4" />,
-                className: "bg-white/5 hover:bg-red-600/20 hover:border-red-500 text-white shadow-xl"
+                className:
+                  "bg-white/5 hover:bg-red-600/20 hover:border-red-500 text-white shadow-xl",
               },
-              project.docs && { 
-                label: "Docs", 
-                url: project.docs, 
+              project.docs && {
+                label: "Docs",
+                url: project.docs,
                 icon: <FileText className="w-4 h-4" />,
-                className: "bg-white/5 hover:bg-red-600/10 hover:border-red-500/30 text-white shadow-xl"
-              }
-            ].filter((link): link is Exclude<typeof link, false | "" | 0 | null | undefined> => !!link);
+                className:
+                  "bg-white/5 hover:bg-red-600/10 hover:border-red-500/30 text-white shadow-xl",
+              },
+            ].filter(
+              (
+                link,
+              ): link is Exclude<
+                typeof link,
+                false | "" | 0 | null | undefined
+              > => !!link,
+            );
 
             return (
               <>
@@ -246,7 +278,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     ))}
                   </div>
                 )}
-                
+
                 <Link href={`/projects/${project.id}`} className="w-full">
                   <Button className="w-full h-11 rounded-xl text-[10px] font-bold uppercase tracking-widest bg-red-600/10 border border-red-600/20 text-red-500 hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
                     View Technical Details <ExternalLink className="w-4 h-4" />
