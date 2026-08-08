@@ -15,13 +15,15 @@ export const personalData = {
   address: "Bengaluru, India",
   github: "https://github.com/abraralis",
   facebook: "",
-  Instagram: "",
+  Instagram: "https://www.instagram.com/abrar00429?igsh=NnRkMWZhcXN1M3Vo",
   linkedIn: "https://linkedin.com/in/abraralis",
   youtube: "https://www.youtube.com/@abraralis7",
-  twitter: "",
+  twitter: "https://x.com/shadow07dev",
+  gitlab: "https://gitlab.com/AbraraliS",
   stackOverflow: "",
   devUsername: "Abrarali",
   leetcode: "",
   resume: "",
-  certificationsDrive: "https://drive.google.com/drive/folders/1xT34xdHeggcPtvcql5FFcsbCH46sTDmq?usp=drive_link",
+  certificationsDrive:
+    "https://drive.google.com/drive/folders/1xT34xdHeggcPtvcql5FFcsbCH46sTDmq?usp=drive_link",
 };

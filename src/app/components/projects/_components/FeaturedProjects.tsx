@@ -9,7 +9,11 @@ import {
 } from "@/components/ui/carousel";
 import ProjectCard from "../project-card";
 
-const FeaturedProjects = () => {
+interface FeaturedProjectsProps {
+  excludeId?: string;
+}
+
+const FeaturedProjects = ({ excludeId }: FeaturedProjectsProps = {}) => {
   return (
     <section id="projects">
       <Carousel
@@ -20,12 +24,16 @@ const FeaturedProjects = () => {
       >
         <CarouselContent>
           {projectsData
+            .filter((p) => p.id !== excludeId)
             .sort((a, b) => {
               if (a.featured !== b.featured) return a.featured ? -1 : 1;
               return (a.priority ?? 999) - (b.priority ?? 999);
             })
             .map((project) => (
-              <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3 h-full">
+              <CarouselItem
+                key={project.id}
+                className="md:basis-1/2 lg:basis-1/3 h-full"
+              >
                 <ProjectCard key={project.id} project={project} />
               </CarouselItem>
             ))}

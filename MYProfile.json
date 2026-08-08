@@ -43,6 +43,65 @@
   },
   "projects": [
     {
+      "id": "texora-marketplace",
+      "project_name": "Texora — B2B Textile Marketplace",
+      "shortTitle": "Texora",
+      "description": "An AI-native B2B textile sourcing platform connecting apparel brands with verified mills and fabric suppliers. Includes a semantic search engine and AI sourcing assistant.",
+      "category": "Full Stack / AI / E-Commerce",
+      "type": "B2B Marketplace Platform",
+      "role": "Full Stack Engineer",
+      "featured": true,
+      "isMain": true,
+      "year": "2026",
+      "tech_stack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "MongoDB",
+        "NextAuth",
+        "Cloudinary",
+        "Hugging Face API",
+        "OpenRouter"
+      ],
+      "features": [
+        "Texa AI Sourcing Assistant for live inventory search",
+        "Semantic Product Search powered by Gemma LLM",
+        "AI Product Comparison & Q&A engine",
+        "Dual-role experience: Buyer cart & Supplier dashboard",
+        "Secure Role-Based Authentication with JWT",
+        "Fully responsive design with localization (INR)"
+      ],
+      "highlights": [
+        "Built an AI-native B2B sourcing platform",
+        "Implemented semantic search and AI product comparison",
+        "Designed comprehensive dashboards for buyers and suppliers"
+      ],
+      "status": "Completed",
+      "images": [
+        "/projects/texora/Home-page.png",
+        "/projects/texora/Marketplace.png",
+        "/projects/texora/product-details.png",
+        "/projects/texora/supplyer-dashboard.png",
+        "/projects/texora/Order_Management.png",
+        "/projects/texora/supplyer-directory.png"
+      ],
+      "thumbnail": "/projects/texora/Home-page.png",
+      "system_architecture": {
+        "type": "Full Stack Marketplace Architecture",
+        "components": [
+          "Frontend (Next.js App Router)",
+          "Backend (Next.js Server Actions/API)",
+          "Database (MongoDB Atlas)",
+          "AI Models (Hugging Face / OpenRouter)"
+        ],
+        "flow": "User → Next.js App → Auth/DB/AI Services → Rendered UI"
+      },
+      "github": "https://github.com/abraralis/Texora",
+      "live": "https://texora-five.vercel.app/",
+      "priority": 2
+    },
+    {
       "id": "buysmart-ai",
       "project_name": "BuySmart AI — Intelligent Product Analysis Platform",
       "shortTitle": "BuySmart AI",

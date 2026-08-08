@@ -1,7 +1,13 @@
 "use client";
 import Link from "next/link";
 import { BiLogoLinkedin } from "react-icons/bi";
-import { FaFacebook, FaStackOverflow, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaStackOverflow,
+  FaYoutube,
+  FaGitlab,
+  FaInstagram,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
@@ -80,7 +86,8 @@ function ContactSection() {
               </span>
             </h2>
             <p className="text-slate-400 text-lg max-w-2xl text-center">
-              Ready to build scalable, high-performance systems? I'm available for engineering roles and freelance opportunities.
+              Ready to build scalable, high-performance systems? I'm available
+              for engineering roles and freelance opportunities.
             </p>
           </div>
         </SectionReveal>
@@ -140,6 +147,16 @@ function ContactSection() {
                       color: "#ffffff",
                     },
                     {
+                      href: personalData.Instagram,
+                      icon: FaInstagram,
+                      color: "#E1306C",
+                    },
+                    {
+                      href: (personalData as any).gitlab,
+                      icon: FaGitlab,
+                      color: "#fc6d26",
+                    },
+                    {
                       href: personalData.linkedIn,
                       icon: BiLogoLinkedin,
                       color: "#0077b5",
@@ -164,19 +181,21 @@ function ContactSection() {
                       icon: FaFacebook,
                       color: "#1877f2",
                     },
-                  ].filter(social => social.href).map((social, idx) => (
-                    <Link
-                      key={idx}
-                      href={social.href}
-                      target="_blank"
-                      className="w-14 h-14 rounded-2xl border border-white/5 bg-white/[0.02] flex items-center justify-center hover:bg-white/[0.05] hover:border-white/20 hover:scale-110 transition-all duration-300"
-                    >
-                      <social.icon
-                        className="w-6 h-6"
-                        style={{ color: social.color }}
-                      />
-                    </Link>
-                  ))}
+                  ]
+                    .filter((social) => social.href)
+                    .map((social, idx) => (
+                      <Link
+                        key={idx}
+                        href={social.href}
+                        target="_blank"
+                        className="w-14 h-14 rounded-2xl border border-white/5 bg-white/[0.02] flex items-center justify-center hover:bg-white/[0.05] hover:border-white/20 hover:scale-110 transition-all duration-300"
+                      >
+                        <social.icon
+                          className="w-6 h-6"
+                          style={{ color: social.color }}
+                        />
+                      </Link>
+                    ))}
                 </div>
               </div>
             </SectionReveal>

@@ -19,6 +19,7 @@ import {
   Youtube,
 } from "lucide-react";
 import Image from "next/image";
+import { ZoomableImage } from "@/components/ui/ZoomableImage";
 import Link from "next/link";
 import { MouseEvent, useRef, useState } from "react";
 
@@ -78,7 +79,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             {project.videos?.[0] && !project.videos[0].includes("youtu") ? (
               <video
                 src={project.videos[0]}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 muted
                 loop
                 onMouseEnter={(e) => e.currentTarget.play()}
@@ -88,12 +89,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 }}
               />
             ) : firstImage ? (
-              <Image
+              <ZoomableImage
                 src={firstImage}
-                width={800}
-                height={450}
                 alt={project.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                imageClassName="transition-transform duration-700 group-hover:scale-110"
               />
             ) : (
               <div className="w-full h-full bg-slate-900 flex items-center justify-center">

@@ -5,8 +5,8 @@ import gsap from "gsap";
 import { SplitText } from "gsap/dist/SplitText";
 import Link from "next/link";
 import { useRef } from "react";
-import { BsGithub, BsLinkedin, BsYoutube } from "react-icons/bs";
-import { FaTwitterSquare } from "react-icons/fa";
+import { BsGithub, BsLinkedin, BsYoutube, BsInstagram } from "react-icons/bs";
+import { FaTwitterSquare, FaGitlab } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
@@ -133,7 +133,8 @@ const HeroSection = () => {
                 {personalData.designation}
               </span>
               <br />
-              dedicated to designing scalable architectures and production-ready applications.
+              dedicated to designing scalable architectures and production-ready
+              applications.
             </p>
           </div>
 
@@ -146,6 +147,24 @@ const HeroSection = () => {
                   className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
                 >
                   <BsGithub size={24} />
+                </Link>
+              )}
+              {personalData.Instagram && (
+                <Link
+                  href={personalData.Instagram}
+                  target="_blank"
+                  className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
+                >
+                  <BsInstagram size={24} />
+                </Link>
+              )}
+              {(personalData as any).gitlab && (
+                <Link
+                  href={(personalData as any).gitlab}
+                  target="_blank"
+                  className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
+                >
+                  <FaGitlab size={24} />
                 </Link>
               )}
               {personalData.linkedIn && (
@@ -257,7 +276,10 @@ const HeroSection = () => {
                     <span className="text-slate-600 italic">03</span>
                     <p className="ml-4">
                       <span className="text-slate-200">focus:</span>{" "}
-                      <span className="text-red-300">'System Architecture'</span>,
+                      <span className="text-red-300">
+                        'System Architecture'
+                      </span>
+                      ,
                     </p>
                   </div>
                   <div className="flex gap-4">
@@ -281,7 +303,9 @@ const HeroSection = () => {
                     <span className="text-slate-600 italic">06</span>
                     <p className="ml-4">
                       <span className="text-slate-200">motto:</span>{" "}
-                      <span className="text-red-400">"Build. Scale. Automate."</span>
+                      <span className="text-red-400">
+                        "Build. Scale. Automate."
+                      </span>
                     </p>
                   </div>
                   <div className="flex gap-4">
