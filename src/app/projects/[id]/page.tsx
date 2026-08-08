@@ -814,7 +814,7 @@ const ProjectDetails = async ({ params }: Props) => {
               </span>
             </Link>
           </div>
-          <FeaturedProjects excludeId={project.id} />
+          <FeaturedProjects excludeId={String(project.id)} />
         </div>
       </div>
     </div>
