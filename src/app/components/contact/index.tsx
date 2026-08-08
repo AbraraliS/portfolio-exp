@@ -152,7 +152,7 @@ function ContactSection() {
                       color: "#E1306C",
                     },
                     {
-                      href: (personalData as any).gitlab,
+                      href: personalData.gitlab,
                       icon: FaGitlab,
                       color: "#fc6d26",
                     },

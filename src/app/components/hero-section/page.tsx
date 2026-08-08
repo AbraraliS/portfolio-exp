@@ -158,9 +158,9 @@ const HeroSection = () => {
                   <BsInstagram size={24} />
                 </Link>
               )}
-              {(personalData as any).gitlab && (
+              {personalData.gitlab && (
                 <Link
-                  href={(personalData as any).gitlab}
+                  href={personalData.gitlab}
                   target="_blank"
                   className="social-icon p-3 rounded-xl bg-white/5 border border-white/10 text-white hover:text-red-500 hover:border-red-500/50 transition-all duration-300 shadow-xl"
                 >

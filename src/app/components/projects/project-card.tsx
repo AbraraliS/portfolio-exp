@@ -18,7 +18,7 @@ import {
   FileText,
   Youtube,
 } from "lucide-react";
-import Image from "next/image";
+
 import { ZoomableImage } from "@/components/ui/ZoomableImage";
 import Link from "next/link";
 import { MouseEvent, useRef, useState } from "react";
