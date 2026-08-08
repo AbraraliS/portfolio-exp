@@ -3,10 +3,11 @@ export const personalData = {
   profile: "/profile.jpg",
   designation: "Full Stack & Systems Engineer",
   designationAlternateWords: [
-    "System Architecture.",
-    "Full Stack.",
-    "AI Systems.",
-    "Scalable Applications.",
+    "Systems Architect.",
+    "Full Stack Developer.",
+    "Software Engineer.",
+    "AI Systems Engineer.",
+    "Backend Developer.",
   ],
   description:
     "I design and build complete systems — from frontend interfaces and mobile apps to backend architecture, APIs, and AI-driven workflows. My focus is on scalable system design, clean architecture, and production-ready applications. I work across web, mobile, and backend, integrating AI and automation where it adds real value.",

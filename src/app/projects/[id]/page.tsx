@@ -52,7 +52,7 @@ const ProjectDetails = async ({ params }: Props) => {
   }
 
   const dynamicImages = getProjectImages(
-    projectData.id,
+    String(projectData.id),
     projectData.images || [],
   );
   const project = { ...projectData, images: dynamicImages };
