@@ -43,7 +43,7 @@ export default function manifest(): MetadataRoute.Manifest {
         form_factor: "wide",
       },
       {
-        src: "/Pwa-logos/card.png",
+        src: "/Pwa-logos/card-mobile.png",
         sizes: "1080x1920",
         type: "image/png",
         form_factor: "narrow",
