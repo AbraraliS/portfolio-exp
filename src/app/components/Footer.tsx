@@ -20,10 +20,10 @@ const Footer = () => (
         <div className="flex flex-col items-center md:items-start gap-6">
           <Link href="/" className="w-fit">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Abrarali Sunasara Logo"
-              width={100}
-              height={100}
+              width={160}
+              height={160}
               className="brightness-125"
             />
           </Link>

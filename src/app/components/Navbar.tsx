@@ -1,5 +1,5 @@
 "use client";
-import img from "@/../public/logo.svg";
+import img from "@/../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -93,8 +93,8 @@ const Navbar = () => {
           <Image
             src={img}
             alt="Abrarali Sunasara"
-            width={isScrolled ? 50 : 60}
-            height={isScrolled ? 50 : 60}
+            width={isScrolled ? 70 : 90}
+            height={isScrolled ? 70 : 90}
             className="transition-all duration-500"
           />
         </Link>
