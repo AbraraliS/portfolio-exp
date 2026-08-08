@@ -139,7 +139,7 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               {personalData.github && (
                 <Link
                   href={personalData.github}
