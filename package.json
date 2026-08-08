@@ -60,10 +60,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp"
-    ]
   }
 }
