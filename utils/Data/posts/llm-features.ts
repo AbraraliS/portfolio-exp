@@ -68,21 +68,21 @@ public Optional<AnalysisResult> getLatestAnalysisForProduct(String productId) {
     { t: "h2", text: "A prompt is not a security boundary" },
     {
       t: "p",
-      text: "This is the lesson I most want to pass on, because the mistake is in my own code. DataTalk Pro lets people query a MySQL database in plain English. The prompt that writes the final answer contains this rule:",
+      text: "This is the lesson I most want to pass on, because the mistake was in my own code, and it went unnoticed until I reread that code for this article. DataTalk Pro lets people query a MySQL database in plain English. The prompt that wrote the final answer contained this rule:",
     },
     {
       t: "quote",
       text: 'If the SQL query contains any dangerous operations like DELETE, DROP, UPDATE, or ALTER, do not execute the query. Instead, respond with "I\'m sorry, but I cannot execute queries that modify or delete data."',
-      cite: "DataTalk Pro, src/app.py",
+      cite: "DataTalk Pro, src/app.py, before the fix",
     },
     {
       t: "p",
-      text: "It reads like a guard. Now look at the order of the chain that uses it:",
+      text: "It reads like a guard. Now look at the order of the chain that used it:",
     },
     {
       t: "code",
       lang: "python",
-      file: "src/app.py, with comments added",
+      file: "src/app.py before the fix, with comments added",
       code: `chain = (
     RunnablePassthrough.assign(query=sql_chain).assign(
         schema=lambda _: db.get_table_info(),
@@ -95,28 +95,60 @@ public Optional<AnalysisResult> getLatestAnalysisForProduct(String productId) {
     },
     {
       t: "p",
-      text: "`db.run` happens before the prompt is ever formatted. If the first model generates a `DELETE`, the statement has already been sent to the database by the time the second model is told not to run it. The user would see a polite refusal for something that already happened. Nothing about this looks wrong in a quick demo, because the model rarely writes destructive SQL when asked ordinary questions.",
+      text: "`db.run` happened before the prompt was ever formatted. If the first model generated a `DELETE`, the statement had already reached the database by the time the second model was told not to run it. The user could get a polite refusal for something that had already happened. Nothing looked wrong in a quick demo, because the model rarely writes destructive SQL when asked ordinary questions.",
+    },
+    {
+      t: "p",
+      text: "To confirm it, I ran the real function against a throwaway database, with a fake model returning the query. A generated `DELETE` emptied the table and a `DROP` removed it.",
     },
     {
       t: "p",
       text: "The principle is simple: an instruction to a model is a request, not an enforcement. Real controls belong in code and in permissions, in that order of convenience and the reverse order of strength.",
     },
     {
+      t: "p",
+      text: "[The fix](https://github.com/AbraraliS/DataTalkPro/commit/18385beaf77db84c3cf605f5665c1e7243438710) moves the decision out of the prompt and ahead of the database call. Generated SQL is checked first, and a refused query returns without ever being run.",
+    },
+    {
       t: "code",
       lang: "python",
-      file: "A sketch of the fix, not current repo code",
-      code: `import sqlglot
-from sqlglot import exp
-
-def run_read_only(db, sql: str):
-    statements = sqlglot.parse(sql, read="mysql")
-    if len(statements) != 1 or not isinstance(statements[0], exp.Select):
-        raise ValueError("Only a single SELECT statement is allowed.")
-    return db.run(sql)`,
+      file: "src/app.py",
+      code: `query = sql_chain.invoke({
+    "chat_history": chat_history,
+    "question": user_query
+})
+try:
+    safe_query = check_read_only(query)
+except UnsafeQueryError:
+    return REFUSAL`,
     },
     {
       t: "p",
-      text: "Parsing the statement is better than searching for the word `DELETE`, because text matching is easy to get wrong in both directions. The strongest control sits outside the application: connect with a database user that only has `SELECT` rights. Then even a bug in the check cannot change any data.",
+      text: "The check itself is an allowlist. A query runs only if it parses as a single known read statement, and anything else is refused, including SQL that can't be parsed.",
+    },
+    {
+      t: "code",
+      lang: "python",
+      file: "src/sql_guard.py, shortened",
+      code: `statements = [s for s in sqlglot.parse(cleaned, read="mysql") if s is not None]
+if len(statements) != 1:
+    raise UnsafeQueryError("Only one statement can run at a time.")
+
+statement = statements[0]
+if not isinstance(statement, _READ_STATEMENTS):
+    raise UnsafeQueryError(f"{type(statement).__name__} statements are not allowed.")
+
+for node in statement.walk():
+    if isinstance(node, _FORBIDDEN_PARTS):
+        raise UnsafeQueryError(f"{type(node).__name__} is not allowed.")`,
+    },
+    {
+      t: "p",
+      text: "Parsing is better than searching for the word `DELETE`, because text matching fails in both directions: it misses `REPLACE` and it wrongly blocks a column called `deleted_at`. Walking the whole statement matters because a `SELECT` can still do more than read, for example by taking locks with `FOR UPDATE`. With the fix in place, the same test leaves every row where it was.",
+    },
+    {
+      t: "p",
+      text: "The strongest control still sits outside the application: connect with a database user that only has `SELECT` rights. Then even a bug in the check cannot change any data.",
     },
     { t: "h2", text: "Fit the model to the machine you have" },
     {
