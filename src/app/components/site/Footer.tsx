@@ -139,6 +139,7 @@ export default function Footer() {
           </small>
           <div>
             <Link href="/privacy">Privacy</Link>
+            <Link href="/sitemap">Sitemap</Link>
             <a href="#main">Back to top</a>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Post, PostBlock } from "@/Types/types";
+import { buildingCriza } from "./building-criza";
 import { gitstoreUploadPipeline } from "./gitstore-upload-pipeline";
 import { llmFeatures } from "./llm-features";
 import { oneServiceOrThree } from "./one-service-or-three";
@@ -7,6 +8,7 @@ import { responsive } from "./responsive";
 
 /** Listed newest first; entries with the same date keep this order. */
 const posts: Post[] = [
+  buildingCriza,
   llmFeatures,
   gitstoreUploadPipeline,
   oneServiceOrThree,

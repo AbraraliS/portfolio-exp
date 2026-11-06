@@ -14,7 +14,12 @@ import ProjectCard from "./ProjectCard";
 
 const projects = projectsInOrder();
 const lineOrder: ProjectLine[] = ["ai", "agents", "systems", "web"];
-const originOrder: ProjectOrigin[] = ["personal", "client", "prototype"];
+const originOrder: ProjectOrigin[] = [
+  "company",
+  "personal",
+  "client",
+  "prototype",
+];
 
 /* Origins with no projects stay out of the filter. */
 const origins = originOrder.filter((origin) =>
@@ -22,6 +27,7 @@ const origins = originOrder.filter((origin) =>
 );
 
 const originPlural: Record<ProjectOrigin, string> = {
+  company: "My company",
   personal: "Personal",
   client: "Client",
   prototype: "Prototypes",

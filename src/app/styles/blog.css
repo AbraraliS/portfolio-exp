@@ -547,3 +547,16 @@
     animation-range: entry 0% entry 40%;
   }
 }
+
+/* --- Sitemap page ------------------------------------------------------- */
+
+.sitemap-groups {
+  display: grid;
+  gap: 40px clamp(32px, 5vw, 72px);
+}
+
+@media (min-width: 900px) {
+  .sitemap-groups {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+}

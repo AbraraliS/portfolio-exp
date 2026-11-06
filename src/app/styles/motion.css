@@ -1612,6 +1612,14 @@
   margin-top: 22px;
 }
 
+.about-copy a {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--line-ai);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 .about-copy-wide {
   max-width: 76ch;
 }

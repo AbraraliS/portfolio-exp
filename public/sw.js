@@ -15,16 +15,16 @@ if (!self.define) {
         return e;
       })
   );
-  self.define = (i, r) => {
-    const c =
+  self.define = (i, c) => {
+    const r =
       e ||
       ("document" in self ? document.currentScript.src : "") ||
       location.href;
-    if (s[c]) return;
+    if (s[r]) return;
     let n = {};
-    const t = (e) => a(e, c),
-      o = { module: { uri: c }, exports: n, require: t };
-    s[c] = Promise.all(i.map((e) => o[e] || t(e))).then((e) => (r(...e), n));
+    const t = (e) => a(e, r),
+      o = { module: { uri: r }, exports: n, require: t };
+    s[r] = Promise.all(i.map((e) => o[e] || t(e))).then((e) => (c(...e), n));
   };
 }
 define(["./workbox-f1770938"], function (e) {
@@ -51,20 +51,20 @@ define(["./workbox-f1770938"], function (e) {
           revision: "28b70244abc3048a4ba072a085e661f7",
         },
         {
-          url: "/_next/static/BXsDaSAVU_1XF2xpi0Bsc/_buildManifest.js",
-          revision: "a7722c58472051aae130714d104bcfca",
+          url: "/_next/static/CAITOUXIchM3kX_JuxZiE/_buildManifest.js",
+          revision: "567463dac6924211c0d5a1c86fce0f08",
         },
         {
-          url: "/_next/static/BXsDaSAVU_1XF2xpi0Bsc/_ssgManifest.js",
+          url: "/_next/static/CAITOUXIchM3kX_JuxZiE/_ssgManifest.js",
           revision: "b6652df95db52feb4daf4eca35380933",
         },
         {
-          url: "/_next/static/chunks/125-4716c1d418120a39.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/125-f410ce28e971c538.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/173-83818c8b39c951d3.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/203.2b4c1ee4fbe3a7cf.js",
@@ -76,15 +76,15 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/_next/static/chunks/455-cb52452f058d84d6.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/4bd1b696-f694dce5afea0dbb.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/chunks/546-ea17d50c93f91baf.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/546-6c6dc70cf3c654c1.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/719.1e54262ee97d014d.js",
@@ -92,91 +92,95 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/_next/static/chunks/970-246733d244944b9d.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/app/_not-found/page-4901dac67fdaac78.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/chunks/app/about/page-26f96481c7689095.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/app/about/page-afe325eaa986a195.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/app/api/contact/route-669d90d481f55f3c.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/app/blog/%5Bslug%5D/page-1b9549ac69b40400.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/chunks/app/blog/page-6b7cbcb33656b573.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/app/blog/page-3a1831672434e951.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/app/contact/page-35b50af6b3fe835f.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/chunks/app/layout-2741d0e9393eb7c2.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/app/layout-695f3fb2f8d7b860.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/chunks/app/not-found-77bbe964144d6d42.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/app/not-found-b9be888e4507c643.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/chunks/app/page-04565c2af73b1b40.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/app/page-eaf9bc0ce6b8a180.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/chunks/app/privacy/page-f5ed7d6797d12472.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/app/privacy/page-1b882ac4fbc7b01e.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/app/projects/%5Bid%5D/page-2ba9cfd5f46a9377.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/app/projects/page-f31f5222b26bfd10.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
+        },
+        {
+          url: "/_next/static/chunks/app/sitemap/page-94a3821e228e15c2.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/app/template-ef1c418165c0084d.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/framework-d29117d969504448.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/main-8447b526b8a49ddb.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/main-app-eb0549cfe53aafd9.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/pages/_app-60989c630625b0d6.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/pages/_error-8a20a8cc0e244b4c.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
           url: "/_next/static/chunks/polyfills-42372ed130431b0a.js",
           revision: "846118c33b2c0e922d7b3a7676f81f6f",
         },
         {
-          url: "/_next/static/chunks/webpack-36565ecba5550efa.js",
-          revision: "BXsDaSAVU_1XF2xpi0Bsc",
+          url: "/_next/static/chunks/webpack-eb320160fea12fc7.js",
+          revision: "CAITOUXIchM3kX_JuxZiE",
         },
         {
-          url: "/_next/static/css/e160ef025d9c7b02.css",
-          revision: "e160ef025d9c7b02",
+          url: "/_next/static/css/a9e512ec741e7926.css",
+          revision: "a9e512ec741e7926",
         },
         {
           url: "/_next/static/media/313510e2713fb214-s.p.woff2",
@@ -267,24 +271,28 @@ define(["./workbox-f1770938"], function (e) {
           revision: "a184f9e3fc4d049f06409709f3050d90",
         },
         {
+          url: "/blog/og/building-criza-a-studio-website-you-can-check.png",
+          revision: "ee4d9dee3eac471722ff3dac3a2c61f1",
+        },
+        {
           url: "/blog/og/designing-an-upload-pipeline-around-github-limits.png",
-          revision: "60f716ee4850f08094f27542cbc33f2f",
+          revision: "f6bbd38c0bcba4f9920cc6a605be0a4a",
         },
         {
           url: "/blog/og/lessons-from-shipping-llm-features.png",
-          revision: "b96c3e1d08798d3b2da3a58c81f789be",
+          revision: "65e29e01a57581aae80473a9b99b4435",
         },
         {
           url: "/blog/og/one-service-or-three-texora-and-buysmart-architecture.png",
-          revision: "69dfae546bda39391e146fe406a6b740",
+          revision: "2adf1cd8a2dc834be90fdb935e395a37",
         },
         {
           url: "/blog/og/performance-and-seo-for-a-nextjs-portfolio.png",
-          revision: "dcb18304d00bb28d05bd9a01ceefb0ca",
+          revision: "4a770d8624e58f2e0f6f7ac0372ab4d7",
         },
         {
           url: "/blog/og/responsive-design-beyond-breakpoints.png",
-          revision: "2e70eeae75f1673534d2136fe0e5c6ab",
+          revision: "0a5f9a588d3b39a133ff82c7491fb3a4",
         },
         { url: "/logo.png", revision: "a797b3505f7eea13d58277a92c4b1345" },
         {
@@ -323,7 +331,7 @@ define(["./workbox-f1770938"], function (e) {
           url: "/lottie/study.json",
           revision: "c7f0f0aab6a33d8e8d0edf89e3b3c076",
         },
-        { url: "/og.png", revision: "0d4eff87e09dc0dd0e049568fed97157" },
+        { url: "/og.png", revision: "a28cf19493a2c28af633a4e519edaa37" },
         {
           url: "/placeholder/placeholder.png",
           revision: "c83aa10e488792c4e2e77a46ed396914",
@@ -333,6 +341,26 @@ define(["./workbox-f1770938"], function (e) {
           revision: "241a2e7708b96042a4220b52bed4cf01",
         },
         { url: "/profile.jpg", revision: "613a67f42b2981660ca3d116e49ab72d" },
+        {
+          url: "/projects/criza/criza-home.png",
+          revision: "59479ce8c8c86c6014a4a8a879eaa07f",
+        },
+        {
+          url: "/projects/criza/criza-launch-checklist.png",
+          revision: "77c14b92f6e08d6d013ba8e0245e0e9c",
+        },
+        {
+          url: "/projects/criza/criza-live-metrics.png",
+          revision: "85ea05e6c668e970270e8d90b230a2fc",
+        },
+        {
+          url: "/projects/criza/criza-portfolio.png",
+          revision: "c9bc6c5cf2fe3fc8a03a9f54b71cdcba",
+        },
+        {
+          url: "/projects/criza/criza-project-brief.png",
+          revision: "14e3ede3ee19a3da33de0eb36a08ae04",
+        },
         {
           url: "/projects/gitstore/gitstore-main.png",
           revision: "a939a61158d2d3f8e4afff7ede0d8631",

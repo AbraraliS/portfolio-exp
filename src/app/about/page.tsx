@@ -64,10 +64,19 @@ export default function AboutPage() {
               production-ready applications.
             </p>
             <p>
-              I work across web, mobile and backend, integrating AI and
-              automation where it adds real value. I've worked on client and
-              independent projects since 2022, alongside a Master of Computer
-              Applications at REVA University in Bengaluru, with a CGPA of 9.44.
+              I co-founded{" "}
+              <a
+                href="https://criza.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Criza
+              </a>
+              , a software and AI studio, with AkbarAli N. I work across web,
+              mobile and backend, integrating AI and automation where it adds
+              real value. I've worked on client and independent projects since
+              2022, alongside a Master of Computer Applications at REVA
+              University in Bengaluru, with a CGPA of 9.44.
             </p>
           </Reveal>
           <Reveal>

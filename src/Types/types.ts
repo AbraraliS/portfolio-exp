@@ -1,5 +1,5 @@
 /** Where a project came from. Shown on every card and filterable. */
-export type ProjectOrigin = "personal" | "client" | "prototype";
+export type ProjectOrigin = "company" | "personal" | "client" | "prototype";
 
 /** Discipline colour on the system map. */
 export type ProjectLine = "ai" | "agents" | "systems" | "web";

@@ -57,6 +57,11 @@ const personJsonLd = {
   "@type": "Person",
   name: personalData.name,
   jobTitle: personalData.designation,
+  worksFor: {
+    "@type": "Organization",
+    name: "Criza",
+    url: "https://criza.dev",
+  },
   url: SITE_URL,
   image: `${SITE_URL}/profile-portrait.webp`,
   address: {

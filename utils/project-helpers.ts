@@ -9,6 +9,7 @@ export const lineLabels: Record<ProjectLine, string> = {
 };
 
 export const originLabels: Record<ProjectOrigin, string> = {
+  company: "My company",
   personal: "Personal project",
   client: "Client project",
   prototype: "Hackathon prototype",
