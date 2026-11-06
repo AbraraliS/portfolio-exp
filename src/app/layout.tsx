@@ -1,79 +1,144 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import type { Metadata, Viewport } from "next";
+import { Big_Shoulders_Display, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ScrollToTopButton from "@/../utils/ScrollToTopButton";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+import "./styles/motion.css";
+import "./styles/blog.css";
+import { personalData } from "@/../utils/Data/PersonalData";
+import { allPosts } from "@/../utils/Data/posts";
+import { projectName, projectsInOrder } from "@/../utils/project-helpers";
+import CommandPalette, { PaletteItem } from "./components/site/CommandPalette";
+import Nav from "./components/site/Nav";
+import Footer from "./components/site/Footer";
+import JsonLd from "./components/site/JsonLd";
+import { shareMeta, SITE_URL } from "@/../utils/site";
+
+const display = Big_Shoulders_Display({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-display",
+  display: "swap",
 });
 
+const text = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-text",
+  display: "swap",
+});
+
+const TITLE = "Abrarali Sunasara | Full Stack & Systems Engineer";
+const DESCRIPTION =
+  "Full stack and systems engineer in Bengaluru building complete products: interfaces and mobile apps, backend architecture, APIs and AI workflows.";
+
 export const metadata: Metadata = {
-  title: "Abrarali Sunasara | Full Stack & Systems Engineer",
-  description:
-    "I design and build complete systems — from frontend interfaces and mobile apps to backend architecture, APIs, and AI-driven workflows.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: TITLE, template: "%s | Abrarali Sunasara" },
+  description: DESCRIPTION,
   keywords: [
     "Abrarali Sunasara",
-    "Full Stack & Systems Engineer",
+    "Full Stack Engineer",
+    "Systems Engineer",
     "System Architecture",
     "AI Integration",
     "Backend Developer",
     "React Native",
+    "Bengaluru",
   ],
-  authors: [{ name: "Abrarali Sunasara" }],
-  openGraph: {
-    title: "Abrarali Sunasara | Full Stack & Systems Engineer",
-    description:
-      "I design and build complete systems — from frontend interfaces and mobile apps to backend architecture, APIs, and AI-driven workflows.",
-    url: "https://abraralisunasara.vercel.app", // Placeholder
-    siteName: "Abrarali Sunasara Portfolio",
-    images: [
-      {
-        url: "/Website-overview.png", // Assuming kept same
-        width: 1200,
-        height: 630,
-        alt: "Abrarali Sunasara Portfolio Overview",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Abrarali Sunasara | Full Stack & Systems Engineer",
-    description:
-      "I design and build complete systems — from frontend interfaces and mobile apps to backend architecture.",
-    images: ["/Website-overview.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  authors: [{ name: personalData.name, url: SITE_URL }],
+  ...shareMeta({ title: TITLE, description: DESCRIPTION, path: "/" }),
+  robots: { index: true, follow: true },
 };
+
+export const viewport: Viewport = {
+  themeColor: "#0C3B40",
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: personalData.name,
+  jobTitle: personalData.designation,
+  url: SITE_URL,
+  image: `${SITE_URL}/profile-portrait.webp`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bengaluru",
+    addressCountry: "IN",
+  },
+  sameAs: [
+    personalData.github,
+    personalData.linkedIn,
+    personalData.gitlab,
+    personalData.youtube,
+    personalData.twitter,
+  ].filter(Boolean),
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: personalData.name,
+  url: SITE_URL,
+};
+
+const paletteItems: PaletteItem[] = [
+  { label: "Home", hint: "Page", href: "/", terms: "start map" },
+  { label: "All projects", hint: "Page", href: "/projects", terms: "work" },
+  {
+    label: "About",
+    hint: "Page",
+    href: "/about",
+    terms: "experience education",
+  },
+  { label: "Blog", hint: "Page", href: "/blog", terms: "articles writing" },
+  {
+    label: "Contact",
+    hint: "Page",
+    href: "/contact",
+    terms: "email hire phone",
+  },
+  ...projectsInOrder().map((project) => ({
+    label: projectName(project),
+    hint: project.type ?? "Project",
+    href: `/projects/${project.id}`,
+    terms: [project.name, project.category, ...(project.tools ?? [])]
+      .join(" ")
+      .toLowerCase(),
+  })),
+  ...allPosts().map((post) => ({
+    label: post.title,
+    hint: "Article",
+    href: `/blog/${post.slug}`,
+    terms: post.skills.join(" ").toLowerCase(),
+  })),
+];
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        <main className="text-white">
-          <div className="container">{children}</div>
-        </main>
-        <ScrollToTopButton />
+    <html
+      lang="en"
+      className={`${display.variable} ${text.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Scroll reveals only hide content once we know JS can show it again. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+        <JsonLd data={personJsonLd} />
+        <JsonLd data={websiteJsonLd} />
+      </head>
+      <body>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <Nav />
+        <main id="main">{children}</main>
         <Footer />
+        <CommandPalette items={paletteItems} />
       </body>
     </html>
   );

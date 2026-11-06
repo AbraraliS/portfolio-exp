@@ -1,17 +1,43 @@
-import { ReactNode } from "react";
+/** Where a project came from. Shown on every card and filterable. */
+export type ProjectOrigin = "personal" | "client" | "prototype";
 
-export interface AnimationLottieProps {
-  animationPath: object; // JSON object for the animation data.
-  width?: string | number; // Optional width prop for customization.
+/** Discipline colour on the system map. */
+export type ProjectLine = "ai" | "agents" | "systems" | "web";
+
+/** One unit of article content. Text fields accept `code`, **bold** and [links](/url). */
+export type PostBlock =
+  | { t: "p"; text: string }
+  | { t: "h2"; text: string }
+  | { t: "note"; text: string }
+  | { t: "quote"; text: string; cite: string }
+  | { t: "list"; items: string[]; ordered?: boolean }
+  | { t: "code"; lang: string; code: string; file?: string }
+  | { t: "route"; stops: string[]; label: string }
+  | { t: "table"; head: string[]; rows: string[][] };
+
+export interface Post {
+  slug: string;
+  title: string;
+  description: string;
+  excerpt: string;
+  /** Publication date, YYYY-MM-DD. */
+  date: string;
+  line: ProjectLine;
+  /** The stages drawn as this article's cover route. */
+  stops: string[];
+  /** Ids of projects the article discusses. */
+  projects: string[];
+  skills: string[];
+  blocks: PostBlock[];
 }
-export interface GlowCardProps {
-  children: ReactNode;
-  identifier: string;
-}
+
 export interface Project {
   id: string | number;
   name: string;
   description: string;
+  origin: ProjectOrigin;
+  originNote?: string;
+  line: ProjectLine;
   shortTitle?: string;
   fullName?: string;
   tools?: string[];
@@ -58,6 +84,7 @@ export interface Project {
   security?: string[];
   performance?: string[];
 }
+
 export interface Achievement {
   title?: string;
   name?: string; // For backward compatibility
@@ -67,11 +94,4 @@ export interface Achievement {
   id?: string;
   link?: string;
   year?: string;
-}
-
-export interface ProjectCardProps {
-  project: Project;
-}
-export interface Props {
-  children: ReactNode;
 }

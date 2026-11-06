@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "A portfolio Progressive Web App built by Abrarali Sunasara",
     start_url: "/",
     display: "standalone",
-    background_color: "#000000",
-    theme_color: "#000000",
+    background_color: "#0C3B40",
+    theme_color: "#0C3B40",
     icons: [
       {
         src: "/Pwa-logos/new-icons/manifest-icon-192.maskable.png",

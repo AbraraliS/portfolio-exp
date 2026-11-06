@@ -3,6 +3,9 @@ import { Project } from "@/Types/types";
 export const projectsData: Project[] = [
   {
     id: "texora-marketplace",
+    origin: "prototype",
+    line: "web",
+    originNote: "Built as a hackathon MVP; marketplace listings are seed data.",
     name: "Texora — B2B Textile Marketplace",
     shortTitle: "Texora",
     description:
@@ -39,14 +42,12 @@ export const projectsData: Project[] = [
     ],
     status: "Completed",
     images: [
-      "/projects/texora/Home-page.png",
-      "/projects/texora/Marketplace.png",
-      "/projects/texora/product-details.png",
-      "/projects/texora/supplyer-dashboard.png",
-      "/projects/texora/Order_Management.png",
-      "/projects/texora/supplyer-directory.png",
+      "/projects/texora/texora-home.png",
+      "/projects/texora/texora-marketplace.png",
+      "/projects/texora/texora-product.png",
+      "/projects/texora/texora-assistant.png",
     ],
-    thumbnail: "/projects/texora/texora-poster.png",
+    thumbnail: "/projects/texora/texora-home.png",
     system_architecture: {
       type: "Full Stack Marketplace Architecture",
       components: [
@@ -63,6 +64,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "buysmart-ai",
+    origin: "personal",
+    line: "ai",
     name: "BuySmart AI — Intelligent Product Analysis Platform",
     shortTitle: "BuySmart AI",
     description:
@@ -103,14 +106,13 @@ export const projectsData: Project[] = [
     ],
     status: "Completed",
     images: [
-      "/assets/projects/buysmart/buysmart-overview.png",
       "/assets/projects/buysmart/buysmart-dashboard.png",
       "/assets/projects/buysmart/buysmart-analysis.png",
       "/assets/projects/buysmart/buysmart-search.png",
       "/assets/projects/buysmart/buysmart-architecture.png",
       "/assets/projects/buysmart/buysmart-wishlist.png",
     ],
-    thumbnail: "/assets/projects/buysmart/buysmart-overview.png",
+    thumbnail: "/assets/projects/buysmart/buysmart-dashboard.png",
     system_architecture: {
       type: "Microservices Architecture",
       components: [
@@ -128,6 +130,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "1",
+    origin: "personal",
+    line: "ai",
     name: "TIPS — Temporal Interview Profiling System",
     shortTitle: "TIPS",
     description:
@@ -196,6 +200,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "2",
+    origin: "personal",
+    line: "agents",
     name: "OpenClaw Orchestrator",
     shortTitle: "OpenClaw",
     description:
@@ -260,6 +266,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "3",
+    origin: "personal",
+    line: "systems",
     name: "GitStore — GitHub-Based Distributed File System",
     github: "https://github.com/AbraraliS/GitSmartStorage",
     shortTitle: "GitStore",
@@ -333,6 +341,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "4",
+    origin: "personal",
+    line: "ai",
     name: "SurveySense — AI Survey Platform",
     fullName: "SurveySense — AI-Driven Survey Web Application",
     shortTitle: "SurveySense",
@@ -403,6 +413,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "5",
+    origin: "personal",
+    line: "agents",
     name: "LabelFlow — Data Annotation & QA Platform",
     shortTitle: "LabelFlow",
     description:
@@ -478,6 +490,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "6",
+    origin: "personal",
+    line: "ai",
     name: "DataTalk Pro — AI Database Query Assistant",
     github: "https://github.com/AbraraliS/DataTalkPro",
     shortTitle: "DataTalk Pro",
@@ -515,6 +529,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "7",
+    origin: "personal",
+    line: "ai",
     name: "AI ChatBot — Movie Recommendation System",
     shortTitle: "MovieBot",
     description:
@@ -545,6 +561,8 @@ export const projectsData: Project[] = [
   },
   {
     id: "8",
+    origin: "personal",
+    line: "web",
     name: "InvenTrack Pro — Inventory Management Platform",
     shortTitle: "InvenTrack",
     description:

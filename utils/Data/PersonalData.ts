@@ -19,7 +19,7 @@ export const personalData = {
   Instagram: "https://www.instagram.com/abrar00429?igsh=NnRkMWZhcXN1M3Vo",
   linkedIn: "https://linkedin.com/in/abraralis",
   youtube: "https://www.youtube.com/@abraralis7",
-  twitter: "https://x.com/shadow07dev",
+  twitter: "https://x.com/abrarali429",
   gitlab: "https://gitlab.com/AbraraliS",
   stackOverflow: "",
   devUsername: "Abrarali",

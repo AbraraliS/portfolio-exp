@@ -1,43 +1,46 @@
+import type { Metadata } from "next";
 import { projectsData } from "@/../utils/Data/projects-data";
-import ProjectCard from "@/app/components/projects/project-card";
+import { breadcrumbJsonLd, shareMeta } from "@/../utils/site";
+import ProjectExplorer from "../components/projects/ProjectExplorer";
+import JsonLd from "../components/site/JsonLd";
 
-const ProjectsPage = () => {
-  return (
-    <section id="projects" className="relative min-h-screen  overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-red-600/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-900/10 blur-[120px] rounded-full pointer-events-none" />
+const description =
+  "AI systems, distributed storage, agent orchestration and full stack products built by Abrarali Sunasara.";
 
-      <div className="flex flex-col gap-16 items-center container mx-auto py-24 px-4 sm:px-8 relative z-10">
-        <div className="max-w-3xl text-center flex flex-col gap-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter text-balance leading-tight">
-            The Digital{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
-              Vault
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-400 leading-relaxed font-medium italic">
-            A comprehensive archive of high-performance applications, innovative
-            experiments, and full-stack solutions built with mission-critical
-            precision.
-          </p>
-        </div>
-
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 w-full">
-          {projectsData
-            .sort((a, b) => {
-              if (a.featured !== b.featured) return a.featured ? -1 : 1;
-              return (a.priority ?? 999) - (b.priority ?? 999);
-            })
-            .map((project) => (
-              <div key={project.id} className="h-full">
-                <ProjectCard project={project} />
-              </div>
-            ))}
-        </div>
-      </div>
-    </section>
-  );
+export const metadata: Metadata = {
+  title: "Projects",
+  description,
+  alternates: { canonical: "/projects" },
+  ...shareMeta({
+    title: "Projects | Abrarali Sunasara",
+    description,
+    path: "/projects",
+  }),
 };
 
-export default ProjectsPage;
+export default function ProjectsPage() {
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+        ])}
+      />
+      <header className="page-head">
+        <div className="page-head-inner">
+          <h1>All projects</h1>
+          <p>
+            {projectsData.length} projects, each with its role, origin, stack
+            and verified links. Filter by discipline or by where the work came
+            from.
+          </p>
+        </div>
+      </header>
+      <div className="plain-shell">
+        <h2 className="sr-only">Project list</h2>
+        <ProjectExplorer />
+      </div>
+    </>
+  );
+}
