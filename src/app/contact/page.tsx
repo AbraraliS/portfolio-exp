@@ -47,14 +47,6 @@ export default function ContactPage() {
               </dd>
             </div>
             <div>
-              <dt>Phone</dt>
-              <dd>
-                <a href={`tel:${personalData.phone.replace(/\s/g, "")}`}>
-                  {personalData.phone}
-                </a>
-              </dd>
-            </div>
-            <div>
               <dt>Location</dt>
               <dd>{personalData.address}</dd>
             </div>

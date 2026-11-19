@@ -12,7 +12,6 @@ export const personalData = {
   description:
     "I design and build complete systems — from frontend interfaces and mobile apps to backend architecture, APIs, and AI-driven workflows. My focus is on scalable system design, clean architecture, and production-ready applications. I work across web, mobile, and backend, integrating AI and automation where it adds real value.",
   email: "abrarali.sunasara28@gmail.com",
-  phone: "+91 7203957429",
   address: "Bengaluru, India",
   github: "https://github.com/abraralis",
   facebook: "",

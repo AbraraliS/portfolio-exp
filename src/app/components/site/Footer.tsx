@@ -100,11 +100,6 @@ export default function Footer() {
                       {personalData.email}
                     </a>
                   </li>
-                  <li>
-                    <a href={`tel:${personalData.phone.replace(/\s/g, "")}`}>
-                      {personalData.phone}
-                    </a>
-                  </li>
                   <li className="footer-plain">{personalData.address}</li>
                 </ul>
               </div>
