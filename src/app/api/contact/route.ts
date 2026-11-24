@@ -1,6 +1,5 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
-import { personalData } from "@/../utils/Data/PersonalData";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "dummy_key");
 
@@ -23,7 +22,8 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: personalData.email,
+      // The form keeps delivering to the inbox Resend is set up for; the site shows abrar@criza.dev.
+      to: process.env.CONTACT_TO || "abrarali.sunasara28@gmail.com",
       subject: `New Message from ${name} (Portfolio)`,
       replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,

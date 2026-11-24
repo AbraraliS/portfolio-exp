@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   }),
 };
 
-const UPDATED = "6 November 2026";
+const UPDATED = "24 November 2026";
 
 export default function PrivacyPage() {
   return (
@@ -99,7 +99,13 @@ export default function PrivacyPage() {
           <h2>Your data</h2>
           <p>
             To ask about or delete a message you sent me, email{" "}
-            <a href={`mailto:${personalData.email}`}>{personalData.email}</a>.
+            <a href={`mailto:${personalData.email}`}>{personalData.email}</a>. I
+            reply and act within 30 days, as India&apos;s Digital Personal Data
+            Protection Act asks.
+          </p>
+          <p>
+            By using this website you accept this notice and the{" "}
+            <Link href="/terms">terms of use</Link>.
           </p>
         </div>
       </div>

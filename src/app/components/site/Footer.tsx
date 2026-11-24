@@ -7,6 +7,14 @@ import Reveal from "./Reveal";
 import { socials } from "./socials";
 
 const FEATURED_PROJECTS = 4;
+
+/** The studio I lead and its products. */
+const crizaSites = [
+  { label: "Criza Labs studio", href: "https://criza.dev" },
+  { label: "Crizo for Android", href: "https://crizo.criza.dev" },
+  { label: "CrizaVoise billing", href: "https://voise.criza.dev" },
+  { label: "CrizaTools", href: "https://tools.criza.dev" },
+];
 const LATEST_POSTS = 3;
 
 const pages = [
@@ -92,6 +100,16 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
+              <div>
+                <h2>Criza Labs</h2>
+                <ul>
+                  {crizaSites.map((site) => (
+                    <li key={site.href}>
+                      <a href={site.href}>{site.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <div className="footer-col-contact">
                 <h2>Contact</h2>
                 <ul>
@@ -134,6 +152,7 @@ export default function Footer() {
           </small>
           <div>
             <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
             <Link href="/sitemap">Sitemap</Link>
             <a href="#main">Back to top</a>
           </div>

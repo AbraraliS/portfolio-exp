@@ -906,7 +906,7 @@
   .btn-ghost:hover {
     border-color: var(--on-deep);
     background: transparent;
-    color: var(--deep);
+    color: var(--ink);
   }
 
   .btn-signal:hover,
@@ -1488,7 +1488,7 @@
 
 .footer-wordmark {
   margin-top: 28px;
-  color: var(--deep);
+  color: var(--ink);
   font-family: var(--font-display);
   font-size: min(24vw, 150px);
   font-weight: 800;

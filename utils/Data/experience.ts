@@ -2,11 +2,11 @@ export const experiences = [
   {
     id: 0,
     title: "Co-Founder, Full-Stack & AI Engineer",
-    company: "Criza",
+    company: "Criza Labs",
     duration: "Current",
     details: [
-      "Co-founded a software and AI studio with AkbarAli N.",
-      "Handle interfaces and full-stack delivery",
+      "Co-founded and lead Criza Labs, a software and AI studio",
+      "Design and build its products: Crizo, CrizaVoise and CrizaTools",
       "Build AI features and automation",
       "Scope projects with clients and support them after launch",
     ],

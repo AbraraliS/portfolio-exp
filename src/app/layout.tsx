@@ -59,9 +59,15 @@ const personJsonLd = {
   jobTitle: personalData.designation,
   worksFor: {
     "@type": "Organization",
-    name: "Criza",
+    name: "Criza Labs",
     url: "https://criza.dev",
   },
+  knowsAbout: [
+    "Full stack engineering",
+    "AI systems",
+    "Android apps",
+    "System architecture",
+  ],
   url: SITE_URL,
   image: `${SITE_URL}/profile-portrait.webp`,
   address: {
@@ -75,6 +81,7 @@ const personJsonLd = {
     personalData.gitlab,
     personalData.youtube,
     personalData.twitter,
+    "https://criza.dev/about/founders/abrar-ali",
   ].filter(Boolean),
 };
 
