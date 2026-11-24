@@ -5,14 +5,14 @@ import ProjectExplorer from "../components/projects/ProjectExplorer";
 import JsonLd from "../components/site/JsonLd";
 
 const description =
-  "AI systems, distributed storage, agent orchestration and full stack products built by Abrarali Sunasara.";
+  "AI systems, distributed storage, agent orchestration and full stack products built by AbrarAli S.";
 
 export const metadata: Metadata = {
   title: "Projects",
   description,
   alternates: { canonical: "/projects" },
   ...shareMeta({
-    title: "Projects | Abrarali Sunasara",
+    title: "Projects | AbrarAli S.",
     description,
     path: "/projects",
   }),

@@ -25,15 +25,16 @@ const text = Hanken_Grotesk({
   display: "swap",
 });
 
-const TITLE = "Abrarali Sunasara | Full Stack & Systems Engineer";
+const TITLE = "AbrarAli S. | Full Stack & Systems Engineer";
 const DESCRIPTION =
   "Full stack and systems engineer in Bengaluru building complete products: interfaces and mobile apps, backend architecture, APIs and AI workflows.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: TITLE, template: "%s | Abrarali Sunasara" },
+  title: { default: TITLE, template: "%s | AbrarAli S." },
   description: DESCRIPTION,
   keywords: [
+    "AbrarAli S.",
     "Abrarali Sunasara",
     "Full Stack Engineer",
     "Systems Engineer",
@@ -56,6 +57,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: personalData.name,
+  alternateName: ["AbrarAli", "Abrarali Sunasara"],
   jobTitle: personalData.designation,
   worksFor: {
     "@type": "Organization",

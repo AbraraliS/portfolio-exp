@@ -24,7 +24,7 @@ export const shareMeta = ({
     title,
     description,
     url: path,
-    siteName: "Abrarali Sunasara",
+    siteName: "AbrarAli S.",
     locale: "en_US",
     type,
     images: [{ url: image, alt: title }],

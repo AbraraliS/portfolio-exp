@@ -7,14 +7,14 @@ import JsonLd from "../components/site/JsonLd";
 import { socials } from "../components/site/socials";
 
 const description =
-  "Contact Abrarali Sunasara about engineering roles and freelance work in full stack development, system design and AI integration.";
+  "Contact AbrarAli S. about engineering roles and freelance work in full stack development, system design and AI integration.";
 
 export const metadata: Metadata = {
   title: "Contact",
   description,
   alternates: { canonical: "/contact" },
   ...shareMeta({
-    title: "Contact | Abrarali Sunasara",
+    title: "Contact | AbrarAli S.",
     description: description,
     path: "/contact",
   }),

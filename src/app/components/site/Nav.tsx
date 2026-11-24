@@ -143,13 +143,9 @@ export default function Nav() {
 
       <header className={`nav ${solid ? "nav-solid" : ""}`}>
         <div className="nav-inner">
-          <Link
-            href="/"
-            className="nav-brand"
-            aria-label="Abrarali Sunasara, home"
-          >
+          <Link href="/" className="nav-brand" aria-label="AbrarAli S., home">
             <Mark size={38} />
-            <span className="nav-name">Abrarali Sunasara</span>
+            <span className="nav-name">AbrarAli S.</span>
           </Link>
 
           <nav aria-label="Main" className="nav-links">

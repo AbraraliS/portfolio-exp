@@ -5,14 +5,14 @@ import PostCard from "../components/blog/PostCard";
 import JsonLd from "../components/site/JsonLd";
 
 const description =
-  "Articles on system design, AI features, responsive frontends and web performance, drawn from real projects with real code, by Abrarali Sunasara.";
+  "Articles on system design, AI features, responsive frontends and web performance, drawn from real projects with real code, by AbrarAli S.";
 
 export const metadata: Metadata = {
   title: "Blog",
   description,
   alternates: { canonical: "/blog" },
   ...shareMeta({
-    title: "Blog | Abrarali Sunasara",
+    title: "Blog | AbrarAli S.",
     description: description,
     path: "/blog",
   }),

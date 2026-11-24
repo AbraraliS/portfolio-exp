@@ -1,5 +1,5 @@
 export const personalData = {
-  name: "Abrarali Sunasara",
+  name: "AbrarAli S.",
   profile: "/profile.jpg",
   designation: "Full Stack & Systems Engineer",
   designationAlternateWords: [
@@ -21,7 +21,7 @@ export const personalData = {
   twitter: "https://x.com/abrarali429",
   gitlab: "https://gitlab.com/AbraraliS",
   stackOverflow: "",
-  devUsername: "Abrarali",
+  devUsername: "AbrarAli",
   leetcode: "",
   resume: "",
   certificationsDrive:

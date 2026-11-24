@@ -11,14 +11,14 @@ import Reveal from "../components/site/Reveal";
 import Stop from "../components/site/Stop";
 
 const description =
-  "About Abrarali Sunasara: full stack and systems engineer in Bengaluru. Experience, education, a published research paper, certifications and professional profiles.";
+  "About AbrarAli S.: full stack and systems engineer in Bengaluru. Experience, education, a published research paper, certifications and professional profiles.";
 
 export const metadata: Metadata = {
   title: "About",
   description,
   alternates: { canonical: "/about" },
   ...shareMeta({
-    title: "About | Abrarali Sunasara",
+    title: "About | AbrarAli S.",
     description: description,
     path: "/about",
     type: "profile",

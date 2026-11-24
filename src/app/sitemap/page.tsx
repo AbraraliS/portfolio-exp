@@ -6,14 +6,14 @@ import { breadcrumbJsonLd, shareMeta } from "@/../utils/site";
 import JsonLd from "../components/site/JsonLd";
 
 const description =
-  "Every page on Abrarali Sunasara's portfolio in one list: main pages, project case studies and blog articles.";
+  "Every page on AbrarAli S.'s portfolio in one list: main pages, project case studies and blog articles.";
 
 export const metadata: Metadata = {
   title: "Sitemap",
   description,
   alternates: { canonical: "/sitemap" },
   ...shareMeta({
-    title: "Sitemap | Abrarali Sunasara",
+    title: "Sitemap | AbrarAli S.",
     description,
     path: "/sitemap",
   }),

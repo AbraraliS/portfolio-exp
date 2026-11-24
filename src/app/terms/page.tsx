@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/terms" },
   ...shareMeta({
-    title: "Terms of use | Abrarali Sunasara",
+    title: "Terms of use | AbrarAli S.",
     description,
     path: "/terms",
   }),

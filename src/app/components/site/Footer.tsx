@@ -44,7 +44,7 @@ export default function Footer() {
               <Link
                 href="/"
                 className="footer-brand"
-                aria-label="Abrarali Sunasara, home"
+                aria-label="AbrarAli S., home"
               >
                 <Mark size={52} />
               </Link>
@@ -142,7 +142,7 @@ export default function Footer() {
 
         <div
           className="footer-wordmark"
-          data-name={personalData.name}
+          data-name="AbrarAli"
           aria-hidden="true"
         />
 

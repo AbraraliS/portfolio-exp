@@ -1,4 +1,4 @@
-# Personal Portfolio — Abrarali Sunasara
+# Personal Portfolio — AbrarAli S.
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -199,4 +199,4 @@ The portfolio is automatically deployed via **Vercel** with continuous integrati
 
 ---
 
-© 2026 Abrarali Sunasara. Built with Next.js and Tailwind CSS.
+© 2026 AbrarAli S. Built with Next.js and Tailwind CSS.
