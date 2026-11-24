@@ -150,6 +150,7 @@ export default function Footer() {
           <div>
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
+            <Link href="/support">Support</Link>
             <Link href="/sitemap">Sitemap</Link>
             <a href="#main">Back to top</a>
           </div>

@@ -1,4 +1,3 @@
-import Stop from "../site/Stop";
 import LocalTime from "./LocalTime";
 
 /**
@@ -103,11 +102,13 @@ export default async function LiveNow() {
   const checkedAt = new Date().toISOString();
 
   return (
-    <section id="live" className="section live">
-      <Stop
-        title="Live now"
-        intro="Not screenshots. These numbers come from my products and GitHub as this page is served."
-      />
+    <section id="live" className="folio-sec live" aria-labelledby="live-h">
+      <h2 id="live-h" className="folio-h">
+        Live now
+      </h2>
+      <p className="folio-muted">
+        Real numbers from my products and GitHub, refreshed every few minutes.
+      </p>
       <div className="live-grid">
         <article className="live-card live-release">
           <p className="live-label">

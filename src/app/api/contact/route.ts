@@ -22,8 +22,8 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      // The form keeps delivering to the inbox Resend is set up for; the site shows abrar@criza.dev.
-      to: process.env.CONTACT_TO || "abrarali.sunasara28@gmail.com",
+      // The inbox Resend delivers to is a private setting (Vercel env CONTACT_TO), never in this public repo.
+      to: process.env.CONTACT_TO || "abrar@criza.dev",
       subject: `New Message from ${name} (Portfolio)`,
       replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,

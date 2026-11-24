@@ -115,8 +115,8 @@
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: min(23vw, 160px);
-  font-weight: 800;
+  font-size: min(13.34vw, 92.8px);
+  font-weight: 650;
   line-height: 0.92;
   letter-spacing: -0.005em;
 }
@@ -408,7 +408,7 @@
 
   /* One huge line across the page: the name is the identity. */
   .hero-name {
-    font-size: min(11.6vw, 182px);
+    font-size: min(6.73vw, 105.56px);
     white-space: nowrap;
   }
 
@@ -825,8 +825,8 @@
   display: block;
   padding: 5px 0 5px 44px;
   font-family: var(--font-display);
-  font-size: clamp(34px, 10vw, 54px);
-  font-weight: 800;
+  font-size: clamp(19.72px, 5.8vw, 31.32px);
+  font-weight: 650;
   line-height: 1.1;
 }
 
@@ -1094,7 +1094,7 @@
   }
 
   .card-title {
-    font-size: 46px;
+    font-size: 28px;
   }
 
   .card-text {
@@ -1224,8 +1224,8 @@
 .closing h2 {
   max-width: 11ch;
   font-family: var(--font-display);
-  font-size: clamp(68px, 12vw, 190px);
-  font-weight: 800;
+  font-size: clamp(39.44px, 6.96vw, 110.2px);
+  font-weight: 650;
   line-height: 0.9;
 }
 
@@ -1276,8 +1276,8 @@
 
 .contact-copy h1 {
   font-family: var(--font-display);
-  font-size: clamp(64px, 10vw, 150px);
-  font-weight: 800;
+  font-size: clamp(37.12px, 5.8vw, 87px);
+  font-weight: 650;
   line-height: 0.92;
 }
 
@@ -1415,7 +1415,7 @@
   color: var(--signal);
   font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 650;
   line-height: 1.1;
 }
 
@@ -1490,8 +1490,8 @@
   margin-top: 28px;
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: min(24vw, 150px);
-  font-weight: 800;
+  font-size: min(13.92vw, 87px);
+  font-weight: 650;
   line-height: 0.9;
   user-select: none;
 }
@@ -1553,7 +1553,7 @@
   }
 
   .footer-wordmark {
-    font-size: min(14.1vw, 222px);
+    font-size: min(8.18vw, 128.76px);
     white-space: nowrap;
   }
 }
@@ -1645,15 +1645,15 @@
 .not-found-code {
   color: var(--signal);
   font-family: var(--font-display);
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 800;
+  font-size: clamp(17.4px, 2.32vw, 27.84px);
+  font-weight: 650;
   line-height: 1;
 }
 
 .page-head-inner > .not-found-code {
   margin: 0 0 8px;
   color: var(--signal);
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(17.4px, 2.32vw, 27.84px);
 }
 
 @media (min-width: 768px) {

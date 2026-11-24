@@ -15,7 +15,7 @@ export const personalData = {
   address: "Bengaluru, India",
   github: "https://github.com/abraralis",
   facebook: "",
-  Instagram: "https://www.instagram.com/abrar00429?igsh=NnRkMWZhcXN1M3Vo",
+  Instagram: "https://www.instagram.com/abrar00429",
   linkedIn: "https://linkedin.com/in/abraralis",
   youtube: "https://www.youtube.com/@abraralis7",
   twitter: "https://x.com/abrarali429",

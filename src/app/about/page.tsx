@@ -70,13 +70,13 @@ export default function AboutPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Criza
+                Criza Labs
               </a>
-              , a software and AI studio, with AkbarAli N. I work across web,
-              mobile and backend, integrating AI and automation where it adds
-              real value. I've worked on client and independent projects since
-              2022, alongside a Master of Computer Applications at REVA
-              University in Bengaluru, with a CGPA of 9.44.
+              , a software and AI studio, with AkbarAli N., and lead how we
+              build. I work across web, mobile and backend, integrating AI and
+              automation where it adds real value. I've worked on client and
+              independent projects since 2022, alongside a Master of Computer
+              Applications at REVA University in Bengaluru, with a CGPA of 9.44.
             </p>
           </Reveal>
           <Reveal>

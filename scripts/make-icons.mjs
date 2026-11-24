@@ -11,7 +11,7 @@ const TILE = "#08110c";
 
 /** The glyph on a 64 x 64 grid. */
 export const glyph = (ink = INK) => `
-  <path d="M12 54 32 9 52 54" fill="none" stroke="${ink}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 54C21 39 28 24 32 9C36 24 43 39 52 54" fill="none" stroke="${ink}" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M32 33 37 40 32 47 27 40Z" fill="${RED}"/>`;
 
 /** The glyph centred on a dark rounded tile; `scale` leaves room for maskable safe zones. */

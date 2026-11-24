@@ -8,59 +8,51 @@
    ========================================================================== */
 
 :root {
-  /* tasteskill-style dark, in AbrarAli's palette (2026-11-24): near-black green grounds, Criza red as the one
-     accent, Crizo mint, blue. No violet, pink or yellow. "paper" is now the main dark ground, "deep" the
-     deeper bands; "ink" is the light text. */
-  --deep: #050b08;
-  --deep-2: #0c1611;
-  --deep-3: #030705;
-  --deep-line: rgba(255, 255, 255, 0.1);
-  --paper: #08110c;
-  --paper-2: #101b15;
-  --ink: #eef3ef;
-  --ink-soft: #9fb1a6;
-  --on-deep: #eef3ef;
-  --on-deep-soft: #a9bab0;
-  --hairline: rgba(255, 255, 255, 0.09);
+  /* 2026-11-24 redesign: the two-column portfolio pattern, calm dark, small type.
+     Mint accent, the logo's red keystone as the one warm note. */
+  --deep: #070908;
+  --deep-2: #111513;
+  --deep-3: #050706;
+  --deep-line: rgba(255, 255, 255, 0.08);
+  --paper: #0b0e0d;
+  --paper-2: #131816;
+  --ink: #e7ece9;
+  --ink-soft: #94a19a;
+  --on-deep: #e7ece9;
+  --on-deep-soft: #94a19a;
+  --hairline: rgba(255, 255, 255, 0.08);
 
-  --signal: #ef4444;
-  --signal-hover: #f87171;
-  --on-signal: #ffffff;
+  --accent: #a1ffcb;
+  --key: #ef4444;
 
-  /* Discipline lines: AI red, agents blue, systems mint, web cyan. */
-  --line-ai: #ef4444;
-  --line-agents: #3b82f6;
-  --line-systems: #34d399;
-  --line-web: #22d3ee;
-  --line-ai-bright: #f87171;
+  --signal: #a1ffcb;
+  --signal-hover: #c6ffe0;
+  --on-signal: #0b0e0d;
+
+  --line-ai: #ff8b7a;
+  --line-agents: #93c5fd;
+  --line-systems: #a1ffcb;
+  --line-web: #67e8f9;
+  --line-ai-bright: #ff8b7a;
   --line-agents-bright: #93c5fd;
-  --line-systems-bright: #8af2be;
+  --line-systems-bright: #a1ffcb;
   --line-web-bright: #67e8f9;
 
-  --focus: #8af2be;
-  --shadow-s:
-    0 0 0 1px rgba(255, 255, 255, 0.07), 0 10px 30px -18px rgba(0, 0, 0, 0.8);
+  --focus: #a1ffcb;
+  --shadow-s: 0 0 0 1px rgba(255, 255, 255, 0.06);
   --shadow-m:
-    0 0 0 1px rgba(255, 255, 255, 0.09),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04),
-    0 28px 64px -30px rgba(0, 0, 0, 0.9);
+    0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 50px -30px rgba(0, 0, 0, 0.9);
 
-  --gutter: clamp(16px, 4vw, 56px);
+  --gutter: clamp(20px, 4vw, 48px);
   --rail-space: 0px;
-  --shell: 1560px;
+  --shell: 1200px;
 
-  --radius-s: 8px;
-  --radius-m: 14px;
-  --radius-l: 24px;
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 16px;
 
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --rail-space: 88px;
-  }
 }
 
 html {
@@ -79,7 +71,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-text), system-ui, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
@@ -277,7 +269,7 @@ section[id] {
 }
 
 .nav-solid {
-  background: rgba(8, 17, 12, 0.78);
+  background: rgba(11, 14, 13, 0.82);
   color: var(--ink);
   box-shadow: 0 1px 0 var(--hairline);
   backdrop-filter: blur(12px);
@@ -305,7 +297,7 @@ section[id] {
 .nav-name {
   font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 650;
   line-height: 1;
   white-space: nowrap;
 }
@@ -454,8 +446,8 @@ section[id] {
 
 .stop-title {
   font-family: var(--font-display);
-  font-size: clamp(64px, 10vw, 136px);
-  font-weight: 800;
+  font-size: clamp(37.12px, 5.8vw, 78.88px);
+  font-weight: 650;
   line-height: 0.92;
 }
 
@@ -485,8 +477,8 @@ section[id] {
 .subhead {
   margin-bottom: 20px;
   font-family: var(--font-display);
-  font-size: clamp(30px, 3vw, 40px);
-  font-weight: 800;
+  font-size: clamp(17.4px, 1.74vw, 23.2px);
+  font-weight: 650;
   line-height: 1.05;
 }
 
@@ -631,8 +623,8 @@ section[id] {
 .card-title {
   margin-top: 2px;
   font-family: var(--font-display);
-  font-size: clamp(42px, 4.4vw, 64px);
-  font-weight: 800;
+  font-size: clamp(24.36px, 2.55vw, 37.12px);
+  font-weight: 650;
   line-height: 1;
 }
 
@@ -761,7 +753,7 @@ section[id] {
   }
 
   .card-wide .card-title {
-    font-size: clamp(64px, 7vw, 104px);
+    font-size: clamp(37.12px, 4.06vw, 60.32px);
   }
 }
 
@@ -885,7 +877,7 @@ section[id] {
 }
 
 .about-lead {
-  font-size: clamp(25px, 3.2vw, 44px);
+  font-size: clamp(14.5px, 1.86vw, 25.52px);
   font-weight: 500;
   line-height: 1.18;
 }
@@ -954,7 +946,7 @@ section[id] {
 .skill-row h3 {
   font-family: var(--font-display);
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 650;
   line-height: 1.1;
 }
 
@@ -1091,8 +1083,8 @@ section[id] {
 .paper h3 {
   max-width: 22ch;
   font-family: var(--font-display);
-  font-size: clamp(38px, 5.4vw, 80px);
-  font-weight: 800;
+  font-size: clamp(22.04px, 3.13vw, 46.4px);
+  font-weight: 650;
   line-height: 1;
 }
 
@@ -1199,7 +1191,7 @@ section[id] {
 .profile-name {
   font-family: var(--font-display);
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 650;
   line-height: 1.1;
 }
 
@@ -1291,8 +1283,8 @@ section[id] {
 
 .contact-copy h2 {
   font-family: var(--font-display);
-  font-size: clamp(64px, 10vw, 150px);
-  font-weight: 800;
+  font-size: clamp(37.12px, 5.8vw, 87px);
+  font-weight: 650;
   line-height: 0.92;
 }
 
@@ -1463,8 +1455,8 @@ section[id] {
 
 .page-head h1 {
   font-family: var(--font-display);
-  font-size: clamp(68px, 13vw, 190px);
-  font-weight: 800;
+  font-size: clamp(39.44px, 7.54vw, 110.2px);
+  font-weight: 650;
   line-height: 0.88;
 }
 
@@ -1551,7 +1543,7 @@ section[id] {
   margin-top: 8px;
   font-family: var(--font-display);
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 650;
   line-height: 1;
 }
 
@@ -1596,8 +1588,8 @@ section[id] {
 .detail-block h2 {
   margin-bottom: 16px;
   font-family: var(--font-display);
-  font-size: clamp(42px, 4.6vw, 64px);
-  font-weight: 800;
+  font-size: clamp(24.36px, 2.67vw, 37.12px);
+  font-weight: 650;
   line-height: 1;
 }
 
@@ -1719,8 +1711,8 @@ section[id] {
 .next-stop strong {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(56px, 9vw, 120px);
-  font-weight: 800;
+  font-size: clamp(32.48px, 5.22vw, 69.6px);
+  font-weight: 650;
   line-height: 0.95;
 }
 
@@ -1902,17 +1894,6 @@ section[id] {
   fill: currentColor;
 }
 
-/* Film grain over the dark page (own SVG noise), as on tasteskill.dev. Fixed and non-interactive. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.16;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
 /* No fade-in on scroll: content is simply there (tasteskill rule). */
 html.js .reveal:not(.is-in),
 html.js [data-reveal]:not(.is-in) {
@@ -2147,8 +2128,8 @@ html.js [data-reveal]:not(.is-in) {
   overflow: hidden;
   padding: 0.04em 0 0.06em;
   font-family: var(--font-display);
-  font-size: min(23vw, 300px);
-  font-weight: 800;
+  font-size: min(13.34vw, 174px);
+  font-weight: 650;
   line-height: 0.86;
   letter-spacing: -0.02em;
   text-align: center;
@@ -2194,4 +2175,14 @@ html.js [data-reveal]:not(.is-in) {
     --wx: 50%;
     animation: none !important;
   }
+}
+
+/* The display face is now the text face (Hanken Grotesk), set calmer. */
+:root {
+  --font-display: var(--font-text);
+}
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
 }

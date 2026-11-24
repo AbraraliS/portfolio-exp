@@ -1,6 +1,8 @@
 import { Post, PostBlock } from "@/Types/types";
 import { buildingCriza } from "./building-criza";
 import { crizaLabsProducts } from "./criza-labs-products";
+import { buildingCrizoAndroid } from "./building-crizo-android";
+import { crizatoolsNoUpload } from "./crizatools-no-upload";
 import { gitstoreUploadPipeline } from "./gitstore-upload-pipeline";
 import { llmFeatures } from "./llm-features";
 import { oneServiceOrThree } from "./one-service-or-three";
@@ -9,7 +11,9 @@ import { responsive } from "./responsive";
 
 /** Listed newest first; entries with the same date keep this order. */
 const posts: Post[] = [
+  buildingCrizoAndroid,
   crizaLabsProducts,
+  crizatoolsNoUpload,
   buildingCriza,
   llmFeatures,
   gitstoreUploadPipeline,

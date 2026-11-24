@@ -13,7 +13,7 @@ export default function Mark({ size = 36 }: { size?: number }) {
       className="mark"
     >
       <path
-        d="M12 54 32 9 52 54"
+        d="M12 54C21 39 28 24 32 9C36 24 43 39 52 54"
         stroke="currentColor"
         strokeWidth="6"
         strokeLinecap="round"

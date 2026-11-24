@@ -1,27 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Big_Shoulders_Display, Hanken_Grotesk } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import "./styles/motion.css";
 import "./styles/blog.css";
+import "./styles/folio.css";
 import { personalData } from "@/../utils/Data/PersonalData";
 import { allPosts } from "@/../utils/Data/posts";
 import { projectName, projectsInOrder } from "@/../utils/project-helpers";
 import CommandPalette, { PaletteItem } from "./components/site/CommandPalette";
 import Nav from "./components/site/Nav";
 import Footer from "./components/site/Footer";
+import Kee from "./components/site/Kee";
 import JsonLd from "./components/site/JsonLd";
 import { shareMeta, SITE_URL } from "@/../utils/site";
-
-const display = Big_Shoulders_Display({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 const text = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-text",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -131,11 +127,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${display.variable} ${text.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={text.variable} suppressHydrationWarning>
       <head>
         {/* Scroll reveals only hide content once we know JS can show it again. */}
         <script
@@ -153,6 +145,7 @@ export default function RootLayout({
         <Nav />
         <main id="main">{children}</main>
         <Footer />
+        <Kee />
         <CommandPalette items={paletteItems} />
       </body>
     </html>

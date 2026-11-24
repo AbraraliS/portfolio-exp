@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/contact", 0.7),
     page("/privacy", 0.2),
     page("/terms", 0.2),
+    page("/support", 0.3),
     page("/sitemap", 0.2),
     ...projectsData.map((project) => page(`/projects/${project.id}`, 0.7)),
     ...allPosts().map((post) => ({
