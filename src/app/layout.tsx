@@ -4,6 +4,7 @@ import "./globals.css";
 import "./styles/motion.css";
 import "./styles/blog.css";
 import "./styles/folio.css";
+import "./styles/cinema.css";
 import { personalData } from "@/../utils/Data/PersonalData";
 import { allPosts } from "@/../utils/Data/posts";
 import { projectName, projectsInOrder } from "@/../utils/project-helpers";

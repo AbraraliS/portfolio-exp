@@ -125,16 +125,13 @@ An intelligent survey engine that uses AI to analyze sentiment, cluster response
    npm install
    ```
 
-3. **Add environment variables**
-   Copy `example.env` to `.env.local` and set `RESEND_API_KEY` to enable the contact form.
-
-4. **Run the development server**
+3. **Run the development server**
 
    ```bash
    npm run dev
    ```
 
-5. **Build for production**
+4. **Build for production**
    ```bash
    npm run build
    ```

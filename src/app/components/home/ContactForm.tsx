@@ -1,42 +1,35 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { isValidEmail } from "@/../utils/check-email";
 
 const MESSAGE_LIMIT = 1000;
 
-type Fields = { name: string; email: string; message: string };
+type Fields = { name: string; message: string };
 type Errors = Partial<Record<keyof Fields, string>>;
-type Status = "idle" | "sending" | "sent" | "failed";
 
-const validate = ({ name, email, message }: Fields): Errors => {
+const validate = ({ name, message }: Fields): Errors => {
   const errors: Errors = {};
   if (!name.trim()) errors.name = "Enter your name.";
-  if (!email.trim()) errors.email = "Enter your email address.";
-  else if (!isValidEmail(email.trim()))
-    errors.email = "Enter an email address like name@example.com.";
   if (!message.trim()) errors.message = "Enter a message.";
   return errors;
 };
 
+/**
+ * The contact form writes the email for you: it opens your own email app with the message ready,
+ * addressed to me. Nothing goes through a server, so nothing is stored or can fail on the way.
+ */
 export default function ContactForm({ email }: { email: string }) {
-  const [fields, setFields] = useState<Fields>({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [honeypot, setHoneypot] = useState("");
+  const [fields, setFields] = useState<Fields>({ name: "", message: "" });
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<Status>("idle");
-  const [sentTo, setSentTo] = useState("");
+  const [opened, setOpened] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const update = (key: keyof Fields, value: string) => {
     setFields((current) => ({ ...current, [key]: value }));
     if (errors[key]) setErrors((current) => ({ ...current, [key]: undefined }));
-    if (status !== "idle") setStatus("idle");
   };
 
-  const submit = async (event: FormEvent<HTMLFormElement>) => {
+  const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const found = validate(fields);
     setErrors(found);
@@ -47,21 +40,18 @@ export default function ContactForm({ email }: { email: string }) {
         ?.focus();
       return;
     }
+    const subject = `Hello from ${fields.name.trim()} (via abrarali.vercel.app)`;
+    const body = `${fields.message.trim()}\n\n${fields.name.trim()}`;
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setOpened(true);
+  };
 
-    setStatus("sending");
+  const copy = async () => {
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...fields, honeypot }),
-      });
-      if (!response.ok) throw new Error(`Status ${response.status}`);
-      setSentTo(fields.email.trim());
-      setFields({ name: "", email: "", message: "" });
-      setStatus("sent");
-    } catch (error) {
-      console.error("Contact form error:", error);
-      setStatus("failed");
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+    } catch {
+      setCopied(false);
     }
   };
 
@@ -85,19 +75,6 @@ export default function ContactForm({ email }: { email: string }) {
 
   return (
     <form className="form" onSubmit={submit} noValidate>
-      {/* Spam trap: hidden from people, filled in by bots. */}
-      <div className="form-trap" aria-hidden="true">
-        <label htmlFor="contact-website">Website</label>
-        <input
-          id="contact-website"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-          value={honeypot}
-          onChange={(event) => setHoneypot(event.target.value)}
-        />
-      </div>
-
       <div className="field">
         <label htmlFor="contact-name">Your name</label>
         <input
@@ -107,18 +84,6 @@ export default function ContactForm({ email }: { email: string }) {
           {...fieldProps("name")}
         />
         {fieldError("name")}
-      </div>
-
-      <div className="field">
-        <label htmlFor="contact-email">Your email</label>
-        <input
-          type="email"
-          inputMode="email"
-          autoComplete="email"
-          maxLength={100}
-          {...fieldProps("email")}
-        />
-        {fieldError("email")}
       </div>
 
       <div className="field">
@@ -136,24 +101,21 @@ export default function ContactForm({ email }: { email: string }) {
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="btn btn-signal"
-        disabled={status === "sending"}
-      >
-        {status === "sending" ? "Sending message" : "Send message"}
+      <button type="submit" className="btn btn-signal">
+        <span>Write the email</span>
       </button>
+      <p className="form-note">
+        This opens your email app with the message ready to {email}. Nothing is
+        sent until you press Send there.
+      </p>
 
       <div role="status" aria-live="polite" className="form-status">
-        {status === "sent" && (
+        {opened && (
           <p className="form-ok">
-            Message sent. The reply will go to {sentTo}.
-          </p>
-        )}
-        {status === "failed" && (
-          <p className="form-fail">
-            Message not sent. Try again, or email{" "}
-            <a href={`mailto:${email}`}>{email}</a>.
+            Your email app should be open with the message ready. No email app?{" "}
+            <button type="button" className="form-copy" onClick={copy}>
+              {copied ? "Address copied" : `Copy ${email}`}
+            </button>
           </p>
         )}
       </div>

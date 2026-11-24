@@ -5,7 +5,7 @@ import { breadcrumbJsonLd, shareMeta } from "@/../utils/site";
 import JsonLd from "../components/site/JsonLd";
 
 const description =
-  "What this website collects and why: contact form messages sent through Resend, no analytics and no advertising cookies.";
+  "What this website collects and why: nothing through the contact form, no analytics and no advertising cookies.";
 
 export const metadata: Metadata = {
   title: "Privacy",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   }),
 };
 
-const UPDATED = "24 November 2026";
+const UPDATED = "25 November 2026";
 
 export default function PrivacyPage() {
   return (
@@ -41,21 +41,12 @@ export default function PrivacyPage() {
 
           <h2>The contact form</h2>
           <p>
-            When you use the <Link href="/contact">contact form</Link>, your
-            name, email address and message are sent to me by email through{" "}
-            <a
-              href="https://resend.com/legal/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resend
-            </a>
-            , an email delivery service. I use these details only to read and
-            reply to your message.
-          </p>
-          <p>
-            If you would rather not use the form, you can email me directly at{" "}
+            The <Link href="/contact">contact form</Link> does not send anything
+            to a server. It opens your own email app with your message ready,
+            addressed to{" "}
             <a href={`mailto:${personalData.email}`}>{personalData.email}</a>.
+            Nothing leaves your device until you press Send there, and I use
+            your email only to read and reply to it.
           </p>
 
           <h2>The pipeline demo</h2>

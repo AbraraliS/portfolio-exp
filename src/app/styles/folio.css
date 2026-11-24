@@ -597,13 +597,13 @@
 /* Calm type on every inner page (owner 2026-11-24: no very big fonts). */
 .page-head h1,
 .project-hero h1,
-main h1:not(.folio-name) {
+main h1:not(.folio-name):not(.cine-title) {
   font-size: clamp(32px, 4.2vw, 52px) !important;
   line-height: 1.08 !important;
   letter-spacing: -0.03em;
 }
 .stop-title,
-main h2:not(.folio-h):not(.sr-only) {
+main h2:not(.folio-h):not(.sr-only):not(.cine-h):not(.cine-close-title) {
   font-size: clamp(22px, 2.4vw, 30px) !important;
   line-height: 1.2 !important;
 }
@@ -1491,4 +1491,21 @@ body:has(.folio) .scroll-progress {
   width: 100% !important;
   height: 100% !important;
   display: block;
+}
+
+.form-note {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.form-copy {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  min-height: 44px;
 }
