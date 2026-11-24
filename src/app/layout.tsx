@@ -84,7 +84,7 @@ const personJsonLd = {
     personalData.gitlab,
     personalData.youtube,
     personalData.twitter,
-    "https://criza.dev/about/founders/abrar-ali",
+    "https://criza.dev/about/team",
   ].filter(Boolean),
 };
 
