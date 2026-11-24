@@ -1,26 +1,25 @@
-/** The AS monogram, drawn as a route with its two terminal stations. */
+/**
+ * The Keystone A (2026-11-24): an open A with no crossbar; a red keystone sits where the bar would
+ * be. The icon files come from the same drawing: node scripts/make-icons.mjs
+ */
 export default function Mark({ size = 36 }: { size?: number }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 64 64"
+      viewBox="6 4 52 56"
       fill="none"
       aria-hidden="true"
       className="mark"
     >
-      <g
+      <path
+        d="M12 54 32 9 52 54"
         stroke="currentColor"
         strokeWidth="6"
-        strokeLinecap="butt"
-        strokeLinejoin="miter"
-      >
-        <path d="M6 58 13 51V27L29 7V52" />
-        <path d="M13 38H29" />
-        <path d="M58 9 49 18H41L37 22V30L41 34H50L54 38V46L49 51H36" />
-      </g>
-      <circle cx="6" cy="58" r="5" fill="var(--signal)" />
-      <circle cx="58" cy="9" r="5" fill="var(--signal)" />
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M32 33 37 40 32 47 27 40Z" fill="#ef4444" />
     </svg>
   );
 }

@@ -21,10 +21,10 @@ if (!self.define) {
       ("document" in self ? document.currentScript.src : "") ||
       location.href;
     if (s[c]) return;
-    let o = {};
-    const n = (e) => a(e, c),
-      t = { module: { uri: c }, exports: o, require: n };
-    s[c] = Promise.all(i.map((e) => t[e] || n(e))).then((e) => (r(...e), o));
+    let n = {};
+    const o = (e) => a(e, c),
+      t = { module: { uri: c }, exports: n, require: o };
+    s[c] = Promise.all(i.map((e) => t[e] || o(e))).then((e) => (r(...e), n));
   };
 }
 define(["./workbox-f1770938"], function (e) {
@@ -44,27 +44,19 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/Pwa-logos/new-icons/manifest-icon-192.maskable.png",
-          revision: "c3075967ba9bbacf76500d2f4c690c66",
+          revision: "b9393daf466185325b98d94fd0fb3727",
         },
         {
           url: "/Pwa-logos/new-icons/manifest-icon-512.maskable.png",
-          revision: "28b70244abc3048a4ba072a085e661f7",
-        },
-        {
-          url: "/_next/static/AkBoYjHjlh9V5opIHKVIg/_buildManifest.js",
-          revision: "383560ec2f1fb6ba9999d3f8c24af1a7",
-        },
-        {
-          url: "/_next/static/AkBoYjHjlh9V5opIHKVIg/_ssgManifest.js",
-          revision: "b6652df95db52feb4daf4eca35380933",
+          revision: "fb7e5de54f1a1f81f2fbdc859f690530",
         },
         {
           url: "/_next/static/chunks/125-0d64151ef59740fe.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/173-83818c8b39c951d3.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/203.2b4c1ee4fbe3a7cf.js",
@@ -76,15 +68,15 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/_next/static/chunks/455-cb52452f058d84d6.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/4bd1b696-f694dce5afea0dbb.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/546-7bce26fd6cf2c2e0.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/719.1e54262ee97d014d.js",
@@ -92,87 +84,87 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/_next/static/chunks/970-246733d244944b9d.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/_not-found/page-4901dac67fdaac78.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/about/page-acb64660ffc7d8b8.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/api/contact/route-669d90d481f55f3c.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/blog/%5Bslug%5D/page-593d097ef47316b9.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/blog/page-3d82de06513ece33.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/contact/page-a2f14427472f1d11.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
-          url: "/_next/static/chunks/app/layout-2354ee05dd514bd6.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          url: "/_next/static/chunks/app/layout-86f0206deb8ed7a2.js",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/not-found-3416fd9492d28bbf.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/page-0ffd66f556956903.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/privacy/page-24a967d8c02ba348.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/projects/%5Bid%5D/page-124363293e455c79.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/projects/page-f7e7ba1f07b57306.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/sitemap/page-4305c454e793e446.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/template-ef1c418165c0084d.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/app/terms/page-a91e61d8fb660eda.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/framework-d29117d969504448.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/main-8447b526b8a49ddb.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/main-app-ec8054c65c5bb051.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/pages/_app-60989c630625b0d6.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/pages/_error-8a20a8cc0e244b4c.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/chunks/polyfills-42372ed130431b0a.js",
@@ -180,7 +172,7 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/_next/static/chunks/webpack-e721f4d31c0798e3.js",
-          revision: "AkBoYjHjlh9V5opIHKVIg",
+          revision: "msJ3wksCx8kA4CZyMHJX9",
         },
         {
           url: "/_next/static/css/d32769443171dbba.css",
@@ -217,6 +209,14 @@ define(["./workbox-f1770938"], function (e) {
         {
           url: "/_next/static/media/d4c34a86ae43ab6e-s.p.woff2",
           revision: "52bd5e699da730301121f89560b2c81e",
+        },
+        {
+          url: "/_next/static/msJ3wksCx8kA4CZyMHJX9/_buildManifest.js",
+          revision: "383560ec2f1fb6ba9999d3f8c24af1a7",
+        },
+        {
+          url: "/_next/static/msJ3wksCx8kA4CZyMHJX9/_ssgManifest.js",
+          revision: "b6652df95db52feb4daf4eca35380933",
         },
         {
           url: "/assets/projects/buysmart/buysmart-analysis.png",
@@ -302,7 +302,7 @@ define(["./workbox-f1770938"], function (e) {
           url: "/blog/og/responsive-design-beyond-breakpoints.png",
           revision: "0a5f9a588d3b39a133ff82c7491fb3a4",
         },
-        { url: "/logo.png", revision: "a797b3505f7eea13d58277a92c4b1345" },
+        { url: "/logo.png", revision: "62b29a5ae47b00ec933a4efd737f7c33" },
         {
           url: "/lottie/build.json",
           revision: "7f35591080c60b039576187683de32e3",
