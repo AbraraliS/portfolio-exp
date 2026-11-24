@@ -2,6 +2,7 @@ import Link from "next/link";
 import { allPosts } from "@/../utils/Data/posts";
 import { personalData } from "@/../utils/Data/PersonalData";
 import { projectName, projectsInOrder } from "@/../utils/project-helpers";
+import FooterWordmark from "./FooterWordmark";
 import Mark from "./Mark";
 import Reveal from "./Reveal";
 import { socials } from "./socials";
@@ -140,11 +141,7 @@ export default function Footer() {
           ))}
         </ul>
 
-        <div
-          className="footer-wordmark"
-          data-name="AbrarAli"
-          aria-hidden="true"
-        />
+        <FooterWordmark />
 
         <div className="footer-base">
           <small>

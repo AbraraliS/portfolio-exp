@@ -2133,3 +2133,65 @@ html.js [data-reveal]:not(.is-in) {
 .hero-title a:hover {
   color: var(--signal-hover);
 }
+
+/* Footer name, like criza.dev's wordmark: centred solid letters lit by a moving pool of colour
+   (Criza red, Crizo mint, blue). It sweeps once on view and follows the pointer on desktop. */
+@property --wx {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -30%;
+}
+.name-mark {
+  --wx: -30%;
+  margin-top: 28px;
+  overflow: hidden;
+  padding: 0.04em 0 0.06em;
+  font-family: var(--font-display);
+  font-size: min(23vw, 300px);
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap;
+  background-image:
+    radial-gradient(
+      circle min(26vw, 340px) at var(--wx) 55%,
+      #ef4444,
+      #8af2be 48%,
+      #3b82f6 76%,
+      transparent 100%
+    ),
+    linear-gradient(#17241d, #17241d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
+.name-mark-s {
+  margin-left: 0.5em;
+  font-family: var(--font-text);
+  font-size: max(0.12em, 14px);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  vertical-align: baseline;
+}
+.name-mark[data-in]:not([data-lit]) {
+  animation: name-sweep 2.8s var(--ease-out) both;
+}
+.name-mark[data-lit] {
+  transition: --wx 0.25s var(--ease-out);
+}
+@keyframes name-sweep {
+  from {
+    --wx: -30%;
+  }
+  to {
+    --wx: 130%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .name-mark {
+    --wx: 50%;
+    animation: none !important;
+  }
+}

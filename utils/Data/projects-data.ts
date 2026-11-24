@@ -99,7 +99,7 @@ export const projectsData: Project[] = [
     name: "CrizaTools: free tools that run in your browser",
     shortTitle: "CrizaTools",
     description:
-      "A growing set of free online tools for documents, images, invoices and everyday work, where files are processed in your own browser and never uploaded.",
+      "67 free online tools for PDFs, photos, money and QR codes, from GST invoices to image compression. Everything runs in your own browser, so nothing is uploaded and no sign up is needed.",
     category: "Full Stack / Web / Performance",
     type: "Web Tools",
     role: "Designed and built for Criza Labs",
@@ -119,10 +119,13 @@ export const projectsData: Project[] = [
     ],
     status: "Live",
     images: [
+      "/projects/crizatools/crizatools-home.webp",
+      "/projects/crizatools/crizatools-gst-invoice.webp",
+      "/projects/crizatools/crizatools-review-qr.webp",
+      "/projects/crizatools/crizatools-mobile.webp",
       "/projects/crizatools/crizatools-free-online-tools.webp",
-      "/projects/crizatools/products-crizatools.png",
     ],
-    thumbnail: "/projects/crizatools/crizatools-free-online-tools.webp",
+    thumbnail: "/projects/crizatools/crizatools-home.webp",
     system_architecture: {
       type: "Static Site with Browser Tools",
       components: [

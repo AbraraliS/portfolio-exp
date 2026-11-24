@@ -51,12 +51,20 @@ define(["./workbox-f1770938"], function (e) {
           revision: "28b70244abc3048a4ba072a085e661f7",
         },
         {
+          url: "/_next/static/ROcosUM-TFRbZqhnXZXYR/_buildManifest.js",
+          revision: "383560ec2f1fb6ba9999d3f8c24af1a7",
+        },
+        {
+          url: "/_next/static/ROcosUM-TFRbZqhnXZXYR/_ssgManifest.js",
+          revision: "b6652df95db52feb4daf4eca35380933",
+        },
+        {
           url: "/_next/static/chunks/125-0d64151ef59740fe.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/173-83818c8b39c951d3.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/203.2b4c1ee4fbe3a7cf.js",
@@ -68,15 +76,15 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/_next/static/chunks/455-cb52452f058d84d6.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/4bd1b696-f694dce5afea0dbb.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
-          url: "/_next/static/chunks/546-dd3cda6cf60bdd33.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          url: "/_next/static/chunks/546-7bce26fd6cf2c2e0.js",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/719.1e54262ee97d014d.js",
@@ -84,107 +92,103 @@ define(["./workbox-f1770938"], function (e) {
         },
         {
           url: "/_next/static/chunks/970-246733d244944b9d.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/_not-found/page-4901dac67fdaac78.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/about/page-acb64660ffc7d8b8.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/api/contact/route-669d90d481f55f3c.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/blog/%5Bslug%5D/page-593d097ef47316b9.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/blog/page-3d82de06513ece33.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/contact/page-a2f14427472f1d11.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
-          url: "/_next/static/chunks/app/layout-1fc3f0be7e5c7624.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          url: "/_next/static/chunks/app/layout-2354ee05dd514bd6.js",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/not-found-3416fd9492d28bbf.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/page-0ffd66f556956903.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/privacy/page-24a967d8c02ba348.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/projects/%5Bid%5D/page-124363293e455c79.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/projects/page-f7e7ba1f07b57306.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/sitemap/page-4305c454e793e446.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/template-ef1c418165c0084d.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/app/terms/page-a91e61d8fb660eda.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/framework-d29117d969504448.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/main-8447b526b8a49ddb.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/main-app-ec8054c65c5bb051.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/pages/_app-60989c630625b0d6.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/pages/_error-8a20a8cc0e244b4c.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
           url: "/_next/static/chunks/polyfills-42372ed130431b0a.js",
           revision: "846118c33b2c0e922d7b3a7676f81f6f",
         },
         {
-          url: "/_next/static/chunks/webpack-eb320160fea12fc7.js",
-          revision: "gXLDUnM-FKd9XmafaPK-U",
+          url: "/_next/static/chunks/webpack-e721f4d31c0798e3.js",
+          revision: "ROcosUM-TFRbZqhnXZXYR",
         },
         {
-          url: "/_next/static/css/8e36382ff44e46cd.css",
-          revision: "8e36382ff44e46cd",
+          url: "/_next/static/css/d32769443171dbba.css",
+          revision: "d32769443171dbba",
         },
         {
-          url: "/_next/static/gXLDUnM-FKd9XmafaPK-U/_buildManifest.js",
-          revision: "383560ec2f1fb6ba9999d3f8c24af1a7",
-        },
-        {
-          url: "/_next/static/gXLDUnM-FKd9XmafaPK-U/_ssgManifest.js",
-          revision: "b6652df95db52feb4daf4eca35380933",
+          url: "/_next/static/css/ee2f41588282f7a7.css",
+          revision: "ee2f41588282f7a7",
         },
         {
           url: "/_next/static/media/313510e2713fb214-s.p.woff2",
@@ -368,6 +372,22 @@ define(["./workbox-f1770938"], function (e) {
         {
           url: "/projects/crizatools/crizatools-free-online-tools.webp",
           revision: "86ac58a04c49da1a5dcf7a8b62f3265e",
+        },
+        {
+          url: "/projects/crizatools/crizatools-gst-invoice.webp",
+          revision: "c456a0a0e6b5fa32cf0bb45d4211cc3c",
+        },
+        {
+          url: "/projects/crizatools/crizatools-home.webp",
+          revision: "b5b68171a644b9f1f4f9414b086856c1",
+        },
+        {
+          url: "/projects/crizatools/crizatools-mobile.webp",
+          revision: "54e8c7d3f133bb18739f408c4b8ffa9b",
+        },
+        {
+          url: "/projects/crizatools/crizatools-review-qr.webp",
+          revision: "67fec400c9793454f9d218a5fa6f8541",
         },
         {
           url: "/projects/crizatools/products-crizatools.png",
