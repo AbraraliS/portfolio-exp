@@ -4,7 +4,6 @@ import { personalData } from "@/../utils/Data/PersonalData";
 import { experiences } from "@/../utils/Data/experience";
 import { allPosts, formatPostDate } from "@/../utils/Data/posts";
 import { projectName, projectsInOrder } from "@/../utils/project-helpers";
-import { socials } from "../site/socials";
 import Mark from "../site/Mark";
 import FolioNav from "./FolioNav";
 import Spotlight from "./Spotlight";
@@ -43,57 +42,12 @@ export default function Folio() {
       <Spotlight />
       <header className="folio-side">
         <div>
-          <Link
-            href="/"
-            className="folio-brand"
-            aria-label={`${personalData.name}, home`}
-          >
-            <Mark size={34} />
-          </Link>
-          <p className="folio-status">
-            <span className="folio-dot" aria-hidden="true" /> Leading Criza Labs
-            · Bengaluru, India
+          <p className="folio-side-label">
+            <Mark size={22} /> {personalData.name}
           </p>
-          <h1 className="folio-name">{personalData.name}</h1>
-          <p className="folio-role">
-            Full stack and AI engineer, co-founder of{" "}
-            <a href="https://criza.dev">Criza Labs</a>
-          </p>
-          <p className="folio-intro">
-            I build whole products, from the first sketch to the shipped
-            release: Android apps, web platforms, backend systems and AI.
-          </p>
-          <dl className="folio-stats">
-            <div>
-              <dt>Products live</dt>
-              <dd>4</dd>
-            </div>
-            <div>
-              <dt>Free tools shipped</dt>
-              <dd>67</dd>
-            </div>
-            <div>
-              <dt>Building since</dt>
-              <dd>2022</dd>
-            </div>
-          </dl>
           <FolioNav sections={sections} />
         </div>
         <div className="folio-foot">
-          <ul className="folio-socials" aria-label="Profiles">
-            {socials.map((social) => (
-              <li key={social.label}>
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer me"
-                  aria-label={`${social.label} (opens in a new tab)`}
-                >
-                  <social.icon aria-hidden="true" />
-                </a>
-              </li>
-            ))}
-          </ul>
           <div className="folio-actions">
             <a className="folio-btn" href={`mailto:${personalData.email}`}>
               Email me

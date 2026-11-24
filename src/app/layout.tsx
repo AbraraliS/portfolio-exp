@@ -10,7 +10,6 @@ import { projectName, projectsInOrder } from "@/../utils/project-helpers";
 import CommandPalette, { PaletteItem } from "./components/site/CommandPalette";
 import Nav from "./components/site/Nav";
 import Footer from "./components/site/Footer";
-import Kee from "./components/site/Kee";
 import JsonLd from "./components/site/JsonLd";
 import { shareMeta, SITE_URL } from "@/../utils/site";
 
@@ -145,7 +144,6 @@ export default function RootLayout({
         <Nav />
         <main id="main">{children}</main>
         <Footer />
-        <Kee />
         <CommandPalette items={paletteItems} />
       </body>
     </html>
