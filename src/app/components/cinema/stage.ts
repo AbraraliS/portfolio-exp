@@ -258,6 +258,14 @@ export function createStage(
       kx = THREE.MathUtils.lerp(kx, narrow ? -1.1 : -2.7, aside);
       ks = THREE.MathUtils.lerp(1, 0.55, aside);
     }
+    // Give the product the stage: on phones Kee leaves for Crizo; everywhere he leaves for CrizaVoise.
+    if (narrow && prog.crizo > 0)
+      ks = THREE.MathUtils.lerp(ks, 0, ease(seg(prog.crizo, 0.05, 0.3)));
+    if (prog.voise > 0) {
+      const off = ease(seg(prog.voise, 0, 0.2));
+      kx = THREE.MathUtils.lerp(kx, narrow ? -3 : -6, off);
+      ks = THREE.MathUtils.lerp(ks, 0, off);
+    }
     if (prog.gallery > 0.05)
       ks = THREE.MathUtils.lerp(ks, 0, ease(seg(prog.gallery, 0.05, 0.25)));
     if (prog.close > 0) {
@@ -321,16 +329,16 @@ export function createStage(
     const lout = ease(seg(prog.gallery, 0, 0.2));
     laptop.visible = prog.voise > 0.08 && lout < 1;
     laptop.position.set(
-      THREE.MathUtils.lerp(side ? -6 : 0, side ? -1.9 : 0, lin),
-      -1.0 + low * 1.2 - lout * 4,
+      THREE.MathUtils.lerp(side ? -6 : 0, side ? -1.45 : 0, lin),
+      (narrow ? -1.0 : -0.8) + low * 1.2 - lout * 4,
       THREE.MathUtils.lerp(narrow ? -3 : 0, 0, lin),
     );
     laptop.rotation.set(
       0.32,
-      THREE.MathUtils.lerp(0.9, side ? 0.35 : 0, lin),
+      THREE.MathUtils.lerp(0.9, side ? 0.22 : 0, lin),
       0,
     );
-    laptop.scale.setScalar(narrow ? 0.62 : 1);
+    laptop.scale.setScalar(narrow ? 0.62 : camera.aspect < 1.45 ? 0.7 : 0.82);
     hinge.rotation.x = THREE.MathUtils.lerp(Math.PI / 2, -0.28, open);
 
     // Dust drifts; the whole field slides gently with the story.
