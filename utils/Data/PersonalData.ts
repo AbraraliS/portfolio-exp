@@ -1,7 +1,7 @@
 export const personalData = {
   name: "AbrarAli S.",
   profile: "/profile.jpg",
-  designation: "Full Stack & Systems Engineer",
+  designation: "Full Stack & AI Engineer, Co-founder of Criza Labs",
   designationAlternateWords: [
     "Systems Architect.",
     "Full Stack Developer.",

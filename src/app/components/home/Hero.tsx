@@ -5,10 +5,10 @@ import { projectsData } from "@/../utils/Data/projects-data";
 import SystemMap from "./SystemMap";
 
 const expertise = [
-  { area: "Frontend", tools: "React, Next.js, TypeScript" },
+  { area: "Frontend", tools: "React, Next.js, Astro, TypeScript" },
   { area: "Backend", tools: "Spring Boot, Node.js, API design" },
   { area: "AI", tools: "LLM APIs, automation, Python" },
-  { area: "Mobile", tools: "React Native, Expo" },
+  { area: "Mobile", tools: "Kotlin, Jetpack Compose, React Native" },
 ];
 
 export default function Hero() {
@@ -23,11 +23,13 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-top">
           <p className="hero-title">
-            {personalData.name}, full stack and systems engineer
+            {personalData.name}, co-founder of{" "}
+            <a href="https://criza.dev">Criza Labs</a>. Full stack, AI and
+            Android engineer.
           </p>
           <p className="hero-status">
             <span className="hero-pulse" aria-hidden="true" />
-            Available for roles and freelance work, {personalData.address}
+            Leading Criza Labs, open to new work, {personalData.address}
           </p>
         </div>
 
@@ -52,8 +54,10 @@ export default function Hero() {
         <div className="hero-grid">
           <div className="hero-copy">
             <p className="hero-role">
-              Interfaces, mobile apps, backend architecture and AI workflows,
-              designed and built as one connected system.
+              From the first sketch to the shipped release: Android apps, web
+              products, backend systems and AI, built as one connected line.
+              Right now I lead Criza Labs and ship Crizo, CrizaVoise and
+              CrizaTools.
             </p>
             <div className="hero-actions">
               <Link href="/#work" className="btn btn-signal">

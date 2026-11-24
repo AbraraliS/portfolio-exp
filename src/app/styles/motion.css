@@ -895,7 +895,7 @@
 }
 
 .paper .btn-ink::before {
-  background: #fff;
+  background: var(--deep-2);
 }
 
 @media (hover: hover) {

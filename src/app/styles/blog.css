@@ -14,8 +14,8 @@
   min-width: 0;
   overflow: hidden;
   border-radius: var(--radius-m);
-  background: #fbfdfc;
-  box-shadow: var(--shadow-s);
+  background: var(--paper-2);
+  box-shadow: var(--shadow-m);
   transition:
     transform 0.35s var(--ease),
     box-shadow 0.35s var(--ease);
@@ -69,10 +69,13 @@
 }
 
 .post-card h3 {
-  font-family: var(--font-display);
-  font-size: clamp(30px, 3vw, 40px);
-  font-weight: 800;
-  line-height: 1.02;
+  font-family: var(--font-text);
+  font-size: clamp(20px, 1.7vw, 24px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
 }
 
 .post-card-excerpt {
@@ -82,8 +85,10 @@
 
 @media (hover: hover) {
   .post-card:hover {
-    box-shadow: var(--shadow-m);
-    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 1px rgba(138, 242, 190, 0.22),
+      0 28px 64px -30px rgba(0, 0, 0, 0.9);
+    transform: translateY(-2px);
   }
 
   .post-card:hover .post-cover {
@@ -129,7 +134,7 @@
   }
 
   .post-card-lead h3 {
-    font-size: clamp(44px, 4.6vw, 68px);
+    font-size: clamp(26px, 2.6vw, 36px);
   }
 
   .post-card-lead .post-card-excerpt {

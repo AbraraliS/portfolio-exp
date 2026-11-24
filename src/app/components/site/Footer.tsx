@@ -49,8 +49,8 @@ export default function Footer() {
                 <Mark size={52} />
               </Link>
               <p className="footer-lead">
-                Full stack and systems engineer in Bengaluru, building complete
-                products from interface to AI workflow.
+                Co-founder of Criza Labs. I build complete products, from the
+                first sketch to the shipped release.
               </p>
               <Link href="/contact" className="btn btn-signal">
                 <span>Contact me</span>

@@ -232,8 +232,9 @@ section[id] {
 }
 
 .btn-ink {
-  background: var(--deep);
-  color: var(--on-deep);
+  background: var(--paper-2);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
 }
 
 .btn-ink:hover {
@@ -246,7 +247,7 @@ section[id] {
 }
 
 .paper .btn-ink:hover {
-  background: #fff;
+  background: var(--deep-2);
 }
 
 .text-link {
@@ -2121,4 +2122,14 @@ html.js [data-reveal]:not(.is-in) {
   .live-status a:hover {
     transform: none;
   }
+}
+.hero-title a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--signal);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+.hero-title a:hover {
+  color: var(--signal-hover);
 }

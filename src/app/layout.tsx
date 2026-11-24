@@ -25,9 +25,10 @@ const text = Hanken_Grotesk({
   display: "swap",
 });
 
-const TITLE = "AbrarAli S. | Full Stack & Systems Engineer";
+const TITLE =
+  "AbrarAli S. | Full Stack & AI Engineer, Co-founder of Criza Labs";
 const DESCRIPTION =
-  "Full stack and systems engineer in Bengaluru building complete products: interfaces and mobile apps, backend architecture, APIs and AI workflows.";
+  "Co-founder of Criza Labs, building complete products end to end: Android apps, web platforms, backend systems and AI. Maker of Crizo, CrizaVoise and CrizaTools.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
